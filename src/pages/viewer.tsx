@@ -26,7 +26,7 @@ export function Viewer() {
   const [isFav, setIsFav] = useState(false)
 
   // Debounce timer for progress saving
-  const progressTimer = useRef<ReturnType<typeof setTimeout>>()
+  const progressTimer = useRef<ReturnType<typeof setTimeout>>(undefined)
 
   // Load user data: favorites + reading progress
   useEffect(() => {
@@ -72,7 +72,7 @@ export function Viewer() {
 
   if (!doc) {
     return (
-      <div className="text-center py-12">
+      <div className="max-w-5xl mx-auto px-4 py-12 text-center">
         <p className="text-gray-500 mb-4">Document not found</p>
         <Link to="/" className="text-blue-600 hover:underline">Back to home</Link>
       </div>
@@ -82,7 +82,7 @@ export function Viewer() {
   const filePath = `/documents/${doc.filename}`
 
   return (
-    <div>
+    <div className="max-w-5xl mx-auto px-4 py-6">
       {/* Top bar */}
       <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
         <div className="flex items-center gap-3">

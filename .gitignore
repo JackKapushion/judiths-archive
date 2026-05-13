@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Quiz data
+.quiz-data/
+
+# Local notes (not tracked)
+my-notes/
+
+# Generated PDF processing output
+public/thumbnails/
+public/search-index.json

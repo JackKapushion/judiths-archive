@@ -49,3 +49,11 @@ export const documents: SoftaDocument[] = [
 export function getDocumentById(id: string): SoftaDocument | undefined {
   return documents.find((doc) => doc.id === id)
 }
+
+export function getThumbnailPath(doc: SoftaDocument): string {
+  if (doc.type === 'image') {
+    return `/documents/${doc.filename}`
+  }
+  const name = doc.filename.replace(/\.pdf$/i, '')
+  return `/thumbnails/${name}.png`
+}
