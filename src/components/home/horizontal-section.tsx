@@ -59,11 +59,11 @@ export function HorizontalSection({
           className="absolute -inset-x-12 -inset-y-4 -z-1"
           style={{
             backgroundColor: color,
-            WebkitMaskImage: 'url(/images/theme/50.png)',
+            WebkitMaskImage: 'url(/images/theme/90.png)',
             WebkitMaskSize: '100% 100%',
             WebkitMaskRepeat: 'no-repeat',
             WebkitMaskPosition: 'center',
-            maskImage: 'url(/images/theme/50.png)',
+            maskImage: 'url(/images/theme/90.png)',
             maskSize: '100% 100%',
             maskRepeat: 'no-repeat',
             maskPosition: 'center',
@@ -73,7 +73,7 @@ export function HorizontalSection({
       <div className="relative px-4 py-5">
         <h2 className="text-lg font-medium text-[var(--color-foreground)] mb-1">{title}</h2>
         {description && (
-          <p className="text-sm text-[var(--color-foreground)]/70 mb-3">{description}</p>
+          <p className="text-base text-[var(--color-foreground)] mb-3">{description}</p>
         )}
         <div className="relative group">
           {canScrollLeft && (

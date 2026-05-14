@@ -48,7 +48,7 @@ export function Home() {
       userData?.recentlyViewed
         ?.map((entry) => documents.find((d) => d.id === entry.docId))
         .filter((d): d is SoftaDocument => d !== undefined)
-        .slice(0, 10) ?? [],
+        .slice(0, 5) ?? [],
     [userData?.recentlyViewed]
   )
 
@@ -73,22 +73,22 @@ export function Home() {
       <Hero />
       <SearchBar onSearch={setQuery} />
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {!isSearching && user && recentDocs.length > 0 && (
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        {!isSearching && user && favoriteDocs.length > 0 && (
           <HorizontalSection
-            title="Recently Viewed"
-            color="#B4CC91"
-            docs={recentDocs}
+            title="Favorites"
+            color="#DE7880"
+            docs={favoriteDocs}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
           />
         )}
 
-        {!isSearching && user && favoriteDocs.length > 0 && (
+        {!isSearching && user && recentDocs.length > 0 && (
           <HorizontalSection
-            title="Favorites"
-            color="#D4787A"
-            docs={favoriteDocs}
+            title="Recently Viewed"
+            color="#1E9AAF"
+            docs={recentDocs}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
           />

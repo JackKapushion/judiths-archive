@@ -29,9 +29,9 @@ function SearchInput({
         type="text"
         value={query}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Search documents..."
-        className={`w-full pl-10 pr-4 bg-white/80 border border-[var(--color-foreground)]/20 rounded-lg text-sm text-[var(--color-foreground)] placeholder:text-[var(--color-foreground)]/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent ${
-          compact ? 'py-1.5' : 'py-2'
+        placeholder={compact ? 'Search or ask AI...' : 'Search for a title or ask something like "What did she believe about leadership?"'}
+        className={`w-full pl-10 pr-4 bg-white/90 border border-[var(--color-foreground)]/15 rounded-lg text-[var(--color-foreground)] placeholder:text-[var(--color-foreground)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent shadow-sm ${
+          compact ? 'py-1.5 text-sm' : 'py-2.5 text-base'
         }`}
       />
     </div>
@@ -77,8 +77,8 @@ export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
           isStuck ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <p className="text-[var(--color-foreground)]/50 text-sm text-center mb-3">
-          Scroll down to browse her collected works, or search for something specific.
+        <p className="text-[var(--color-foreground)] text-lg text-center mb-3">
+          Browse her works below, or just ask the AI.
         </p>
         <SearchInput query={query} onChange={handleChange} />
       </div>
