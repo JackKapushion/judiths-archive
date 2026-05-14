@@ -7,13 +7,19 @@ export function Hero() {
           alt="Judith Orloff"
           className="w-40 h-40 rounded-full object-cover mx-auto mb-6 shadow-md"
         />
-        <h1 className="text-3xl font-semibold text-gray-900 mb-3">
-          Judith Orloff's Archive
+        <h1 className="text-3xl font-normal text-gray-900 mb-6">
+          The Archive of Judith Orloff
         </h1>
-        <p className="text-lg text-gray-600 max-w-xl mx-auto">
-          A collection of writings, teachings, and documents from the life and
-          work of Judith Orloff, M.Ed. - educator, author, and leadership coach.
-        </p>
+        <div className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto space-y-4">
+          <p>
+            Judith Orloff, M.Ed., was an educator, author, and leadership coach
+            based in Boulder, Colorado. She founded the Radical Love Foundation
+            and created the CHOICES: MBL program, dedicating her career to helping
+            people take responsibility for their own experience and create
+            meaningful change. This site is an archive of her writings, teachings,
+            and documents.
+          </p>
+        </div>
       </div>
     </section>
   )

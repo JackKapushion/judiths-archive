@@ -1,10 +1,9 @@
 import { useEffect, useState, useMemo } from 'react'
-import { documents, type SoftaDocument } from '../lib/documents'
+import { documents, type SoftaDocument, getCategories, getDocumentsByCategory } from '../lib/documents'
 import { useAuth } from '../components/auth/auth-context'
 import { useAuthGate } from '../components/auth/use-auth-gate'
 import { getUserData, toggleFavorite, type UserData } from '../lib/user-data'
 import { Hero } from '../components/home/hero'
-import { Bio } from '../components/home/bio'
 import { SearchBar } from '../components/home/search-bar'
 import { DocumentCard } from '../components/home/document-card'
 import { HorizontalSection } from '../components/home/horizontal-section'
@@ -72,7 +71,6 @@ export function Home() {
   return (
     <div>
       <Hero />
-      <Bio />
       <SearchBar onSearch={setQuery} />
 
       <div className="max-w-6xl mx-auto px-4 py-8">
@@ -94,27 +92,40 @@ export function Home() {
           />
         )}
 
-        <section>
-          <h2 className="text-lg font-medium text-gray-900 mb-3">
-            {isSearching ? 'Search Results' : 'All Documents'}
-          </h2>
-          {filteredDocs.length === 0 ? (
-            <p className="text-gray-500 text-sm">
-              No documents match your search.
-            </p>
-          ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {filteredDocs.map((doc) => (
-                <DocumentCard
-                  key={doc.id}
-                  doc={doc}
-                  isFav={favorites.has(doc.id)}
-                  onToggleFavorite={handleToggleFavorite}
-                />
-              ))}
-            </div>
-          )}
-        </section>
+        {isSearching ? (
+          <section>
+            <h2 className="text-lg font-medium text-gray-900 mb-3">
+              Search Results
+            </h2>
+            {filteredDocs.length === 0 ? (
+              <p className="text-gray-500 text-sm">
+                No documents match your search.
+              </p>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {filteredDocs.map((doc) => (
+                  <DocumentCard
+                    key={doc.id}
+                    doc={doc}
+                    isFav={favorites.has(doc.id)}
+                    onToggleFavorite={handleToggleFavorite}
+                  />
+                ))}
+              </div>
+            )}
+          </section>
+        ) : (
+          getCategories().map((category) => (
+            <HorizontalSection
+              key={category.name}
+              title={category.name}
+              description={category.description}
+              docs={getDocumentsByCategory(category.name)}
+              favorites={favorites}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          ))
+        )}
       </div>
     </div>
   )
