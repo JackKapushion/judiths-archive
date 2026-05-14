@@ -1,16 +1,16 @@
 export function Hero() {
   return (
-    <section className="bg-stone-100 py-16 px-4">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="py-16 px-4">
+      <div className="max-w-3xl mx-auto text-center painted-patch py-12 px-8">
         <img
           src="/images/judith.png"
           alt="Judith Orloff"
           className="w-40 h-40 rounded-full object-cover mx-auto mb-6 shadow-md"
         />
-        <h1 className="text-3xl font-normal text-gray-900 mb-6">
+        <h1 className="text-3xl font-normal text-[var(--color-foreground)] mb-6">
           The Archive of Judith Orloff
         </h1>
-        <div className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto space-y-4">
+        <div className="text-[var(--color-foreground)] text-lg leading-relaxed max-w-2xl mx-auto space-y-4">
           <p>
             Judith Orloff, M.Ed., was an educator, author, and leadership coach
             based in Boulder, Colorado. She founded the Radical Love Foundation

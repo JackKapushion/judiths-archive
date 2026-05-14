@@ -15,11 +15,11 @@ export function DocumentCard({
   const thumbnailSrc = getThumbnailPath(doc)
 
   return (
-    <div className="group relative bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 hover:shadow-sm transition-all">
+    <div className="group relative bg-white/80 rounded-lg border border-[var(--color-foreground)]/10 overflow-hidden hover:border-[var(--color-foreground)]/20 hover:shadow-sm transition-all">
       <Link to={`/read/${doc.id}`}>
-        <div className="aspect-[3/4] bg-gray-100">
+        <div className="aspect-[3/4] bg-[var(--color-tertiary)]/30">
           {imgError ? (
-            <div className="w-full h-full flex flex-col items-center justify-center p-4 text-gray-400">
+            <div className="w-full h-full flex flex-col items-center justify-center p-4 text-[var(--color-foreground)]/40">
               <svg
                 className="w-10 h-10 mb-2"
                 fill="none"
@@ -50,7 +50,7 @@ export function DocumentCard({
       <div className="p-3 flex items-start justify-between gap-2">
         <Link
           to={`/read/${doc.id}`}
-          className="text-sm text-gray-700 leading-tight line-clamp-2 hover:text-gray-900"
+          className="text-sm text-[var(--color-foreground)] leading-tight line-clamp-2 hover:opacity-70"
         >
           {doc.title}
         </Link>

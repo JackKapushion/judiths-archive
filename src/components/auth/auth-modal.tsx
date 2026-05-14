@@ -49,14 +49,14 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl w-full max-w-sm mx-4 p-6"
+        className="bg-[var(--color-tertiary)] rounded-lg shadow-xl w-full max-w-sm mx-4 p-6 painted-patch"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-medium text-gray-900">Sign in</h2>
+          <h2 className="text-lg font-medium text-[var(--color-foreground)]">Sign in</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 text-xl leading-none"
+            className="text-[var(--color-foreground)]/40 hover:text-[var(--color-foreground)] text-xl leading-none"
           >
             &times;
           </button>
@@ -64,11 +64,11 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
 
         {emailSent ? (
           <div className="text-center py-4">
-            <p className="text-gray-700 mb-2">Check your email!</p>
-            <p className="text-sm text-gray-500">
+            <p className="text-[var(--color-foreground)] mb-2">Check your email!</p>
+            <p className="text-sm text-[var(--color-foreground)]/60">
               We sent a sign-in link to <span className="font-medium">{email}</span>
             </p>
-            <p className="text-sm text-gray-400 mt-2">
+            <p className="text-sm text-[var(--color-foreground)]/40 mt-2">
               Don't see it? Check your spam or junk folder.
             </p>
           </div>
@@ -76,7 +76,7 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
           <>
             <button
               onClick={handleGoogleSignIn}
-              className="w-full flex items-center justify-center gap-2 border border-gray-300 rounded-md px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+              className="w-full flex items-center justify-center gap-2 border border-[var(--color-foreground)]/20 rounded-md px-4 py-2.5 text-sm font-medium text-[var(--color-foreground)] bg-white/60 hover:bg-white/80 transition-colors"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path
@@ -100,12 +100,12 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
             </button>
 
             <div className="flex items-center gap-3 mt-4 mb-3">
-              <div className="flex-1 h-px bg-gray-200" />
-              <span className="text-xs text-gray-400">or</span>
-              <div className="flex-1 h-px bg-gray-200" />
+              <div className="flex-1 h-px bg-[var(--color-foreground)]/20" />
+              <span className="text-xs text-[var(--color-foreground)]/40">or</span>
+              <div className="flex-1 h-px bg-[var(--color-foreground)]/20" />
             </div>
 
-            <p className="text-sm text-gray-500 mb-3">
+            <p className="text-sm text-[var(--color-foreground)]/60 mb-3">
               Don't have Gmail? Enter any email and we'll send you a link to sign in.
             </p>
 
@@ -116,11 +116,11 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
                 required
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full bg-white/60 border border-[var(--color-foreground)]/20 rounded-md px-3 py-2 text-sm text-[var(--color-foreground)] placeholder:text-[var(--color-foreground)]/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
               />
               <button
                 type="submit"
-                className="w-full mt-3 bg-gray-900 text-white rounded-md px-4 py-2.5 text-sm font-medium hover:bg-gray-800 transition-colors"
+                className="w-full mt-3 bg-[var(--color-primary)] text-[var(--color-foreground)] rounded-md px-4 py-2.5 text-sm font-medium hover:opacity-90 transition-colors"
               >
                 Send sign-in link
               </button>

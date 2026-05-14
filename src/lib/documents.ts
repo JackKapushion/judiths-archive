@@ -51,30 +51,35 @@ export function getDocumentById(id: string): SoftaDocument | undefined {
   return documents.find((doc) => doc.id === id)
 }
 
-const categories: { name: string; description: string }[] = [
+const categories: { name: string; description: string; color: string }[] = [
   {
     name: 'Letters & Correspondence',
     description: 'Throughout her career, Judith maintained a rich network of professional and personal relationships. She wrote extensively to colleagues in the education and leadership development communities, to former students who had gone on to build their own practices, and to friends and family. These letters capture her voice in its most direct form - encouraging, challenging, and always deeply personal. Many of them trace the evolution of her thinking over decades, from her early teaching days through the founding of the Radical Love Foundation.',
+    color: '#1E9AAE',
   },
   {
     name: 'Teaching Materials',
     description: 'Judith earned her M.Ed. with a focus on experiential education and spent years developing curricula that bridged leadership theory with hands-on learning. She taught at institutions including the Vermont Institute of Community Involvement and Burlington College, where she designed workshops on conflict resolution, group dynamics, and organizational change. These documents include lesson plans, workshop outlines, training manuals, and course syllabi that reflect her belief that real learning happens through experience, not lecture.',
+    color: '#8B3A52',
   },
   {
     name: 'Personal Writing',
     description: 'Beyond her professional work, Judith was a prolific and deeply reflective writer. She kept journals throughout her life and wrote essays on topics ranging from Kabbalistic philosophy to the nature of personal responsibility. Much of this writing informed her published works, including The Power of the Sacred Living Letters: The Kabbalah Book of Change. These unpublished pieces offer a window into how she processed the world - always searching, always questioning, always pushing toward something more honest.',
+    color: '#2B5EA7',
   },
   {
     name: 'CHOICES Program',
     description: 'CHOICES: MBL (Managing by Leadership) was the program Judith created and considered her life\'s work. It was a comprehensive framework for personal and organizational transformation, drawing on her background in education, her study of Kabbalistic teachings, and years of hands-on facilitation. The program covered stress management, conflict resolution, communication skills, and experiential learning techniques. She ran CHOICES workshops for corporate teams, nonprofits, and community groups, and trained other facilitators to carry the work forward. These documents include program guides, participant workbooks, facilitator notes, and presentation materials.',
+    color: '#D4787A',
   },
   {
     name: 'Photos & Screenshots',
     description: 'A collection of photographs, clippings, and visual materials from different periods of Judith\'s life and career. These images capture moments from her teaching, her travels, her time with family, and the community she built around her work.',
+    color: '#E8A88A',
   },
 ]
 
-export function getCategories(): { name: string; description: string }[] {
+export function getCategories(): { name: string; description: string; color: string }[] {
   return categories.filter((cat) =>
     documents.some((doc) => doc.category === cat.name)
   )

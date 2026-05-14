@@ -13,7 +13,7 @@ function SearchInput({
   return (
     <div className={compact ? 'w-full relative' : 'max-w-2xl mx-auto relative'}>
       <svg
-        className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+        className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-foreground)]/40"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ function SearchInput({
         value={query}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search documents..."
-        className={`w-full pl-10 pr-4 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
+        className={`w-full pl-10 pr-4 bg-white/80 border border-[var(--color-foreground)]/20 rounded-lg text-sm text-[var(--color-foreground)] placeholder:text-[var(--color-foreground)]/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent ${
           compact ? 'py-1.5' : 'py-2'
         }`}
       />
@@ -73,11 +73,11 @@ export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
       <div ref={sentinelRef} className="h-0" />
       {/* Inline version - fades out when stuck */}
       <div
-        className={`pb-8 pt-2 px-4 bg-stone-100 transition-opacity duration-150 ${
+        className={`pb-8 pt-2 px-4 transition-opacity duration-150 ${
           isStuck ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <p className="text-gray-500 text-sm text-center mb-3">
+        <p className="text-[var(--color-foreground)]/50 text-sm text-center mb-3">
           Scroll down to browse her collected works, or search for something specific.
         </p>
         <SearchInput query={query} onChange={handleChange} />

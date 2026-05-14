@@ -77,6 +77,7 @@ export function Home() {
         {!isSearching && user && recentDocs.length > 0 && (
           <HorizontalSection
             title="Recently Viewed"
+            color="#B4CC91"
             docs={recentDocs}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
@@ -86,6 +87,7 @@ export function Home() {
         {!isSearching && user && favoriteDocs.length > 0 && (
           <HorizontalSection
             title="Favorites"
+            color="#D4787A"
             docs={favoriteDocs}
             favorites={favorites}
             onToggleFavorite={handleToggleFavorite}
@@ -94,11 +96,11 @@ export function Home() {
 
         {isSearching ? (
           <section>
-            <h2 className="text-lg font-medium text-gray-900 mb-3">
+            <h2 className="text-lg font-medium text-[var(--color-foreground)] mb-3">
               Search Results
             </h2>
             {filteredDocs.length === 0 ? (
-              <p className="text-gray-500 text-sm">
+              <p className="text-[var(--color-foreground)]/50 text-sm">
                 No documents match your search.
               </p>
             ) : (
@@ -120,6 +122,7 @@ export function Home() {
               key={category.name}
               title={category.name}
               description={category.description}
+              color={category.color}
               docs={getDocumentsByCategory(category.name)}
               favorites={favorites}
               onToggleFavorite={handleToggleFavorite}

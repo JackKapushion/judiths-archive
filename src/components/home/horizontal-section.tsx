@@ -5,12 +5,14 @@ import { DocumentCard } from './document-card'
 export function HorizontalSection({
   title,
   description,
+  color,
   docs,
   favorites,
   onToggleFavorite,
 }: {
   title: string
   description?: string
+  color?: string
   docs: SoftaDocument[]
   favorites: Set<string>
   onToggleFavorite: (docId: string) => void
@@ -51,48 +53,66 @@ export function HorizontalSection({
   if (docs.length === 0) return null
 
   return (
-    <section className="mb-8">
-      <h2 className="text-lg font-medium text-gray-900 mb-1">{title}</h2>
-      {description && (
-        <p className="text-sm text-gray-500 mb-3">{description}</p>
-      )}
-      <div className="relative group">
-        {canScrollLeft && (
-          <button
-            onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 items-center justify-center rounded-full bg-white/90 shadow border border-gray-200 text-gray-600 hover:bg-white hover:text-gray-900 transition-colors"
-            aria-label="Scroll left"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-        )}
+    <section className="mb-8 relative">
+      {color && (
         <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide"
-        >
-          {docs.map((doc) => (
-            <div key={doc.id} className="w-44 flex-shrink-0 snap-start">
-              <DocumentCard
-                doc={doc}
-                isFav={favorites.has(doc.id)}
-                onToggleFavorite={onToggleFavorite}
-              />
-            </div>
-          ))}
-        </div>
-        {canScrollRight && (
-          <button
-            onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 items-center justify-center rounded-full bg-white/90 shadow border border-gray-200 text-gray-600 hover:bg-white hover:text-gray-900 transition-colors"
-            aria-label="Scroll right"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          className="absolute -inset-x-12 -inset-y-4 -z-1"
+          style={{
+            backgroundColor: color,
+            WebkitMaskImage: 'url(/images/theme/50.png)',
+            WebkitMaskSize: '100% 100%',
+            WebkitMaskRepeat: 'no-repeat',
+            WebkitMaskPosition: 'center',
+            maskImage: 'url(/images/theme/50.png)',
+            maskSize: '100% 100%',
+            maskRepeat: 'no-repeat',
+            maskPosition: 'center',
+          }}
+        />
+      )}
+      <div className="relative px-4 py-5">
+        <h2 className="text-lg font-medium text-[var(--color-foreground)] mb-1">{title}</h2>
+        {description && (
+          <p className="text-sm text-[var(--color-foreground)]/70 mb-3">{description}</p>
         )}
+        <div className="relative group">
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll('left')}
+              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 items-center justify-center rounded-full bg-white/80 shadow border border-[var(--color-foreground)]/10 text-[var(--color-foreground)]/60 hover:bg-white hover:text-[var(--color-foreground)] transition-colors"
+              aria-label="Scroll left"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide"
+          >
+            {docs.map((doc) => (
+              <div key={doc.id} className="w-44 flex-shrink-0 snap-start">
+                <DocumentCard
+                  doc={doc}
+                  isFav={favorites.has(doc.id)}
+                  onToggleFavorite={onToggleFavorite}
+                />
+              </div>
+            ))}
+          </div>
+          {canScrollRight && (
+            <button
+              onClick={() => scroll('right')}
+              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 items-center justify-center rounded-full bg-white/80 shadow border border-[var(--color-foreground)]/10 text-[var(--color-foreground)]/60 hover:bg-white hover:text-[var(--color-foreground)] transition-colors"
+              aria-label="Scroll right"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
     </section>
   )

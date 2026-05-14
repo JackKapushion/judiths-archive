@@ -1,7 +1,118 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/newsreader_normal_400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/newsreader_normal_500.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/newsreader_normal_600.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/newsreader_normal_700.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/newsreader_italic_400.ttf') format('truetype');
+}
+
+:root {
+  --color-primary: #1E9AAE;
+  --color-foreground: #11202E;
+  --color-background: #97BA65;
+  --color-tertiary: #B4CC91;
+  --color-secondary: #1E9AAE;
+}
+
 body {
-  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-family: 'Newsreader', serif;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+  line-height: 1.5;
+}
+
+/* Painted canvas texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/theme/background-texture.png');
+  background-size: contain;
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background);
+  mix-blend-mode: color;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration-thickness: 0.0625em;
+  text-underline-offset: 0.15em;
+}
+
+/* Painted content patch effect */
+.painted-patch {
+  background-image: url('/images/theme/50.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.painted-patch-alt {
+  background-image: url('/images/theme/25.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.painted-patch-light {
+  background-image: url('/images/theme/90.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 
 @utility scrollbar-hide {
