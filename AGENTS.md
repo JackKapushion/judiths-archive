@@ -1,5 +1,7 @@
 # Softa's Archive
 
+This file provides instructions for any AI coding agent working in this repository. It follows the AGENTS.md standard and is read natively by Claude Code, Gemini CLI/Antigravity, Cursor, GitHub Copilot, Windsurf, and other AI development tools.
+
 A memorial and document archive site for Judith Orloff, M.Ed. (Softa). Built with Vite, React, TypeScript, Tailwind CSS, and Firebase.
 
 ## Domain
@@ -13,20 +15,21 @@ A memorial and document archive site for Judith Orloff, M.Ed. (Softa). Built wit
 ## Development Workflow
 
 - Plans live in `/steps` as numbered markdown files (e.g., `01-project-setup.md`)
-- Plans are implemented by Claude Code, not manually
+- Plans are implemented by the AI coding agent, not manually
 - Plan numbers are sequential across all steps
-- Plans should include: Goal, Requirements, Prerequisites (manual tasks for Jack), Step-by-step implementation plan (for Claude Code)
+- Plans should include: Goal, Requirements, Prerequisites (manual tasks for Jack), Step-by-step implementation plan (for the AI)
 - Do NOT include a "Testing & Validation" section in plans
+- Do not enter a planning mode or start generating implementation plans autonomously. Follow this workflow instead.
 
 ## Plan Review Process
 
 - Start with a concise numbered list of issues found during review
 - Explain one issue at a time (e.g., "Issue 1 of 5"), wait for "continue" between each
-- Claude Code only starts implementing after an explicit "green light" from Jack
+- Only start implementing after an explicit "green light" from Jack
 
 ## Shell Commands
 
-All shell commands (npm install, npm create vite, firebase deploy, etc.) are run by Jack, not by Claude Code. List them clearly in the Prerequisites section of each plan.
+All shell commands (npm install, npm create vite, firebase deploy, etc.) are run by Jack, not by the AI. List them clearly in the Prerequisites section of each plan.
 
 ## Tech Stack
 
