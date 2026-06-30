@@ -42,7 +42,9 @@ export function Viewer() {
     })
 
     // Track as recently viewed
-    addRecentlyViewed(user.uid, docId)
+    addRecentlyViewed(user.uid, docId).catch((err) => {
+      console.error('Failed to track recently viewed:', err)
+    })
   }, [user, docId])
 
   // Save progress when page changes (debounced)

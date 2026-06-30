@@ -75,7 +75,7 @@ export function HorizontalSection({
         {description && (
           <p className="text-base text-[var(--color-foreground)] mb-3">{description}</p>
         )}
-        <div className="relative group">
+        <div className="relative">
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}

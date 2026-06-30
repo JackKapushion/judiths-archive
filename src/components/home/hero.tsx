@@ -1,6 +1,6 @@
 export function Hero() {
   return (
-    <section className="py-16 px-4">
+    <section className="pt-16 pb-6 px-4">
       <div className="max-w-3xl mx-auto text-center painted-patch py-12 px-8">
         <img
           src="/images/judith.png"

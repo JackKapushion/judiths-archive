@@ -41,10 +41,15 @@ export function DocumentCard({
             <img
               src={thumbnailSrc}
               alt={doc.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               onError={() => setImgError(true)}
             />
           )}
+          <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+            <p className="text-white text-sm text-center leading-snug">
+              {doc.title}
+            </p>
+          </div>
         </div>
       </Link>
       <div className="p-3 flex items-start justify-between gap-2">

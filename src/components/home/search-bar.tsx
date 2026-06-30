@@ -1,17 +1,27 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+import { useNavigate } from 'react-router-dom'
 
 function SearchInput({
   query,
   onChange,
-  compact,
+  onSubmit,
+  inHeader = false,
 }: {
   query: string
   onChange: (value: string) => void
-  compact?: boolean
+  onSubmit: () => void
+  inHeader?: boolean
 }) {
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      onSubmit()
+    }
+  }
+
   return (
-    <div className={compact ? 'w-full relative' : 'max-w-2xl mx-auto relative'}>
+    <div className="relative">
       <svg
         className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--color-foreground)]/40"
         fill="none"
@@ -29,24 +39,59 @@ function SearchInput({
         type="text"
         value={query}
         onChange={(e) => onChange(e.target.value)}
-        placeholder={compact ? 'Search or ask AI...' : 'Search for a title or ask something like "What did she believe about leadership?"'}
-        className={`w-full pl-10 pr-4 bg-white/90 border border-[var(--color-foreground)]/15 rounded-lg text-[var(--color-foreground)] placeholder:text-[var(--color-foreground)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent shadow-sm ${
-          compact ? 'py-1.5 text-sm' : 'py-2.5 text-base'
-        }`}
+        onKeyDown={handleKeyDown}
+        placeholder='Search for a title or ask something like "What did she believe about leadership?"'
+        className={`w-full pl-10 pr-11 py-2.5 border border-[var(--color-foreground)]/15 rounded-xl text-[var(--color-foreground)] text-base placeholder:text-[var(--color-foreground)]/50 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/40 focus:border-[var(--color-primary)]/20 shadow-sm ${inHeader ? 'bg-white' : 'bg-white/90'}`}
       />
+      <button
+        onClick={onSubmit}
+        disabled={!query.trim()}
+        className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg bg-[var(--color-foreground)] text-white disabled:opacity-20 hover:bg-[var(--color-foreground)]/80 transition-all cursor-pointer disabled:cursor-default"
+      >
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+        </svg>
+      </button>
     </div>
   )
 }
 
-export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
+export function SearchBar() {
+  const navigate = useNavigate()
   const [query, setQuery] = useState('')
   const [isStuck, setIsStuck] = useState(false)
   const sentinelRef = useRef<HTMLDivElement>(null)
+  const inlineRef = useRef<HTMLDivElement>(null)
   const [headerSlot, setHeaderSlot] = useState<HTMLElement | null>(null)
+  // Track the inline search bar's exact position so the header version matches
+  const [inlinePos, setInlinePos] = useState({ left: 0, width: 672 })
 
   useEffect(() => {
     setHeaderSlot(document.getElementById('header-search-slot'))
   }, [])
+
+  const measureInline = useCallback(() => {
+    const el = inlineRef.current
+    if (!el) return
+    const rect = el.getBoundingClientRect()
+    setInlinePos({ left: rect.left, width: rect.width })
+  }, [])
+
+  useEffect(() => {
+    measureInline()
+    window.addEventListener('resize', measureInline)
+    return () => window.removeEventListener('resize', measureInline)
+  }, [measureInline])
 
   useEffect(() => {
     const sentinel = sentinelRef.current
@@ -56,17 +101,28 @@ export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
       ([entry]) => {
         setIsStuck(!entry.isIntersecting)
       },
-      { rootMargin: '-57px 0px 0px 0px', threshold: 0 }
+      { rootMargin: '-65px 0px 0px 0px', threshold: 0 }
     )
 
     observer.observe(sentinel)
     return () => observer.disconnect()
   }, [])
 
-  const handleChange = (value: string) => {
-    setQuery(value)
-    onSearch(value)
+  const handleSubmit = () => {
+    const trimmed = query.trim()
+    if (!trimmed) return
+    navigate(`/chat?q=${encodeURIComponent(trimmed)}`)
   }
+
+  // Calculate the offset needed to position the header search bar
+  // at the same viewport X as the inline version
+  const portalStyle = headerSlot
+    ? (() => {
+        const slotRect = headerSlot.getBoundingClientRect()
+        const offset = inlinePos.left - slotRect.left
+        return { marginLeft: `${offset}px`, width: `${inlinePos.width}px` }
+      })()
+    : undefined
 
   return (
     <>
@@ -78,19 +134,22 @@ export function SearchBar({ onSearch }: { onSearch: (query: string) => void }) {
         }`}
       >
         <p className="text-[var(--color-foreground)] text-lg text-center mb-3">
-          Browse her works below, or just ask the AI.
+          Scroll down to browse her works, or ask the AI a question here.
         </p>
-        <SearchInput query={query} onChange={handleChange} />
+        <div ref={inlineRef} className="max-w-2xl mx-auto">
+          <SearchInput query={query} onChange={setQuery} onSubmit={handleSubmit} />
+        </div>
       </div>
-      {/* Header portal version - fades in when stuck */}
+      {/* Header portal version - positioned to match inline version exactly */}
       {headerSlot &&
         createPortal(
           <div
             className={`transition-opacity duration-150 ${
               isStuck ? 'opacity-100' : 'opacity-0 pointer-events-none'
             }`}
+            style={portalStyle}
           >
-            <SearchInput query={query} onChange={handleChange} compact />
+            <SearchInput query={query} onChange={setQuery} onSubmit={handleSubmit} inHeader />
           </div>,
           headerSlot
         )}

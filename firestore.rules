@@ -4,5 +4,31 @@ service cloud.firestore {
     match /users/{userId} {
       allow read, write: if request.auth != null && request.auth.uid == userId;
     }
+
+    match /conversations/{conversationId} {
+      allow read: if request.auth != null
+        && resource.data.userId == request.auth.uid;
+
+      // Clients can only update title and isArchived (rename/archive).
+      // messageCount and lastMessageAt are managed by Cloud Functions.
+      allow update: if request.auth != null
+        && resource.data.userId == request.auth.uid
+        && !request.resource.data.diff(resource.data).affectedKeys()
+          .hasAny(['userId', 'messageCount', 'lastMessageAt', 'createdAt']);
+
+      allow delete: if request.auth != null
+        && resource.data.userId == request.auth.uid;
+
+      // Conversations are created by Cloud Functions, not clients.
+      // No client create rule needed.
+
+      match /messages/{messageId} {
+        allow read: if request.auth != null
+          && get(/databases/$(database)/documents/conversations/$(conversationId)).data.userId == request.auth.uid;
+
+        // Messages are created by Cloud Functions only.
+        // No client write rules needed.
+      }
+    }
   }
 }

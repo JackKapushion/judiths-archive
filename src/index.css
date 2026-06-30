@@ -115,6 +115,37 @@ a {
   background-position: center top;
 }
 
+/* Painted header stroke effect */
+.painted-header {
+  background: transparent;
+  overflow-x: clip;
+}
+
+.painted-header::before {
+  content: '';
+  position: absolute;
+  top: -500px;
+  left: -200px;
+  right: -200px;
+  bottom: -50px;
+  background-color: var(--color-tertiary);
+  -webkit-mask-image: url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png');
+  mask-image: url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-composite: source-over;
+  mask-composite: add;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.painted-header > * {
+  position: relative;
+  z-index: 1;
+}
+
 @utility scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;

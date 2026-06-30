@@ -26,15 +26,26 @@ export function Header() {
   }, [dropdownOpen])
 
   return (
-    <header className="sticky top-0 z-20 bg-[var(--color-background)] border-b border-[var(--color-foreground)]/10">
-      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
-        <Link to="/" className="text-lg font-normal text-[var(--color-foreground)] hover:opacity-70 flex-shrink-0">
+    <header className="sticky top-0 z-20 painted-header overflow-visible">
+      {/* h-16 keeps the header compact while giving items room to center properly */}
+      <div className="px-6 sm:px-10 h-16 pt-4 flex items-center justify-between gap-4">
+        <Link to="/" className="text-xl leading-none py-1.5 text-[var(--color-foreground)] hover:opacity-70 flex-shrink-0">
           Judith's Archive
         </Link>
 
         <div id="header-search-slot" className="flex-1 min-w-0" />
 
-        <div className="flex items-center gap-3 flex-shrink-0">
+        <Link
+          to="/chat"
+          className="flex-shrink-0 inline-flex items-center gap-1.5 text-[var(--color-foreground)] text-sm font-medium leading-none bg-white/80 hover:bg-white/95 px-4 py-1.5 rounded-full border border-[var(--color-foreground)]/10 hover:border-[var(--color-foreground)]/20 transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
+          </svg>
+          AI Chat
+        </Link>
+
+        <div className="flex items-center gap-4 flex-shrink-0">
           {loading ? null : user ? (
             <div ref={dropdownRef} className="relative">
               <button
@@ -78,7 +89,7 @@ export function Header() {
           ) : (
             <button
               onClick={openAuthModal}
-              className="text-lg font-medium text-[var(--color-foreground)] bg-white/30 px-3 py-1 rounded hover:bg-white/50"
+              className="text-lg font-medium leading-none py-1.5 text-[var(--color-foreground)] hover:opacity-70"
             >
               Sign in
             </button>

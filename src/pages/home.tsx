@@ -5,18 +5,20 @@ import { useAuthGate } from '../components/auth/use-auth-gate'
 import { getUserData, toggleFavorite, type UserData } from '../lib/user-data'
 import { Hero } from '../components/home/hero'
 import { SearchBar } from '../components/home/search-bar'
-import { DocumentCard } from '../components/home/document-card'
 import { HorizontalSection } from '../components/home/horizontal-section'
+
+const defaultUserData: UserData = { favorites: [], progress: {}, recentlyViewed: [] }
 
 export function Home() {
   const { user } = useAuth()
   const authGate = useAuthGate()
   const [userData, setUserData] = useState<UserData | null>(null)
-  const [query, setQuery] = useState('')
 
   useEffect(() => {
     if (user) {
-      getUserData(user.uid).then(setUserData)
+      getUserData(user.uid).then(setUserData).catch((err) => {
+        console.error('Failed to load user data:', err)
+      })
     } else {
       setUserData(null)
     }
@@ -25,16 +27,20 @@ export function Home() {
   const handleToggleFavorite = (docId: string) => {
     authGate(async () => {
       if (!user) return
-      const nowFav = await toggleFavorite(user.uid, docId)
-      setUserData((prev) => {
-        if (!prev) return prev
-        return {
-          ...prev,
-          favorites: nowFav
-            ? [...prev.favorites, docId]
-            : prev.favorites.filter((id) => id !== docId),
-        }
-      })
+      try {
+        const nowFav = await toggleFavorite(user.uid, docId)
+        setUserData((prev) => {
+          const base = prev ?? defaultUserData
+          return {
+            ...base,
+            favorites: nowFav
+              ? [...base.favorites, docId]
+              : base.favorites.filter((id) => id !== docId),
+          }
+        })
+      } catch (err) {
+        console.error('Failed to toggle favorite:', err)
+      }
     })
   }
 
@@ -60,21 +66,13 @@ export function Home() {
     [userData?.favorites]
   )
 
-  const filteredDocs = useMemo(() => {
-    if (!query.trim()) return documents
-    const q = query.toLowerCase()
-    return documents.filter((doc) => doc.title.toLowerCase().includes(q))
-  }, [query])
-
-  const isSearching = query.trim().length > 0
-
   return (
     <div>
       <Hero />
-      <SearchBar onSearch={setQuery} />
+      <SearchBar />
 
       <div className="max-w-5xl mx-auto px-4 py-8">
-        {!isSearching && user && favoriteDocs.length > 0 && (
+        {user && favoriteDocs.length > 0 && (
           <HorizontalSection
             title="Favorites"
             color="#DE7880"
@@ -84,7 +82,7 @@ export function Home() {
           />
         )}
 
-        {!isSearching && user && recentDocs.length > 0 && (
+        {user && recentDocs.length > 0 && (
           <HorizontalSection
             title="Recently Viewed"
             color="#1E9AAF"
@@ -94,41 +92,17 @@ export function Home() {
           />
         )}
 
-        {isSearching ? (
-          <section>
-            <h2 className="text-lg font-medium text-[var(--color-foreground)] mb-3">
-              Search Results
-            </h2>
-            {filteredDocs.length === 0 ? (
-              <p className="text-[var(--color-foreground)]/50 text-sm">
-                No documents match your search.
-              </p>
-            ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                {filteredDocs.map((doc) => (
-                  <DocumentCard
-                    key={doc.id}
-                    doc={doc}
-                    isFav={favorites.has(doc.id)}
-                    onToggleFavorite={handleToggleFavorite}
-                  />
-                ))}
-              </div>
-            )}
-          </section>
-        ) : (
-          getCategories().map((category) => (
-            <HorizontalSection
-              key={category.name}
-              title={category.name}
-              description={category.description}
-              color={category.color}
-              docs={getDocumentsByCategory(category.name)}
-              favorites={favorites}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          ))
-        )}
+        {getCategories().map((category) => (
+          <HorizontalSection
+            key={category.name}
+            title={category.name}
+            description={category.description}
+            color={category.color}
+            docs={getDocumentsByCategory(category.name)}
+            favorites={favorites}
+            onToggleFavorite={handleToggleFavorite}
+          />
+        ))}
       </div>
     </div>
   )
