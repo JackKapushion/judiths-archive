@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../auth/auth-context'
 
 function getSignInMethod(user: { providerData: { providerId: string }[] }) {
@@ -11,6 +11,8 @@ function getSignInMethod(user: { providerData: { providerId: string }[] }) {
 
 export function Header() {
   const { user, loading, signOut, openAuthModal } = useAuth()
+  const location = useLocation()
+  const isOnChat = location.pathname.startsWith('/chat')
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -35,18 +37,20 @@ export function Header() {
 
         <div id="header-search-slot" className="flex-1 min-w-0" />
 
-        <Link
-          to="/chat"
-          className="flex-shrink-0 inline-flex items-center gap-1.5 text-[var(--color-foreground)] text-sm font-medium leading-none bg-white/80 hover:bg-white/95 px-4 py-1.5 rounded-full border border-[var(--color-foreground)]/10 hover:border-[var(--color-foreground)]/20 transition-colors"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-          </svg>
-          AI Chat
-        </Link>
+        {!isOnChat && (
+          <Link
+            to="/chat"
+            className="flex-shrink-0 inline-flex items-center gap-1.5 text-[var(--color-foreground)] text-sm font-medium leading-none bg-white/80 hover:bg-white/95 px-4 py-1.5 rounded-full border border-[var(--color-foreground)]/10 hover:border-[var(--color-foreground)]/20 transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
+            </svg>
+            AI Chat
+          </Link>
+        )}
 
         <div className="flex items-center gap-4 flex-shrink-0">
-          {loading ? null : user ? (
+          {loading ? null : (user && !user.isAnonymous) ? (
             <div ref={dropdownRef} className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}

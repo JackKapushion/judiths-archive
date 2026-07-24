@@ -1,8 +1,17 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import { Link } from 'react-router-dom'
 import { type SoftaDocument, getThumbnailPath } from '../../lib/documents'
 
-export function DocumentCard({
+// PERFORMANCE: React.memo prevents re-rendering ~100 cards when unrelated
+// state changes (auth loading, modal toggle, etc.). Cards only re-render
+// when their own doc, isFav, or onToggleFavorite actually change.
+//
+// HOVER: Uses CSS group-hover (not JS onMouseEnter/onMouseLeave). CSS hover
+// is handled by the browser's rendering engine, independent of the JS main
+// thread. This means hover works even during React re-renders. JS-based
+// hover was tried and failed because any main thread work (re-renders,
+// Firebase SDK init) blocks JS event handlers.
+export const DocumentCard = memo(function DocumentCard({
   doc,
   isFav,
   onToggleFavorite,
@@ -15,9 +24,9 @@ export function DocumentCard({
   const thumbnailSrc = getThumbnailPath(doc)
 
   return (
-    <div className="group relative bg-white/80 rounded-lg border border-[var(--color-foreground)]/10 overflow-hidden hover:border-[var(--color-foreground)]/20 hover:shadow-sm transition-all">
-      <Link to={`/read/${doc.id}`}>
-        <div className="aspect-[3/4] bg-[var(--color-tertiary)]/30">
+    <div className="bg-white/80 rounded-lg border border-[var(--color-foreground)]/10 overflow-hidden hover:border-[var(--color-foreground)]/20 hover:shadow-sm transition-all">
+      <Link to={`/read/${doc.id}`} className="group block">
+        <div className="relative aspect-[3/4] bg-[var(--color-tertiary)]/30">
           {imgError ? (
             <div className="w-full h-full flex flex-col items-center justify-center p-4 text-[var(--color-foreground)]/40">
               <svg
@@ -45,7 +54,7 @@ export function DocumentCard({
               onError={() => setImgError(true)}
             />
           )}
-          <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center justify-center p-4">
             <p className="text-white text-sm text-center leading-snug">
               {doc.title}
             </p>
@@ -61,12 +70,18 @@ export function DocumentCard({
         </Link>
         <button
           onClick={() => onToggleFavorite(doc.id)}
-          className="flex-shrink-0 text-lg hover:scale-110 transition-transform mt-[-2px]"
+          className={`flex-shrink-0 transition-all duration-150 mt-[-2px] hover:scale-110 ${
+            isFav
+              ? 'text-red-500'
+              : 'text-[var(--color-foreground)]/25 hover:text-red-400'
+          }`}
           aria-label={isFav ? 'Remove from favorites' : 'Add to favorites'}
         >
-          {isFav ? '\u2764\uFE0F' : '\u2661'}
+          <svg className="w-5 h-5" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={isFav ? 0 : 2} fill={isFav ? 'currentColor' : 'none'}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>
         </button>
       </div>
     </div>
   )
-}
+})

@@ -8,7 +8,7 @@ import {
   deleteConversation,
   type Conversation,
 } from '../../lib/conversations'
-import { DEMO_CONVERSATIONS, isDemoConversation } from '../../lib/demo-data'
+import { DEMO_CONVERSATIONS } from '../../lib/demo-data'
 
 interface ChatSidebarProps {
   open: boolean
@@ -135,8 +135,10 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [search, setSearch] = useState('')
 
+  const isRealUser = user && !user.isAnonymous
+
   useEffect(() => {
-    if (!user) {
+    if (!isRealUser) {
       setConversations([])
       return
     }
@@ -148,7 +150,7 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
       .catch(() => {
         setConversations(DEMO_CONVERSATIONS)
       })
-  }, [user, currentConversationId])
+  }, [isRealUser, user, currentConversationId])
 
   function handleRename(id: string, title: string) {
     setConversations((prev) =>
@@ -213,8 +215,22 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
           </button>
         </div>
 
+        {/* Back to Archive */}
+        <div className="px-3 pt-4 pb-1">
+          <Link
+            to="/"
+            onClick={onClose}
+            className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Archive
+          </Link>
+        </div>
+
         {/* New chat button */}
-        <div className="px-3 pt-4 pb-2">
+        <div className="px-3 pb-2">
           <Link
             to="/chat"
             onClick={onClose}
@@ -250,19 +266,19 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
 
         {/* Conversation list */}
         <div className="flex-1 overflow-y-auto scrollbar-hide px-2 pb-4">
-          {!user && (
+          {!isRealUser && (
             <p className="text-white/40 text-sm px-3 py-2">
               Sign in to save your chats.
             </p>
           )}
 
-          {user && grouped.length === 0 && !search.trim() && (
+          {isRealUser && grouped.length === 0 && !search.trim() && (
             <p className="text-white/30 text-sm px-3 py-2">
               No conversations yet.
             </p>
           )}
 
-          {user && grouped.length === 0 && search.trim() && (
+          {isRealUser && grouped.length === 0 && search.trim() && (
             <p className="text-white/30 text-sm px-3 py-2">
               No matching chats.
             </p>

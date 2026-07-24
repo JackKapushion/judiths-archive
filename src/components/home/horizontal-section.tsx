@@ -1,8 +1,12 @@
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect, useCallback, memo } from 'react'
 import { type SoftaDocument } from '../../lib/documents'
 import { DocumentCard } from './document-card'
 
-export function HorizontalSection({
+// PERFORMANCE: React.memo prevents re-rendering all 8 sections (and their
+// ~100 total cards) when Home re-renders from auth state changes. Props are
+// stabilized in Home via useMemo (docs, favorites) and useCallback
+// (onToggleFavorite), so memo can bail out on shallow comparison.
+export const HorizontalSection = memo(function HorizontalSection({
   title,
   description,
   color,
@@ -54,9 +58,11 @@ export function HorizontalSection({
 
   return (
     <section className="mb-8 relative">
+      {/* Painted background patch. pointer-events-none is a safety measure
+          so this never blocks mouse events on the cards above it. */}
       {color && (
         <div
-          className="absolute -inset-x-12 -inset-y-4 -z-1"
+          className="absolute -inset-x-12 -inset-y-4 -z-1 pointer-events-none"
           style={{
             backgroundColor: color,
             WebkitMaskImage: 'url(/images/theme/90.png)',
@@ -116,4 +122,4 @@ export function HorizontalSection({
       </div>
     </section>
   )
-}
+})

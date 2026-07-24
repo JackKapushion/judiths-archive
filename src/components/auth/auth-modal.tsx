@@ -49,18 +49,35 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-[var(--color-tertiary)] rounded-lg shadow-xl w-full max-w-sm mx-4 p-6 painted-patch"
+        className="bg-[var(--color-tertiary)] rounded-lg shadow-xl w-full max-w-sm mx-4 px-6 pt-8 pb-10 painted-patch"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-medium text-[var(--color-foreground)]">Sign in</h2>
+        <div className="flex justify-between items-start mb-2">
+          <h2 className="text-lg font-medium text-[var(--color-foreground)]">Sign in to</h2>
           <button
             onClick={onClose}
-            className="text-[var(--color-foreground)]/40 hover:text-[var(--color-foreground)] text-xl leading-none"
+            className="text-[var(--color-foreground)]/70 hover:text-[var(--color-foreground)] text-xl leading-none"
           >
             &times;
           </button>
         </div>
+
+        <ul className="mb-5 space-y-2 text-sm text-[var(--color-foreground)]/70">
+          <li className="flex items-center gap-2">
+            <span className="w-1 h-1 rounded-full bg-[var(--color-foreground)]/40 flex-shrink-0" />
+            Track your recently viewed documents
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-1 h-1 rounded-full bg-[var(--color-foreground)]/40 flex-shrink-0" />
+            Save your favorite documents
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="w-1 h-1 rounded-full bg-[var(--color-foreground)]/40 flex-shrink-0" />
+            Keep your AI conversation history
+          </li>
+        </ul>
+
+        <div className="h-px bg-[var(--color-foreground)]/10 mb-5" />
 
         {emailSent ? (
           <div className="text-center py-4">
@@ -101,7 +118,7 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
 
             <div className="flex items-center gap-3 mt-4 mb-3">
               <div className="flex-1 h-px bg-[var(--color-foreground)]/20" />
-              <span className="text-xs text-[var(--color-foreground)]/40">or</span>
+              <span className="text-sm text-[var(--color-foreground)]/70">or</span>
               <div className="flex-1 h-px bg-[var(--color-foreground)]/20" />
             </div>
 

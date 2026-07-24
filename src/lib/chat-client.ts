@@ -1,3 +1,4 @@
+import { signInAnonymously } from 'firebase/auth'
 import { auth } from './firebase'
 import type { ChatEvent } from './conversations'
 
@@ -16,10 +17,15 @@ export async function sendChatMessage(
   conversationId: string | null,
   callbacks: ChatStreamCallbacks,
 ): Promise<void> {
-  const user = auth.currentUser
+  let user = auth.currentUser
   if (!user) {
-    callbacks.onError('You must be signed in to chat.')
-    return
+    try {
+      const result = await signInAnonymously(auth)
+      user = result.user
+    } catch {
+      callbacks.onError('Unable to connect to chat. Please try again.')
+      return
+    }
   }
 
   const token = await user.getIdToken()

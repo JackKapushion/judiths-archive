@@ -12,7 +12,7 @@ export function Chat() {
   const { conversationId } = useParams<{ conversationId?: string }>()
   const [searchParams, setSearchParams] = useSearchParams()
   const navigate = useNavigate()
-  const { user, openAuthModal } = useAuth()
+  const { user } = useAuth()
 
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [streamingText, setStreamingText] = useState<string | null>(null)
@@ -53,11 +53,6 @@ export function Chat() {
 
   const handleSend = useCallback(
     async (message: string) => {
-      if (!user) {
-        openAuthModal()
-        return
-      }
-
       if (isStreaming) return
 
       // Add user message to UI immediately
@@ -76,7 +71,9 @@ export function Chat() {
       await sendChatMessage(message, currentConvoId, {
         onConversationCreated: (id) => {
           setCurrentConvoId(id)
-          navigate(`/chat/${id}`, { replace: true })
+          if (user && !user.isAnonymous) {
+            navigate(`/chat/${id}`, { replace: true })
+          }
         },
         onStatus: (text) => {
           setStatus(text)
@@ -108,22 +105,18 @@ export function Chat() {
         },
       })
     },
-    [user, openAuthModal, isStreaming, currentConvoId, navigate],
+    [user, isStreaming, currentConvoId, navigate],
   )
 
   // Auto-send query from ?q= parameter (from home page search bar)
   useEffect(() => {
     const q = searchParams.get('q')
     if (!q || initialQuerySent.current) return
-    if (!user) {
-      openAuthModal()
-      return
-    }
 
     initialQuerySent.current = true
     setSearchParams({}, { replace: true })
     handleSend(q)
-  }, [searchParams, user, openAuthModal, handleSend, setSearchParams])
+  }, [searchParams, handleSend, setSearchParams])
 
   return (
     <div className="flex overflow-x-clip" style={{ height: 'calc(100vh - 64px)' }}>
