@@ -29,6 +29,9 @@ dist-ssr
 # Local notes (not tracked)
 my-notes/
 
+# Firebase
+.firebase/
+
 # Generated PDF processing output
 public/thumbnails/
 public/search-index.json
