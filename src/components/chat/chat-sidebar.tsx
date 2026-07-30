@@ -293,18 +293,22 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
           </button>
         </div>
 
-        {/* New chat button */}
+        {/* New chat button. Uses explicit navigate() instead of <Link>
+            because on Safari mobile, the sidebar's onClose state update
+            can race with React Router's navigation and swallow it. */}
         <div className="px-3 pb-2">
-          <Link
-            to="/chat"
-            onClick={onClose}
+          <button
+            onClick={() => {
+              onClose()
+              navigate('/chat')
+            }}
             className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
             New chat
-          </Link>
+          </button>
         </div>
 
         {/* Search */}

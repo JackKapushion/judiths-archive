@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GoogleAuthProvider, signInWithPopup, sendSignInLinkToEmail } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithPopup, signInWithRedirect, sendSignInLinkToEmail } from 'firebase/auth'
 import { auth } from '../../lib/firebase'
 
 interface AuthModalProps {
@@ -15,12 +15,31 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
   if (!open) return null
 
   const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider()
     try {
-      await signInWithPopup(auth, new GoogleAuthProvider())
+      await signInWithPopup(auth, provider)
       onClose()
-    } catch (err) {
-      console.error('Google sign-in failed:', err)
-      setError('Google sign-in failed. Please try again.')
+    } catch (err: unknown) {
+      const code = (err as { code?: string })?.code
+      console.error('Google sign-in failed:', code, err)
+
+      // Safari and some mobile browsers block popups even from user gestures.
+      // Fall back to redirect-based sign-in which navigates the full page
+      // to Google's auth screen instead of opening a popup.
+      if (code === 'auth/popup-blocked' || code === 'auth/popup-closed-by-user') {
+        try {
+          await signInWithRedirect(auth, provider)
+        } catch {
+          setError('Google sign-in failed. Please try again.')
+        }
+        return
+      }
+
+      if (code === 'auth/unauthorized-domain') {
+        setError('This domain is not authorized for sign-in.')
+      } else {
+        setError('Google sign-in failed. Please try again.')
+      }
     }
   }
 

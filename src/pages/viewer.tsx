@@ -1015,11 +1015,16 @@ export function Viewer() {
         {/* Desktop spacer pushes zoom controls to the right edge */}
         <div className="hidden lg:block flex-1 min-w-0" />
 
-        {/* Zoom controls: visible on all screens. Smaller buttons on mobile. */}
+        {/* Zoom controls: visible on all screens. Smaller buttons on mobile.
+            Desktop uses 25% steps for finer control, mobile uses 50% since
+            there's less screen space and coarser gestures. */}
         <div className="flex items-center gap-2 lg:gap-4 flex-shrink-0 z-10">
           <div className="flex items-center h-7 lg:h-8 rounded-lg bg-[#e4e9d9] border border-[var(--color-foreground)]/12 overflow-hidden">
             <button
-              onClick={() => setScale((s) => Math.max(0.5, +(s - 0.5).toFixed(2)))}
+              onClick={() => {
+                const step = window.matchMedia('(min-width: 1024px)').matches ? 0.25 : 0.5
+                setScale((s) => Math.max(0.5, +(s - step).toFixed(2)))
+              }}
               className="w-7 h-7 lg:w-8 lg:h-8 flex items-center justify-center text-[var(--color-foreground)]/80 hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5 transition-colors text-base lg:text-lg font-semibold"
               aria-label="Zoom out"
             >
@@ -1029,7 +1034,10 @@ export function Viewer() {
               {Math.round(scale * 100)}%
             </span>
             <button
-              onClick={() => setScale((s) => Math.min(2.5, +(s + 0.5).toFixed(2)))}
+              onClick={() => {
+                const step = window.matchMedia('(min-width: 1024px)').matches ? 0.25 : 0.5
+                setScale((s) => Math.min(2.5, +(s + step).toFixed(2)))
+              }}
               className="w-7 h-7 lg:w-8 lg:h-8 flex items-center justify-center text-[var(--color-foreground)]/80 hover:text-[var(--color-foreground)] hover:bg-[var(--color-foreground)]/5 transition-colors text-base lg:text-lg font-semibold"
               aria-label="Zoom in"
             >

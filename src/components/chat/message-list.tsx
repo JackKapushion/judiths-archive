@@ -246,11 +246,22 @@ function CitationLink({ citation }: { citation: Citation }) {
     ? `pp. ${citation.page}-${citation.endPage}`
     : `p. ${citation.page}`
 
+  const url = `/read/${citation.docId}?page=${pageParam}`
+
   return (
     <a
-      href={`/read/${citation.docId}?page=${pageParam}`}
+      href={url}
       target="_blank"
       rel="noopener noreferrer"
+      // Explicit onClick with window.open as a workaround for Chrome mobile,
+      // where tapping <a target="_blank"> inside a scrollable container
+      // sometimes does nothing (the native link behavior silently fails).
+      // Safari handles it natively, but window.open from a click handler
+      // works reliably on both.
+      onClick={(e) => {
+        e.preventDefault()
+        window.open(url, '_blank')
+      }}
       className="inline text-[var(--color-primary)] hover:underline text-sm"
       title={`${citation.title}, ${pageLabel}`}
     >

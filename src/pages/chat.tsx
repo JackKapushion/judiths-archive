@@ -99,6 +99,19 @@ export function Chat() {
       wasKeyboardOpenRef.current = isOpen
     }
 
+    // Reposition the fixed container so the chat input sits above
+    // the keyboard on iOS Safari. Safari doesn't support the
+    // interactive-widget=resizes-content meta tag (Chrome-only), so
+    // position:fixed bottom:0 lands behind the keyboard. We use the
+    // visualViewport API to calculate how much of the layout viewport
+    // is hidden behind the keyboard + Safari's toolbar and offset
+    // the container's bottom edge by that amount.
+    const adjustForKeyboard = () => {
+      if (!vv || !containerRef.current) return
+      const offset = window.innerHeight - vv.height - vv.offsetTop
+      containerRef.current.style.bottom = `${Math.max(0, offset)}px`
+    }
+
     const handleViewportChange = () => {
       // Only respond to viewport changes caused by the chat input.
       // When the sidebar rename input (or any other external input)
@@ -109,13 +122,17 @@ export function Chat() {
         && !containerRef.current?.contains(activeEl)
       if (isExternalFocus) return
 
+      adjustForKeyboard()
       checkKeyboardAndBlur()
       // Delayed re-check: when iOS dismisses the keyboard, the
       // keyboard animation and URL bar transition happen
       // simultaneously. By 400ms everything has settled to the
       // true resting values, so the keyboard-close transition
       // is reliably detected.
-      setTimeout(checkKeyboardAndBlur, 400)
+      setTimeout(() => {
+        adjustForKeyboard()
+        checkKeyboardAndBlur()
+      }, 400)
     }
 
     const preventScroll = () => {
