@@ -439,13 +439,18 @@ export function Viewer() {
       setScrollProgress(container.scrollTop / maxScroll)
     }
 
+    // Find current page by iterating backwards: the first page (from the
+    // bottom) whose top edge is above the 30% threshold is the current page.
+    // Breaks on first match instead of scanning all pages, so scrolling is
+    // O(1) in the common case (sequential reading) instead of O(numPages).
     const threshold =
       container.getBoundingClientRect().top + container.clientHeight * 0.3
     let current = 1
-    for (let i = 1; i <= numPages; i++) {
+    for (let i = numPages; i >= 1; i--) {
       const el = pageRefs.current.get(i)
       if (el && el.getBoundingClientRect().top <= threshold) {
         current = i
+        break
       }
     }
     setCurrentPage(current)
@@ -1188,8 +1193,23 @@ export function Viewer() {
             className="w-max min-w-full"
             onLoadSuccess={handlePdfLoad}
             loading={
-              <div className="text-center py-20 opacity-40">
-                Loading document...
+              <div className="flex flex-col items-center justify-center py-32 gap-4">
+                {/* Pulsing document icon so the user knows the PDF is downloading,
+                    not just staring at an empty screen. */}
+                <svg
+                  className="w-12 h-12 animate-pulse text-[var(--color-foreground)]/30"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                  />
+                </svg>
+                <p className="text-sm text-[var(--color-foreground)]/40">Loading document...</p>
               </div>
             }
             error={
@@ -1250,6 +1270,30 @@ export function Viewer() {
                       <Page
                         pageNumber={pageNum}
                         renderTextLayer={true}
+                        // Show a subtle loading indicator while the canvas renders.
+                        // Without this, pages appear as blank white rectangles for
+                        // a moment when scrolling into view (the wrapper div has
+                        // dimensions and shadow but no content yet).
+                        loading={
+                          <div
+                            className="flex items-center justify-center bg-white"
+                            style={{ width: placeholderW, height: placeholderH }}
+                          >
+                            <svg
+                              className="w-8 h-8 animate-pulse text-[var(--color-foreground)]/25"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={1.5}
+                                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                              />
+                            </svg>
+                          </div>
+                        }
                         // Mobile: width prop fits page to container width.
                         // At scale=1.0 (100%), the page fills the screen.
                         // Zooming multiplies from there.

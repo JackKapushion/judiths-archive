@@ -53,6 +53,7 @@ function SearchInput({
       <button
         onClick={onSubmit}
         disabled={!query.trim()}
+        aria-label="Submit search"
         className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg bg-[var(--color-foreground)] text-white disabled:opacity-20 hover:bg-[var(--color-foreground)]/80 transition-all cursor-pointer disabled:cursor-default"
       >
         <svg

@@ -54,6 +54,7 @@ export const DocumentCard = memo(function DocumentCard({
             <img
               src={thumbnailSrc}
               alt={doc.title}
+              loading="lazy"
               className="w-full h-full object-cover"
               onError={() => setImgError(true)}
             />

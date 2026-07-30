@@ -56,6 +56,7 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
           <h2 className="text-lg font-medium text-[var(--color-foreground)]">Sign in to</h2>
           <button
             onClick={onClose}
+            aria-label="Close sign-in dialog"
             className="text-[var(--color-foreground)]/70 hover:text-[var(--color-foreground)] text-3xl leading-none cursor-pointer p-1 -mr-1 -mt-1"
           >
             &times;
@@ -93,6 +94,7 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
           <>
             <button
               onClick={handleGoogleSignIn}
+              aria-label="Sign in with Google"
               className="w-full flex items-center justify-center gap-2 border border-[var(--color-foreground)]/20 rounded-md px-4 py-2.5 text-sm font-medium text-[var(--color-foreground)] bg-white/60 hover:bg-white/80 transition-colors"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
@@ -137,6 +139,7 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
               />
               <button
                 type="submit"
+                aria-label="Send sign-in link to email"
                 className="w-full mt-3 bg-[var(--color-primary)] text-[var(--color-foreground)] rounded-md px-4 py-2.5 text-sm font-medium hover:opacity-90 transition-colors"
               >
                 Send sign-in link

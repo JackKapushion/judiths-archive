@@ -1,12 +1,17 @@
 import { onRequest } from 'firebase-functions/v2/https'
 import { getFirestore, Timestamp } from 'firebase-admin/firestore'
 import { getAuth } from 'firebase-admin/auth'
+import { defineString } from 'firebase-functions/params'
 import { computeCost, getMonthlyCounterPath, getDailyCounterPath, MONTHLY_COST_CAP } from './pricing'
 
-const ADMIN_EMAIL = 'jack.kapushion@gmail.com'
+// Admin email stored in environment config instead of source code.
+// Set via functions/.env: ADMIN_EMAIL=your@email.com
+const adminEmail = defineString('ADMIN_EMAIL')
 
 export const adminStats = onRequest(
-  { cors: true },
+  // Whitelist production domain. Firebase Hosting rewrites are same-origin
+  // so CORS doesn't apply there; this only restricts direct function URL access.
+  { cors: ['https://judithorloff.org'] },
   async (req, res) => {
     if (req.method !== 'GET') {
       res.status(405).json({ error: 'Method not allowed' })
@@ -23,7 +28,7 @@ export const adminStats = onRequest(
     try {
       const token = authHeader.split('Bearer ')[1]
       const decoded = await getAuth().verifyIdToken(token)
-      if (decoded.email !== ADMIN_EMAIL) {
+      if (decoded.email !== adminEmail.value()) {
         res.status(403).json({ error: 'Forbidden' })
         return
       }
@@ -33,6 +38,11 @@ export const adminStats = onRequest(
     }
 
     const db = getFirestore()
+
+    // Wrap all Firestore/Auth reads in try-catch so transient failures
+    // return a 503 instead of crashing with an unhandled error.
+    try {
+
     const now = new Date()
     const periodStart = new Date(now.getTime() - 28 * 24 * 60 * 60 * 1000)
     const periodTimestamp = Timestamp.fromDate(periodStart)
@@ -160,6 +170,10 @@ export const adminStats = onRequest(
     const monthlySnap = await db.doc(getMonthlyCounterPath()).get()
     const monthlyCost = costFrom(monthlySnap.data() ?? {})
 
+    // Prevent proxies from caching admin data. The dashboard polls
+    // for fresh stats, and a stale cached response would be misleading.
+    res.set('Cache-Control', 'no-store')
+
     res.json({
       period: {
         start: periodStart.toISOString(),
@@ -200,5 +214,10 @@ export const adminStats = onRequest(
         cap: MONTHLY_COST_CAP,
       },
     })
+
+    } catch (err) {
+      console.error('Admin stats error:', err)
+      res.status(503).json({ error: 'Failed to load dashboard data. Please try again.' })
+    }
   },
 )

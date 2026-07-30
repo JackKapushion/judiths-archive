@@ -41,11 +41,20 @@ interface SearchRecord {
   text: string
 }
 
+// MiniSearch.search() returns SearchResult (id, score, terms, etc.) but the
+// stored fields (docId, title, page, text) are added dynamically at runtime.
+// This combined type lets us access both without double-casting each usage site.
+type SearchResultWithFields = ReturnType<MiniSearch<SearchRecord>['search']>[number]
+  & Pick<SearchRecord, 'docId' | 'title' | 'page' | 'text'>
+
 // --- Data loading ---
+// All data files are read once per cold start and cached at module scope.
+// Subsequent requests reuse the cached values (no disk I/O).
 
 let documentIndex: DocumentMeta[] | null = null
 let miniSearch: MiniSearch<SearchRecord> | null = null
 let outlineIndex: Map<string, OutlineSection[]> | null = null
+let rawSearchIndex: RawSearchIndex | null = null
 
 function getDocumentIndex(): DocumentMeta[] {
   if (!documentIndex) {
@@ -53,6 +62,18 @@ function getDocumentIndex(): DocumentMeta[] {
     documentIndex = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
   }
   return documentIndex!
+}
+
+// Cached raw search index. Used by both the search engine (getSearchEngine)
+// and direct document reads (readDocument). Previously readDocument re-read
+// the JSON file on every call; now it shares this cached copy.
+function getRawSearchIndex(): RawSearchIndex {
+  if (!rawSearchIndex) {
+    rawSearchIndex = JSON.parse(
+      fs.readFileSync(path.join(__dirname, '..', 'data', 'search-index.json'), 'utf-8'),
+    )
+  }
+  return rawSearchIndex!
 }
 
 function getOutlineIndex(): Map<string, OutlineSection[]> {
@@ -74,9 +95,7 @@ function getSearchEngine(): MiniSearch<SearchRecord> {
   if (miniSearch) return miniSearch
 
   const docs = getDocumentIndex()
-  const rawIndex: RawSearchIndex = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '..', 'data', 'search-index.json'), 'utf-8'),
-  )
+  const rawIndex = getRawSearchIndex()
 
   // Build searchable records from every page of every document
   const records: SearchRecord[] = []
@@ -186,20 +205,35 @@ export const tools: Anthropic.Messages.Tool[] = [
 // Returns content blocks suitable for a tool_result message.
 // search_documents returns search_result blocks for automatic citation tracking.
 // read_document returns text blocks.
+//
+// Validates that Claude's tool inputs have the expected types before using them.
+// Malformed inputs return an error message to Claude (not a crash) so it can
+// retry with corrected parameters.
 export function executeToolCall(
   name: string,
   input: Record<string, unknown>,
 ): Anthropic.Messages.ToolResultBlockParam['content'] {
   switch (name) {
-    case 'search_documents':
-      return searchDocuments(
-        input.query as string,
-        (input.max_results as number | undefined) ?? 5,
-      )
-    case 'get_document_outline':
-      return getDocumentOutline(input.doc_id as string)
-    case 'read_document':
-      return readDocument(input.doc_id as string, input.pages as string | undefined)
+    case 'search_documents': {
+      if (typeof input.query !== 'string' || !input.query.trim()) {
+        return [{ type: 'text', text: 'Error: search_documents requires a non-empty "query" string.' }]
+      }
+      const maxResults = typeof input.max_results === 'number' ? input.max_results : 5
+      return searchDocuments(input.query, maxResults)
+    }
+    case 'get_document_outline': {
+      if (typeof input.doc_id !== 'string' || !input.doc_id.trim()) {
+        return [{ type: 'text', text: 'Error: get_document_outline requires a "doc_id" string.' }]
+      }
+      return getDocumentOutline(input.doc_id)
+    }
+    case 'read_document': {
+      if (typeof input.doc_id !== 'string' || !input.doc_id.trim()) {
+        return [{ type: 'text', text: 'Error: read_document requires a "doc_id" string.' }]
+      }
+      const pages = typeof input.pages === 'string' ? input.pages : undefined
+      return readDocument(input.doc_id, pages)
+    }
     default:
       return [{ type: 'text', text: `Unknown tool: ${name}` }]
   }
@@ -223,12 +257,15 @@ function searchDocuments(
     ]
   }
 
+  // Cast once: MiniSearch stores our fields on results at runtime (configured
+  // via storeFields), but TypeScript only knows about SearchResult's own props.
+  const typedResults = results as SearchResultWithFields[]
+
   // Deduplicate: if multiple pages from the same doc match, keep the best one
-  const seen = new Map<string, (typeof results)[0]>()
-  for (const result of results) {
-    const docId = (result as unknown as SearchRecord).docId
-    if (!seen.has(docId) || result.score > seen.get(docId)!.score) {
-      seen.set(docId, result)
+  const seen = new Map<string, SearchResultWithFields>()
+  for (const result of typedResults) {
+    if (!seen.has(result.docId) || result.score > seen.get(result.docId)!.score) {
+      seen.set(result.docId, result)
     }
   }
 
@@ -239,12 +276,11 @@ function searchDocuments(
   // Return as text content with structured search results.
   // Each result includes enough context for Claude to cite it.
   const formatted = topResults.map((result) => {
-    const record = result as unknown as SearchRecord
-    const snippet = extractSnippet(record.text, query)
+    const snippet = extractSnippet(result.text, query)
     return {
       type: 'text' as const,
       text:
-        `[Document: "${record.title}" (ID: ${record.docId}), Page ${record.page}, Relevance: ${result.score.toFixed(1)}]\n` +
+        `[Document: "${result.title}" (ID: ${result.docId}), Page ${result.page}, Relevance: ${result.score.toFixed(1)}]\n` +
         snippet,
     }
   })
@@ -337,9 +373,7 @@ function readDocument(
     return [{ type: 'text', text: `Document "${docId}" not found in the archive.` }]
   }
 
-  const rawIndex: RawSearchIndex = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '..', 'data', 'search-index.json'), 'utf-8'),
-  )
+  const rawIndex = getRawSearchIndex()
   const entry = rawIndex[doc.filename]
 
   if (!entry) {

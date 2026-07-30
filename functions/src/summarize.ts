@@ -65,28 +65,37 @@ export async function maybeSummarize(
 
   const anthropic = new Anthropic()
 
-  const response = await anthropic.messages.create({
-    model: 'claude-haiku-4-5',
-    max_tokens: 1024,
-    system:
-      'Summarize this conversation history concisely. Preserve key facts, decisions, ' +
-      'document references, and any specific information the user asked about. ' +
-      'The summary will be used to maintain context in a long conversation about ' +
-      'an archive of documents. Keep it factual and information-dense.',
-    messages: [
-      {
-        role: 'user',
-        content: `Summarize this conversation:\n\n${textToSummarize}`,
-      },
-    ],
-  })
+  let response: Anthropic.Messages.Message
+  try {
+    response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5',
+      max_tokens: 1024,
+      system:
+        'Summarize this conversation history concisely. Preserve key facts, decisions, ' +
+        'document references, and any specific information the user asked about. ' +
+        'The summary will be used to maintain context in a long conversation about ' +
+        'an archive of documents. Keep it factual and information-dense.',
+      messages: [
+        {
+          role: 'user',
+          content: `Summarize this conversation:\n\n${textToSummarize}`,
+        },
+      ],
+    })
+  } catch (err) {
+    console.error('[SUMMARIZE] Anthropic API call failed:', err)
+    return null
+  }
 
+  // Guard against empty content array (shouldn't happen but prevents
+  // a crash if the API returns an unexpected response shape)
   const summary =
-    response.content[0].type === 'text'
+    response.content.length > 0 && response.content[0].type === 'text'
       ? response.content[0].text.trim()
       : ''
 
   if (!summary) {
+    console.warn('[SUMMARIZE] Got empty summary from API, skipping summarization')
     return null
   }
 

@@ -53,6 +53,7 @@ export function ChatInput({ onSend, disabled, placeholder, onFocusChange }: Chat
           onClick={handleSubmit}
           disabled={disabled || !value.trim()}
           className="flex-shrink-0 mr-2.5 p-1.5 rounded-xl bg-[var(--color-foreground)] text-white disabled:opacity-20 hover:bg-[var(--color-foreground)]/80 transition-all cursor-pointer disabled:cursor-default"
+          aria-label="Send message"
         >
           <svg
             className="w-4 h-4"

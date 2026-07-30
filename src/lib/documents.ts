@@ -727,5 +727,5 @@ export function getThumbnailPath(doc: SoftaDocument): string {
     return `/documents/${doc.filename}`
   }
   const name = doc.filename.replace(/\.pdf$/i, '')
-  return `/thumbnails/${name}.png`
+  return `/thumbnails/${name}.webp`
 }

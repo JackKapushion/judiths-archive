@@ -247,8 +247,10 @@ export function Admin() {
             operational safeguard, not a primary metric. */}
         {(() => {
           const pct = Math.min((stats.spending.month / stats.spending.cap) * 100, 100)
-          // Green under 50%, amber 50-80%, red 80%+
+          // Color + text label so status is accessible without relying on color alone.
+          // Green under 50%, amber 50-80%, red 80%+.
           const barColor = pct >= 80 ? 'bg-red-500' : pct >= 50 ? 'bg-amber-500' : 'bg-emerald-500'
+          const statusLabel = pct >= 80 ? 'Approaching limit' : pct >= 50 ? 'Moderate usage' : 'Under budget'
           const atCap = stats.spending.month >= stats.spending.cap
           return (
             <div className="mt-4 bg-white/90 rounded-xl p-5 shadow-[0_1px_3px_rgba(0,0,0,0.08),0_1px_2px_rgba(0,0,0,0.04)] border border-[var(--color-foreground)]/5">
@@ -270,8 +272,17 @@ export function Admin() {
                 <div
                   className={`h-full rounded-full transition-all ${barColor}`}
                   style={{ width: `${pct}%` }}
+                  role="progressbar"
+                  aria-valuenow={Math.round(pct)}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label={`Monthly spending: ${statusLabel}`}
                 />
               </div>
+              {/* Text status label so the bar's meaning doesn't depend on color alone */}
+              {!atCap && (
+                <p className="text-xs text-[var(--color-foreground)]/50 mt-1.5">{statusLabel} ({Math.round(pct)}%)</p>
+              )}
               {atCap && (
                 <p className="text-xs text-red-600 font-medium mt-2">
                   Cap reached. Chat is disabled until next month.

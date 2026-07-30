@@ -159,6 +159,7 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
   const { user } = useAuth()
   const navigate = useNavigate()
   const [conversations, setConversations] = useState<Conversation[]>([])
+  const [loadError, setLoadError] = useState(false)
   const [search, setSearch] = useState('')
 
   // iOS scroll lock: overflow:hidden on the body doesn't prevent
@@ -192,12 +193,14 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
       return
     }
 
+    setLoadError(false)
     getConversations(user.uid)
       .then(({ conversations }) => {
         setConversations(conversations)
       })
       .catch(() => {
         setConversations([])
+        setLoadError(true)
       })
   }, [isRealUser, user, currentConversationId])
 
@@ -333,7 +336,13 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
             </p>
           )}
 
-          {isRealUser && grouped.length === 0 && !search.trim() && (
+          {isRealUser && loadError && (
+            <p className="text-red-400/70 text-sm px-3 py-2">
+              Couldn't load conversations.
+            </p>
+          )}
+
+          {isRealUser && !loadError && grouped.length === 0 && !search.trim() && (
             <p className="text-white/50 text-sm px-3 py-2">
               No conversations yet.
             </p>

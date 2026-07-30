@@ -9,6 +9,28 @@ function getSignInMethod(user: { providerData: { providerId: string }[] }) {
   return providerId || 'Unknown'
 }
 
+// Shared delete-account error handler. Desktop dropdown and mobile menu both
+// need the same logic, extracted here to avoid duplicating the error mapping.
+async function handleDeleteAccount(
+  deleteAccount: () => Promise<void>,
+  onSuccess: () => void,
+  setError: (msg: string) => void,
+) {
+  try {
+    await deleteAccount()
+    onSuccess()
+  } catch (err: unknown) {
+    const code = (err as { code?: string })?.code
+    if (code === 'auth/requires-recent-login') {
+      // Only email-link users hit this since Google re-auths
+      // automatically via popup in deleteAccount.
+      setError('Please sign out, sign back in, and try again.')
+    } else {
+      setError('Something went wrong. Try again.')
+    }
+  }
+}
+
 export function Header() {
   const { user, loading, signOut, deleteAccount, openAuthModal } = useAuth()
   const location = useLocation()
@@ -187,21 +209,11 @@ export function Header() {
                         )}
                         <div className="flex gap-2">
                           <button
-                            onClick={async () => {
-                              try {
-                                await deleteAccount()
-                                setDropdownOpen(false)
-                              } catch (err: unknown) {
-                                const code = (err as { code?: string })?.code
-                                if (code === 'auth/requires-recent-login') {
-                                  // Only email-link users hit this since Google re-auths
-                                  // automatically via popup in deleteAccount.
-                                  setDeleteError('Please sign out, sign back in, and try again.')
-                                } else {
-                                  setDeleteError('Something went wrong. Try again.')
-                                }
-                              }
-                            }}
+                            onClick={() => handleDeleteAccount(
+                              deleteAccount,
+                              () => setDropdownOpen(false),
+                              setDeleteError,
+                            )}
                             className="text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-xs font-medium transition-colors"
                           >
                             Delete
@@ -288,19 +300,11 @@ export function Header() {
                         )}
                         <div className="flex gap-2">
                           <button
-                            onClick={async () => {
-                              try {
-                                await deleteAccount()
-                                setMobileMenuOpen(false)
-                              } catch (err: unknown) {
-                                const code = (err as { code?: string })?.code
-                                if (code === 'auth/requires-recent-login') {
-                                  setDeleteError('Please sign out, sign back in, and try again.')
-                                } else {
-                                  setDeleteError('Something went wrong. Try again.')
-                                }
-                              }
-                            }}
+                            onClick={() => handleDeleteAccount(
+                              deleteAccount,
+                              () => setMobileMenuOpen(false),
+                              setDeleteError,
+                            )}
                             className="text-white bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-xs font-medium transition-colors"
                           >
                             Delete

@@ -53,7 +53,9 @@ function sendEvent(res: import('express').Response, event: ChatEvent) {
 
 export const chat = onRequest(
   {
-    cors: true,
+    // Whitelist production domain. Firebase Hosting rewrites are same-origin
+    // so CORS doesn't apply there; this only restricts direct function URL access.
+    cors: ['https://judithorloff.org'],
     concurrency: 1,
     maxInstances: 10,
     // 540s (9 min) gives plenty of headroom for multi-round tool use.
@@ -88,7 +90,11 @@ export const chat = onRequest(
 
     const { conversationId, message } = req.body as ChatRequest
 
-    if (!message?.trim()) {
+    // Validate message is a string. The TypeScript type cast on the line above
+    // doesn't protect at runtime. If a crafted request sends message as an
+    // array or object, optional chaining on .trim() would throw a TypeError
+    // instead of returning a clean 400.
+    if (typeof message !== 'string' || !message.trim()) {
       res.status(400).json({ error: 'Message is required' })
       return
     }
@@ -136,14 +142,39 @@ export const chat = onRequest(
     res.setHeader('Cache-Control', 'no-cache')
     res.setHeader('Connection', 'keep-alive')
 
-    sendEvent(res, { type: 'status', text: 'Thinking...' })
+    // Track client disconnection so processing continues even if the user
+    // navigates away. The Anthropic API call and Firestore writes should
+    // complete regardless, so the response is available when they return.
+    let clientDisconnected = false
+    req.on('close', () => {
+      clientDisconnected = true
+    })
+
+    // Wraps sendEvent to silently no-op when the client has disconnected.
+    // Without this, res.write() to a dead connection would throw and
+    // short-circuit the Anthropic processing loop via the outer catch block.
+    const safeSend = (event: ChatEvent) => {
+      if (clientDisconnected) return
+      try {
+        sendEvent(res, event)
+      } catch {
+        clientDisconnected = true
+      }
+    }
+
+    safeSend({ type: 'status', text: 'Thinking...' })
 
     // SSE heartbeat: send a comment every 15 seconds to keep the connection
     // alive through any intermediate proxies (Cloud Run, load balancers, etc.).
     // SSE comments (lines starting with ":") are ignored by the client parser
     // but reset idle timeouts on the TCP connection.
     const heartbeat = setInterval(() => {
-      res.write(': heartbeat\n\n')
+      if (clientDisconnected) return
+      try {
+        res.write(': heartbeat\n\n')
+      } catch {
+        clientDisconnected = true
+      }
     }, 15_000)
 
     // Declared outside try so the catch block can access it to
@@ -172,15 +203,18 @@ export const chat = onRequest(
         convoId = convoRef.id
         isFirstMessage = true
 
-        sendEvent(res, { type: 'conversation_created', conversationId: convoId })
+        safeSend({ type: 'conversation_created', conversationId: convoId })
 
         // Increment conversation counters across all three time scopes:
         // global (all-time), monthly (cap tracking), daily (today/28-day).
         // These live in separate docs so they survive conversation deletions.
         const convoIncrement = { totalConversations: FieldValue.increment(1) }
-        db.doc('counters/global').set(convoIncrement, { merge: true }).catch(() => {})
-        db.doc(monthlyCounterPath).set(convoIncrement, { merge: true }).catch(() => {})
-        db.doc(getDailyCounterPath()).set(convoIncrement, { merge: true }).catch(() => {})
+        db.doc('counters/global').set(convoIncrement, { merge: true })
+          .catch((err) => console.error('Counter write failed (global/convo):', err))
+        db.doc(monthlyCounterPath).set(convoIncrement, { merge: true })
+          .catch((err) => console.error('Counter write failed (monthly/convo):', err))
+        db.doc(getDailyCounterPath()).set(convoIncrement, { merge: true })
+          .catch((err) => console.error('Counter write failed (daily/convo):', err))
       } else {
         const convoSnap = await db.collection('conversations').doc(convoId).get()
         if (!convoSnap.exists || convoSnap.data()?.userId !== uid) {
@@ -283,22 +317,12 @@ export const chat = onRequest(
         })
 
         for await (const event of stream) {
-          // Send a status as soon as the model starts generating a tool call.
-          // Without this, there's a dead gap between the last text token and
-          // tool execution where the frontend has no indicator that work is
-          // happening (the model is silently generating tool call JSON).
-          if (
-            event.type === 'content_block_start' &&
-            event.content_block.type === 'tool_use'
-          ) {
-            sendEvent(res, { type: 'status', text: 'Searching the archive...' })
-          }
           if (
             event.type === 'content_block_delta' &&
             event.delta.type === 'text_delta'
           ) {
             fullResponse += event.delta.text
-            sendEvent(res, { type: 'content_delta', text: event.delta.text })
+            safeSend({ type: 'content_delta', text: event.delta.text })
           }
         }
 
@@ -346,11 +370,11 @@ export const chat = onRequest(
         for (const toolCall of toolUseBlocks) {
           const statusText =
             toolCall.name === 'search_documents'
-              ? 'Searching archive...'
+              ? 'Searching the archive...'
               : toolCall.name === 'get_document_outline'
                 ? 'Checking document outline...'
                 : 'Reading document...'
-          sendEvent(res, { type: 'status', text: statusText })
+          safeSend({ type: 'status', text: statusText })
 
           const result = executeToolCall(
             toolCall.name,
@@ -393,34 +417,30 @@ export const chat = onRequest(
       // Increment lifetime counters for messages and tokens.
       // Separate from per-conversation tracking so totals persist
       // even if a user deletes their conversation.
-      db.doc('counters/global').set({
+      // Counter increments log errors instead of silently swallowing them.
+      // Silent failures here would make the monthly spending cap inaccurate
+      // over time, which could lead to unexpected bills.
+      const tokenIncrement = {
         totalMessages: FieldValue.increment(2),
         totalInputTokens: FieldValue.increment(totalInputTokens),
         totalOutputTokens: FieldValue.increment(totalOutputTokens),
         totalCacheCreationTokens: FieldValue.increment(totalCacheCreationTokens),
         totalCacheReadTokens: FieldValue.increment(totalCacheReadTokens),
-      }, { merge: true }).catch(() => {})
+      }
+
+      db.doc('counters/global').set(tokenIncrement, { merge: true })
+        .catch((err) => console.error('Counter write failed (global/tokens):', err))
 
       // Increment monthly counters for spending cap enforcement.
       // Each month gets its own doc (e.g. counters/monthly-2026-07)
       // so there's no reset logic needed. Old months just stay as history.
-      db.doc(monthlyCounterPath).set({
-        totalMessages: FieldValue.increment(2),
-        totalInputTokens: FieldValue.increment(totalInputTokens),
-        totalOutputTokens: FieldValue.increment(totalOutputTokens),
-        totalCacheCreationTokens: FieldValue.increment(totalCacheCreationTokens),
-        totalCacheReadTokens: FieldValue.increment(totalCacheReadTokens),
-      }, { merge: true }).catch(() => {})
+      db.doc(monthlyCounterPath).set(tokenIncrement, { merge: true })
+        .catch((err) => console.error('Counter write failed (monthly/tokens):', err))
 
       // Increment daily counters for the dashboard's today/28-day cost
       // breakdown. Same pattern as monthly: one doc per day, no resets.
-      db.doc(getDailyCounterPath()).set({
-        totalMessages: FieldValue.increment(2),
-        totalInputTokens: FieldValue.increment(totalInputTokens),
-        totalOutputTokens: FieldValue.increment(totalOutputTokens),
-        totalCacheCreationTokens: FieldValue.increment(totalCacheCreationTokens),
-        totalCacheReadTokens: FieldValue.increment(totalCacheReadTokens),
-      }, { merge: true }).catch(() => {})
+      db.doc(getDailyCounterPath()).set(tokenIncrement, { merge: true })
+        .catch((err) => console.error('Counter write failed (daily/tokens):', err))
 
       // Auto-generate title on first exchange
       if (isFirstMessage) {
@@ -429,9 +449,11 @@ export const chat = onRequest(
         )
       }
 
-      sendEvent(res, { type: 'done', messageId: assistantMsg.id })
+      safeSend({ type: 'done', messageId: assistantMsg.id })
       clearInterval(heartbeat)
-      res.end()
+      if (!clientDisconnected) {
+        try { res.end() } catch { /* client already gone */ }
+      }
     } catch (err) {
       console.error('Chat error:', err)
       // Clear generating status so the frontend doesn't show a perpetual
@@ -457,12 +479,11 @@ export const chat = onRequest(
         errorMessage = 'Chat is temporarily unavailable. Please try again later.'
       }
 
-      sendEvent(res, {
-        type: 'error',
-        error: errorMessage,
-      })
+      safeSend({ type: 'error', error: errorMessage })
       clearInterval(heartbeat)
-      res.end()
+      if (!clientDisconnected) {
+        try { res.end() } catch { /* client already gone */ }
+      }
     }
   },
 )
