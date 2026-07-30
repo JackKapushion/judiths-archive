@@ -345,6 +345,20 @@ export function Chat() {
       <ChatSidebar
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        onNewChat={() => {
+          // Reset all chat state so the user gets a fresh conversation.
+          // navigate('/chat') alone isn't enough for anonymous users
+          // because their URL is already /chat (it never updates to
+          // /chat/{id}), so React Router treats it as a no-op.
+          setCurrentConvoId(null)
+          setMessages([])
+          setStreamingText(null)
+          setStatus(null)
+          setIsStreaming(false)
+          isStreamingRef.current = false
+          setIsGenerating(false)
+          navigate('/chat', { replace: true })
+        }}
         currentConversationId={currentConvoId}
       />
 

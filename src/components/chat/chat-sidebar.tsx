@@ -12,6 +12,7 @@ import {
 interface ChatSidebarProps {
   open: boolean
   onClose: () => void
+  onNewChat: () => void
   currentConversationId: string | null
 }
 
@@ -155,7 +156,7 @@ function ConversationMenu({
   )
 }
 
-export function ChatSidebar({ open, onClose, currentConversationId }: ChatSidebarProps) {
+export function ChatSidebar({ open, onClose, onNewChat, currentConversationId }: ChatSidebarProps) {
   const { user } = useAuth()
   const navigate = useNavigate()
   const [conversations, setConversations] = useState<Conversation[]>([])
@@ -293,14 +294,15 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
           </button>
         </div>
 
-        {/* New chat button. Uses explicit navigate() instead of <Link>
-            because on Safari mobile, the sidebar's onClose state update
-            can race with React Router's navigation and swallow it. */}
+        {/* New chat button. Calls onNewChat which resets chat state
+            and navigates to /chat. Can't just navigate('/chat') because
+            anonymous users stay at /chat even with an active conversation
+            (their URL never updates to /chat/{id}), making navigate a no-op. */}
         <div className="px-3 pb-2">
           <button
             onClick={() => {
               onClose()
-              navigate('/chat')
+              onNewChat()
             }}
             className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm"
           >
