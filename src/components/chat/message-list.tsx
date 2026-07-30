@@ -134,13 +134,24 @@ export function MessageList({ messages, streamingText, status, inputFocused, isG
       // + bottom padding ≈ 104px) so the hero centers in the visible
       // area above the input, not behind it.
       <div className="flex-1 flex items-center justify-center p-8 pb-28">
-        <div className="text-center max-w-md">
+        <div className="text-center max-w-lg">
           <h2 className="text-3xl text-[var(--color-foreground)]/80 mb-3">
             Ask about the archive
           </h2>
           <p className="text-[var(--color-foreground)]/45 text-lg leading-relaxed">
             Questions about Judith's writings, teachings, and documents.
             The AI will search the archive and cite its sources.
+          </p>
+          <p className="text-[var(--color-foreground)]/30 text-sm mt-3">
+            Curious how this works?{' '}
+            <a
+              href="https://github.com/JackKapushion/judiths-archive/blob/main/ARCHITECTURE.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[var(--color-foreground)]/50 transition-colors"
+            >
+              Check this out
+            </a>
           </p>
         </div>
       </div>
