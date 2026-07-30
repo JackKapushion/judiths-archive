@@ -8,7 +8,6 @@ import {
   deleteConversation,
   type Conversation,
 } from '../../lib/conversations'
-import { DEMO_CONVERSATIONS } from '../../lib/demo-data'
 
 interface ChatSidebarProps {
   open: boolean
@@ -46,7 +45,10 @@ function ConversationMenu({
   }, [menuOpen])
 
   useEffect(() => {
-    if (renaming) inputRef.current?.focus()
+    // preventScroll stops iOS from panning the visual viewport
+    // to bring the input into view, which would shift the header
+    // off screen. The input is already visible in the sidebar.
+    if (renaming) inputRef.current?.focus({ preventScroll: true })
   }, [renaming])
 
   function handleRenameSubmit() {
@@ -59,7 +61,7 @@ function ConversationMenu({
 
   if (renaming) {
     return (
-      <div className="px-1 py-0.5">
+      <div className="flex items-center gap-1 px-1 py-0.5">
         <input
           ref={inputRef}
           value={renameValue}
@@ -69,21 +71,45 @@ function ConversationMenu({
             if (e.key === 'Escape') setRenaming(false)
           }}
           onBlur={handleRenameSubmit}
-          className="w-full bg-white/10 border border-white/20 rounded px-2 py-1 text-sm text-white focus:outline-none focus:border-white/40"
+          className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded px-2 py-1 text-base text-white focus:outline-none focus:border-white/40"
         />
+        {/* Check mark confirms the rename (same position as the
+            three-dot menu so users know where to tap). Clicking
+            away / blurring also confirms via onBlur above. */}
+        <button
+          onMouseDown={(e) => {
+            // mouseDown instead of onClick so it fires before
+            // the input's onBlur (which also submits). Prevent
+            // default to keep focus on the input until we
+            // explicitly submit.
+            e.preventDefault()
+            handleRenameSubmit()
+          }}
+          className="flex-shrink-0 p-1.5 rounded text-white/60 hover:text-white transition-colors"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </button>
       </div>
     )
   }
 
   return (
-    <div className="group relative flex items-center">
+    // Background highlight on the full row so the dots menu sits
+    // inside the highlight, not next to it.
+    <div className={`group relative flex items-center rounded-lg transition-colors ${
+      isActive
+        ? 'bg-white/15'
+        : 'hover:bg-white/5'
+    }`}>
       <Link
         to={`/chat/${convo.id}`}
         onClick={closeSidebar}
-        className={`flex-1 min-w-0 block px-3 py-1.5 rounded-lg text-sm truncate transition-colors ${
+        className={`flex-1 min-w-0 block px-3 py-1.5 text-sm truncate transition-colors ${
           isActive
-            ? 'bg-white/15 text-white'
-            : 'text-white/60 hover:text-white hover:bg-white/5'
+            ? 'text-white'
+            : 'text-white/60 hover:text-white'
         }`}
       >
         {convo.title}
@@ -92,12 +118,12 @@ function ConversationMenu({
       <div ref={menuRef} className="relative flex-shrink-0">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="p-1 rounded text-white/0 group-hover:text-white/40 hover:!text-white/70 transition-colors"
+            className="p-1.5 rounded text-white/40 sm:text-white/0 sm:group-hover:text-white/60 hover:!text-white transition-colors"
           >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="6" r="1.5" />
-              <circle cx="12" cy="12" r="1.5" />
-              <circle cx="12" cy="18" r="1.5" />
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="6" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <circle cx="12" cy="18" r="2" />
             </svg>
           </button>
 
@@ -135,6 +161,29 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [search, setSearch] = useState('')
 
+  // iOS scroll lock: overflow:hidden on the body doesn't prevent
+  // visual viewport panning (a browser-level pan separate from
+  // document scroll). position:fixed on the body is the only
+  // reliable way to fully lock the page on iOS. This prevents
+  // the user from scrolling the header off screen while the
+  // sidebar is open (especially during rename with keyboard up).
+  useEffect(() => {
+    if (!open) return
+    const isMobile = !window.matchMedia('(min-width: 1024px)').matches
+    if (!isMobile) return
+
+    document.body.style.position = 'fixed'
+    document.body.style.width = '100%'
+    document.body.style.top = '0'
+
+    return () => {
+      document.body.style.position = ''
+      document.body.style.width = ''
+      document.body.style.top = ''
+      window.scrollTo(0, 0)
+    }
+  }, [open])
+
   const isRealUser = user && !user.isAnonymous
 
   useEffect(() => {
@@ -145,10 +194,10 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
 
     getConversations(user.uid)
       .then(({ conversations }) => {
-        setConversations([...conversations, ...DEMO_CONVERSATIONS])
+        setConversations(conversations)
       })
       .catch(() => {
-        setConversations(DEMO_CONVERSATIONS)
+        setConversations([])
       })
   }, [isRealUser, user, currentConversationId])
 
@@ -160,7 +209,7 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
       // Revert on failure - refetch
       if (user) {
         getConversations(user.uid).then(({ conversations }) => {
-          setConversations([...conversations, ...DEMO_CONVERSATIONS])
+          setConversations(conversations)
         })
       }
     })
@@ -171,7 +220,7 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
     deleteConversation(id).catch(() => {
       if (user) {
         getConversations(user.uid).then(({ conversations }) => {
-          setConversations([...conversations, ...DEMO_CONVERSATIONS])
+          setConversations(conversations)
         })
       }
     })
@@ -190,43 +239,55 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
 
   return (
     <>
-      {/* Mobile overlay */}
+      {/* Mobile overlay: onTouchMove prevents touch-scrolling the
+          page behind the sidebar. */}
       {open && (
         <div
           className="fixed inset-0 bg-black/30 z-30 lg:hidden"
           onClick={onClose}
+          onTouchMove={(e) => e.preventDefault()}
         />
       )}
 
+      {/* overscroll-behavior-contain prevents scroll chaining from
+          the sidebar's conversation list to the body, which would
+          let the page scroll and push the header off screen. */}
       <aside
-        className={`fixed lg:relative top-0 left-0 z-40 lg:z-auto h-full w-72 bg-[var(--color-foreground)] text-white flex flex-col transition-transform duration-200 ${
+        className={`fixed lg:relative top-0 left-0 z-40 lg:z-auto h-full w-72 bg-[var(--color-foreground)] text-white flex flex-col transition-transform duration-200 overscroll-contain ${
           open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        {/* Header */}
-        <div className="px-4 pt-4 pb-1 flex items-center justify-end">
-          <button
-            onClick={onClose}
-            className="lg:hidden p-1 text-white/50 hover:text-white"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+        {/* On mobile the sidebar is fixed full-height but the header
+            overlaps it (higher z-index). This spacer pushes content
+            below the header. On desktop the sidebar is relative within
+            the chat container which already starts below the header. */}
+        <div className="lg:hidden flex-shrink-0" style={{ height: 'var(--header-height, 64px)' }} />
 
-        {/* Back to Archive */}
-        <div className="px-3 pt-4 pb-1">
+        {/* Top row: Back to Archive flush to top, close button on the
+            right (mobile only). Single row keeps it compact. */}
+        <div className="px-3 pt-3 lg:pt-2 pb-1 flex items-center justify-between">
+          {/* flex-1 makes the hover highlight span the full row width,
+              matching the New Chat button below it. Without it, the
+              highlight only covers the text content width. */}
           <Link
             to="/"
             onClick={onClose}
-            className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm"
+            className="flex-1 flex items-center gap-2 px-3 py-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors text-sm"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to Archive
           </Link>
+          <button
+            onClick={onClose}
+            className="p-1 text-white/50 hover:text-white lg:hidden"
+            aria-label="Close sidebar"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         {/* New chat button */}
@@ -267,19 +328,19 @@ export function ChatSidebar({ open, onClose, currentConversationId }: ChatSideba
         {/* Conversation list */}
         <div className="flex-1 overflow-y-auto scrollbar-hide px-2 pb-4">
           {!isRealUser && (
-            <p className="text-white/40 text-sm px-3 py-2">
+            <p className="text-white/50 text-sm px-3 py-2">
               Sign in to save your chats.
             </p>
           )}
 
           {isRealUser && grouped.length === 0 && !search.trim() && (
-            <p className="text-white/30 text-sm px-3 py-2">
+            <p className="text-white/50 text-sm px-3 py-2">
               No conversations yet.
             </p>
           )}
 
           {isRealUser && grouped.length === 0 && search.trim() && (
-            <p className="text-white/30 text-sm px-3 py-2">
+            <p className="text-white/50 text-sm px-3 py-2">
               No matching chats.
             </p>
           )}

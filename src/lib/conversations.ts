@@ -27,6 +27,10 @@ export interface Conversation {
   lastMessageAt: Timestamp
   messageCount: number
   isArchived: boolean
+  // Backend sets this to 'generating' while the AI is working,
+  // 'idle' when done. Used to show a typing indicator when the
+  // user navigates back to a mid-generation conversation.
+  status?: 'generating' | 'idle'
 }
 
 export interface Message {
@@ -128,6 +132,23 @@ export function onMessagesChange(
   return onSnapshot(q, (snap) => {
     const messages = snap.docs.map((d) => ({ id: d.id, ...d.data() }) as Message)
     callback(messages)
+  })
+}
+
+// Real-time listener on a single conversation document.
+// Fires immediately with current data, then on every change.
+// Used to track the conversation's 'generating'/'idle' status
+// so the frontend knows when a background response is in flight.
+export function onConversationDoc(
+  conversationId: string,
+  callback: (conversation: Conversation | null) => void,
+): Unsubscribe {
+  return onSnapshot(doc(conversationsRef, conversationId), (snap) => {
+    if (!snap.exists()) {
+      callback(null)
+      return
+    }
+    callback({ id: snap.id, ...snap.data() } as Conversation)
   })
 }
 

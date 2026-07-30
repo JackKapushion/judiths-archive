@@ -2,17 +2,22 @@ import { createContext, useContext, useEffect, useState, useCallback, useMemo, t
 import {
   onAuthStateChanged,
   signOut as firebaseSignOut,
+  deleteUser,
+  reauthenticateWithPopup,
+  GoogleAuthProvider,
   isSignInWithEmailLink,
   signInWithEmailLink,
   type User,
 } from 'firebase/auth'
-import { auth } from '../../lib/firebase'
+import { doc, deleteDoc } from 'firebase/firestore'
+import { auth, db } from '../../lib/firebase'
 import { AuthModal } from './auth-modal'
 
 interface AuthContextValue {
   user: User | null
   loading: boolean
   signOut: () => Promise<void>
+  deleteAccount: () => Promise<void>
   openAuthModal: () => void
 }
 
@@ -64,6 +69,40 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await firebaseSignOut(auth)
   }, [])
 
+  const deleteAccount = useCallback(async () => {
+    const currentUser = auth.currentUser
+    if (!currentUser) return
+
+    // Delete the user's Firestore preferences doc first (while still authed),
+    // then delete the auth account. Conversations are left orphaned but become
+    // inaccessible via security rules once the auth user is gone.
+    try {
+      await deleteDoc(doc(db, 'users', currentUser.uid))
+    } catch {
+      // If the doc doesn't exist yet (user never favorited/viewed anything), that's fine
+    }
+
+    try {
+      await deleteUser(currentUser)
+    } catch (err: unknown) {
+      const code = (err as { code?: string })?.code
+      if (code !== 'auth/requires-recent-login') throw err
+
+      // Firebase requires a recent sign-in for destructive actions. If the
+      // session is stale, re-authenticate via Google popup automatically
+      // so the user doesn't have to manually sign out and back in.
+      const providerId = currentUser.providerData[0]?.providerId
+      if (providerId === 'google.com') {
+        await reauthenticateWithPopup(currentUser, new GoogleAuthProvider())
+        await deleteUser(currentUser)
+      } else {
+        // Email link users can't re-auth with a popup, so we surface
+        // the original error for the UI to handle.
+        throw err
+      }
+    }
+  }, [])
+
   const openAuthModal = useCallback(() => setAuthModalOpen(true), [])
   const closeAuthModal = useCallback(() => setAuthModalOpen(false), [])
 
@@ -71,8 +110,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // openAuthModal are stable refs (useCallback with [] deps). authModalOpen
   // is deliberately excluded so modal toggles don't trigger consumer re-renders.
   const value = useMemo(
-    () => ({ user, loading, signOut, openAuthModal }),
-    [user, loading, signOut, openAuthModal]
+    () => ({ user, loading, signOut, deleteAccount, openAuthModal }),
+    [user, loading, signOut, deleteAccount, openAuthModal]
   )
 
   return (

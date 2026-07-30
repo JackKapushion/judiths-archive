@@ -2,9 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Softa's Archive</title>
+    <!-- SVG favicon: a sage-green leaf matching the site's palette.
+         SVG favicons stay crisp at all sizes and are supported by all
+         modern browsers. The .ico fallback line is omitted since we
+         don't have one and legacy-IE support isn't needed. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- interactive-widget=resizes-content tells the browser to resize
+         the layout viewport when the keyboard opens instead of scrolling.
+         Without it, iOS scrolls position:fixed elements off-screen when
+         an input is focused (pushes the header and nav off the top). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content" />
+    <title>Judith's Archive</title>
   </head>
   <body>
     <div id="root"></div>

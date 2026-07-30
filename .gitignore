@@ -29,9 +29,25 @@ dist-ssr
 # Local notes (not tracked)
 my-notes/
 
+# Environment variables (Firebase config is public but .env files
+# could contain other secrets in the future)
+.env*
+
 # Firebase
 .firebase/
 
 # Generated PDF processing output
 public/thumbnails/
 public/search-index.json
+
+# Claude Code session checkpoints
+current-task.md
+
+# Generated verification reports
+outline-verification-report.md
+
+# Old planning artifacts
+steps/
+
+# Temp data
+tmp/

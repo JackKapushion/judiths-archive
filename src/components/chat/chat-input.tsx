@@ -4,9 +4,12 @@ interface ChatInputProps {
   onSend: (message: string) => void
   disabled?: boolean
   placeholder?: string
+  // Lets the parent (Chat page) know when the input is focused,
+  // so it can hide the hero text and adjust layout for the keyboard.
+  onFocusChange?: (focused: boolean) => void
 }
 
-export function ChatInput({ onSend, disabled, placeholder }: ChatInputProps) {
+export function ChatInput({ onSend, disabled, placeholder, onFocusChange }: ChatInputProps) {
   const [value, setValue] = useState('')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -39,9 +42,11 @@ export function ChatInput({ onSend, disabled, placeholder }: ChatInputProps) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleKeyDown}
+          onFocus={() => onFocusChange?.(true)}
+          onBlur={() => onFocusChange?.(false)}
           disabled={disabled}
           rows={1}
-          placeholder={placeholder || 'Search for a title or ask something like "What did she believe about leadership?"'}
+          placeholder={placeholder ?? 'Search or ask anything'}
           className="flex-1 resize-none pl-4 py-3 bg-transparent text-[var(--color-foreground)] placeholder:text-[var(--color-foreground)]/35 focus:outline-none text-base leading-relaxed disabled:opacity-50"
         />
         <button

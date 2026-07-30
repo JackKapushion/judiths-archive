@@ -12,7 +12,7 @@
     "deploy": "firebase deploy --only functions"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
+    "@anthropic-ai/sdk": "^0.115.0",
     "firebase-admin": "^13.6.0",
     "firebase-functions": "^7.0.0",
     "minisearch": "^7.2.0"

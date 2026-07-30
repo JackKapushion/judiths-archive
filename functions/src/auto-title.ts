@@ -15,7 +15,7 @@ export async function generateTitle(
   const anthropic = new Anthropic()
 
   const response = await anthropic.messages.create({
-    model: 'claude-haiku-4-20250514',
+    model: 'claude-haiku-4-5',
     max_tokens: 30,
     system:
       'Generate a concise 3-8 word title for this conversation. Return ONLY the title text, nothing else. No quotes, no punctuation at the end.',

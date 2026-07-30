@@ -48,6 +48,53 @@
   --color-secondary: #1E9AAE;
 }
 
+/* MOBILE COLOR SWAP: On mobile, the page background becomes the lighter
+   green (#B4CC91, was tertiary) and the header/accents become the darker
+   green (#97BA65, was background). This creates better visual hierarchy
+   on small screens where the header needs to stand out against content.
+   Desktop keeps the original assignment. Only swap these two variables;
+   all elements referencing them (body bg, header paint, auth modal, etc.)
+   pick up the change automatically. */
+@media (max-width: 639px) {
+  :root {
+    --color-background: #B4CC91;
+    --color-tertiary: #97BA65;
+  }
+}
+
+html {
+  overflow-y: scroll;
+  /* DO NOT add overflow-x: hidden here. It creates a rendering artifact
+     (visible gap on the right side) on mobile when combined with
+     background-attachment: fixed on the body. Instead, fix horizontal
+     overflow at the source (constrain elements that extend beyond the
+     viewport, like HorizontalSection painted backgrounds). */
+}
+
+/* Reserve scrollbar space on DESKTOP ONLY to prevent layout shift when
+   content toggles between scrollable and not. This MUST NOT be set on
+   mobile because phones use overlay scrollbars and scrollbar-gutter: stable
+   wastes ~15px on the right edge, creating a visible dark-green strip.
+   Using min-width (not a max-width override) so it's impossible for
+   mobile to accidentally inherit scrollbar-gutter: stable. */
+@media (min-width: 640px) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+/* Desktop only: disable rubber-band bounce for the custom scroll-snap
+   effect. Not needed on mobile (scroll-snap is disabled, natural scrolling).
+   Applied to body only (not html) because Safari has a bug where
+   overscroll-behavior: none on the html element can block native
+   scrolling entirely after programmatic scrollTo calls. Chrome handles
+   both fine, but Safari needs it scoped to body. */
+@media (min-width: 640px) {
+  body {
+    overscroll-behavior: none;
+  }
+}
+
 body {
   font-family: 'Newsreader', serif;
   color: var(--color-foreground);
@@ -60,9 +107,32 @@ body {
   line-height: 1.5;
 }
 
+/* MOBILE BODY FIXES:
+   - background-attachment: fixed is broken on iOS (all WebKit browsers).
+     It causes rendering gaps and layout artifacts. Use scroll instead.
+   - background-blend-mode: luminosity takes brightness from the texture
+     and hue/sat from the color, which darkens #B4CC91 so it no longer
+     looks like the light green seen in the desktop header/cards. soft-light
+     preserves the base color while still showing the paper texture. */
+@media (max-width: 639px) {
+  body {
+    background-attachment: scroll;
+    background-blend-mode: soft-light;
+  }
+}
+
 a {
   text-decoration-thickness: 0.0625em;
   text-underline-offset: 0.15em;
+}
+
+/* On mobile, the hero doesn't use the painted-patch card background.
+   Content sits directly on the page background for a cleaner, more
+   readable layout with left-aligned text. Desktop keeps the card. */
+@media (max-width: 639px) {
+  #hero-section .painted-patch {
+    background-image: none;
+  }
 }
 
 /* Painted content patch effect */
@@ -87,24 +157,55 @@ a {
   background-position: center top;
 }
 
-/* Painted header stroke effect */
+/* Painted header stroke effect.
+   REQUIREMENT: The painted watercolor effect MUST always be visible on the
+   home page header, on BOTH mobile and desktop. Never remove or break this.
+
+   The ::before pseudo creates a watercolor wash behind the header, filling
+   the full header width (left: 0 to right: 0) and extending well above
+   (top: -500px) and below (bottom: -50px) to create the painted-edge look.
+   overflow: visible lets the pseudo render above/below without clipping.
+
+   IMPORTANT: Do NOT use overflow-x: clip or overflow: hidden on this element.
+   - overflow-x: clip has a WebKit bug (ALL Safari, desktop AND mobile) that
+     clips BOTH axes, completely hiding the paint pseudo.
+     See: https://caniuse.com/?search=overflow-x%3Aclip
+   - overflow: hidden breaks position: sticky on the header.
+   The pseudo is constrained to left: 0 / right: 0 so it never extends
+   beyond the header's width, making overflow clipping unnecessary. */
 .painted-header {
   background: transparent;
-  overflow-x: clip;
+  overflow: visible;
 }
 
 .painted-header::before {
   content: '';
   position: absolute;
   top: -500px;
-  left: -200px;
-  right: -200px;
+  /* left/right: 0 keeps the pseudo within the header's width (= viewport
+     width). No overflow-x: clip needed since nothing extends beyond.
+     Previously this was left: -200px / right: -200px with overflow-x: clip
+     to create a wider wash, but that approach is broken in all WebKit
+     browsers (Safari desktop + mobile) due to the both-axes-clip bug. */
+  left: 0;
+  right: 0;
   bottom: -50px;
   background-color: var(--color-tertiary);
   -webkit-mask-image: url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png');
   mask-image: url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png'), url('/images/theme/50.png');
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
+  /* Scale the mask MUCH wider than the pseudo so the watercolor texture's
+     feathered/transparent edges are pushed well off-screen. The old approach
+     used left: -200px / right: -200px to extend the pseudo 200px beyond the
+     viewport, then overflow-x: clip to hide the extensions. Since clip is
+     broken on Safari/WebKit, we keep the pseudo at left: 0 / right: 0 and
+     instead scale the mask 500px wider (250px beyond each side). This pushes
+     the feathered edges 250px off-screen, matching the old visual result.
+     Vertical stays at 100% (the pseudo already extends -500px above and
+     -50px below, so feathered edges are naturally off-screen vertically). */
+  -webkit-mask-size: calc(100% + 500px) 100%;
+  mask-size: calc(100% + 500px) 100%;
+  -webkit-mask-position: center;
+  mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-composite: source-over;
@@ -116,6 +217,63 @@ a {
 .painted-header > * {
   position: relative;
   z-index: 1;
+}
+
+/* Gentle bounce for the scroll-hint chevron on the hero section */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* Painted background for category sections (HorizontalSection).
+   DESKTOP ONLY: single watercolor mask at 100% for organic feathered
+   edges on all sides. Hidden on mobile where the three-div DOM
+   approach is used instead (see splotch-edge classes below). */
+.category-paint-bg {
+  -webkit-mask-image: url('/images/theme/90.png');
+  mask-image: url('/images/theme/90.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Mobile splotch edges: top and bottom watercolor feathered-edge
+   pieces used as SEPARATE DOM elements (not CSS mask layers).
+
+   Why separate elements instead of multi-layer CSS masks? CSS mask
+   layers composite with source-over (union): the result at each
+   pixel = max(all layers). On short sections, two 500px masks'
+   opaque centers overlap the entire element, canceling out the
+   feathered edges entirely. Separate DOM elements avoid this
+   because each independently renders only its portion.
+
+   Edge height (65px) captures the feathered zone of the watercolor
+   at 500px scale (~40-50px) plus breathing room. Width oversized
+   by 80px to push L/R
+   feathered edges off-screen so splotches go edge-to-edge. */
+.splotch-edge-top {
+  -webkit-mask-image: url('/images/theme/90.png');
+  mask-image: url('/images/theme/90.png');
+  -webkit-mask-size: calc(100% + 80px) 500px;
+  mask-size: calc(100% + 80px) 500px;
+  -webkit-mask-position: center top;
+  mask-position: center top;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.splotch-edge-bottom {
+  -webkit-mask-image: url('/images/theme/90.png');
+  mask-image: url('/images/theme/90.png');
+  -webkit-mask-size: calc(100% + 80px) 500px;
+  mask-size: calc(100% + 80px) 500px;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 @utility scrollbar-hide {
@@ -133,4 +291,44 @@ a {
 
 @utility animate-fade-in {
   animation: fade-in 0.15s ease-out;
+}
+
+/* Fix Chrome find-in-page (Cmd+F) not finding text in the PDF viewer.
+
+   Problem 1: The default pdf.js CSS uses overflow: hidden on .textLayer,
+   which creates a scroll container internally. Chrome's find-in-page
+   skips content inside these hidden scroll containers (0/0 results).
+   Fix: overflow: clip clips visually without creating a scroll container.
+
+   Problem 2: When Chrome highlights a Cmd+F match, it renders the
+   character using the PDF's embedded font. Many PDFs use custom font
+   subsets with non-standard glyph shapes (upside-down letters, symbols
+   instead of characters). Forcing a standard serif font makes highlights
+   render normal-looking characters. Text selection alignment with the
+   canvas won't be pixel-perfect, but that's a fine tradeoff for
+   readable search highlights. */
+.textLayer {
+  overflow: clip !important;
+}
+
+.textLayer :is(span, br) {
+  font-family: serif !important;
+}
+
+/* CSS Highlight API: search highlights rendered natively by the browser.
+   This handles rotated text layers correctly because the browser computes
+   visual positions internally, unlike getClientRects() or
+   span.style.backgroundColor which return/render in pre-transform
+   coordinate space. */
+::highlight(search-active) {
+  background-color: rgba(255, 150, 0, 0.5);
+}
+::highlight(search-inactive) {
+  background-color: rgba(255, 200, 0, 0.3);
+}
+
+/* Pulsing dots for chat "thinking" indicator, like a texting bubble */
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }

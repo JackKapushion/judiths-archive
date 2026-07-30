@@ -56,7 +56,7 @@ export function AuthModal({ open, onClose }: AuthModalProps) {
           <h2 className="text-lg font-medium text-[var(--color-foreground)]">Sign in to</h2>
           <button
             onClick={onClose}
-            className="text-[var(--color-foreground)]/70 hover:text-[var(--color-foreground)] text-xl leading-none"
+            className="text-[var(--color-foreground)]/70 hover:text-[var(--color-foreground)] text-3xl leading-none cursor-pointer p-1 -mr-1 -mt-1"
           >
             &times;
           </button>

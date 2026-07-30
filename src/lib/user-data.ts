@@ -77,11 +77,12 @@ export async function addRecentlyViewed(uid: string, docId: string): Promise<voi
   // Remove existing entry for this doc if present
   const filtered = data.recentlyViewed.filter((entry) => entry.docId !== docId)
 
-  // Add to front, cap at 20
+  // FIFO cache: add to front, evict oldest beyond 5.
+  // 5 is exactly enough to fill one full-width row on the home page.
   const recentlyViewed = [
     { docId, viewedAt: Timestamp.now() },
     ...filtered,
-  ].slice(0, 20)
+  ].slice(0, 5)
 
   await setDoc(userRef(uid), { recentlyViewed }, { merge: true })
 }

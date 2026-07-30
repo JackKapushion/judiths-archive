@@ -8,6 +8,12 @@ export interface Conversation {
   lastMessageAt: Timestamp
   messageCount: number
   isArchived: boolean
+  summary?: string
+  // Tracks whether the backend is actively generating a response.
+  // Set to 'generating' before the AI loop starts, cleared to 'idle'
+  // when done (or on error). The frontend uses this to show a typing
+  // indicator when the user navigates back to a mid-generation conversation.
+  status?: 'generating' | 'idle'
 }
 
 // Firestore: /conversations/{conversationId}/messages/{messageId}

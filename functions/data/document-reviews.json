@@ -30,34 +30,9 @@
     ]
   },
   {
-    "id": "9d",
-    "title": "Kosmos Essay Draft v2 - Radical Choice, Conditioning, and Disruptive Learning Technology",
-    "summary": "An essay draft (797 words) written for Kosmos journal exploring how childhood conditioning shapes adult choices and behavior patterns, and how Disruptive Learning Technology (DLT) provides a step-by-step practice for dissolving those patterns. The essay introduces the concept of \"Radical Choice\" as the intersection between conditioning and authentic living, references Buckminster Fuller, and describes the Six Principles of Insight, Personal Responsibility, Authenticity, Integrity, Clear Mind, and Awakened Action. Also includes a section on Real Impact Learning (RIL) and Emotional Literacy.",
-    "authorship": "Judith Orloff (attributed via the Healthpia/Kosmos branding and consistent voice with other Orloff writings)",
-    "category": "Writings, Speeches & Correspondence",
-    "pageCount": 3,
-    "outline": [
-      {
-        "title": "Healthpia Introduction and Radical Choice Essay",
-        "pages": "1",
-        "description": "Opens with the Healthpia concept header and begins the Kosmos Essay Draft v2 on Radical Choice, discussing the gap between stated values and actual choices, referencing Buckminster Fuller."
-      },
-      {
-        "title": "Conditioning, Radical Choice, and Disruptive Learning Technology",
-        "pages": "2",
-        "description": "Explores how conditioning from childhood determines choices, defines Radical Choice as the intersection between conditioning and life, and introduces DLT as a practice built on six principles for dissolving behavioral patterns."
-      },
-      {
-        "title": "Real Impact Learning and Emotional Literacy",
-        "pages": "3",
-        "description": "Concludes the essay and introduces Real Impact Learning (RIL) and Emotional Literacy (EL) as the ability to be self-aware and make decisions aligned with one's vision."
-      }
-    ]
-  },
-  {
     "id": "13c",
-    "title": "Letters to W. Edwards Deming from Judith Orloff-Falk (1992)",
-    "summary": "Two letters from Judith Orloff-Falk to W. Edwards Deming, written on Educational Discoveries letterhead from Boulder, Colorado. The first letter (January 23, 1992) introduces herself after attending Deming's seminar in San Jose, describes her consulting work with Wilcox Memorial Hospital in Kauai, Hawaii (with partner John Dowd) on driving out fear and building constancy of purpose, and encloses a copy of the book \"Choices for Success.\" The second letter (February 27, 1992) responds to Deming's reply, discusses Japanese vs. American management consciousness, and reports on their work transforming the culture at Wilcox Memorial Hospital from competition and blame to personal responsibility, noting the Long-Term Care division as the most transformed.",
+    "title": "Correspondence with W. Edwards Deming (1992)",
+    "summary": "Three letters between Judith Orloff-Falk and W. Edwards Deming in early 1992. Judith's first letter (January 23) introduces herself after attending Deming's seminar in San Jose, describes her consulting work with Wilcox Memorial Hospital in Kauai, Hawaii (with partner John Dowd) on driving out fear and building constancy of purpose, and encloses the book \"Choices for Success.\" Deming's reply (February 14) praises the book and invites Judith to provide criticism of his 4-day seminar content, mentioning his forthcoming book \"The New Economics.\" Judith's second letter (February 27) responds to his manuscript, compares Japanese and American management consciousness, and reports on transforming the culture at Wilcox Memorial Hospital from competition and blame to personal responsibility, noting the Long-Term Care division as the most transformed.",
     "authorship": "Judith Orloff-Falk, Vice President, Educational Discoveries (2511 55th Street, Boulder, CO 80301). Partner Peg Doubleday is also mentioned.",
     "category": "Writings, Speeches & Correspondence",
     "pageCount": 4,
@@ -65,12 +40,17 @@
       {
         "title": "First Letter to Deming (January 23, 1992)",
         "pages": "1-2",
-        "description": "Judith introduces herself after attending Deming's San Jose seminar, describes her consulting work at Wilcox Memorial Hospital in Hawaii focusing on driving out fear and constancy of purpose, encloses the book 'Choices for Success,' and requests Deming's endorsement."
+        "description": "Judith introduces herself after attending Deming's San Jose seminar, describes her consulting work at Wilcox Memorial Hospital in Hawaii focusing on driving out fear and constancy of purpose, encloses the book 'Choices for Success,' and requests Deming's endorsement. Handwritten note on page 2: 'Sent book, business card.'"
+      },
+      {
+        "title": "Deming's Reply (February 14, 1992)",
+        "pages": "4",
+        "description": "Reply from W. Edwards Deming on his personal letterhead (Washington, D.C.). Praises 'Choice for Success' as great, invites Judith to provide criticism and extension of his 4-day seminar content, and mentions his forthcoming book 'The New Economics.'"
       },
       {
         "title": "Second Letter to Deming (February 27, 1992)",
-        "pages": "3-4",
-        "description": "Follow-up letter responding to Deming's manuscript for 'The New Economics,' comparing Japanese and American management approaches, reporting on the transformation work at Wilcox Memorial Hospital including the resistance of middle management, and highlighting the success of the Long-Term Care division."
+        "pages": "4",
+        "description": "Follow-up responding to Deming's reply and manuscript for 'The New Economics.' Compares Japanese and American management consciousness, reports on transformation work at Wilcox Memorial Hospital (culture shift from competition and blame to personal responsibility), notes resistance from middle management, and highlights the Long-Term Care division as the most transformed."
       }
     ]
   },
@@ -183,19 +163,19 @@
     "pageCount": 5,
     "outline": [
       {
-        "title": "Cover and Situation Overview",
-        "pages": "1-2",
-        "description": "Cover page for Lubavitch Friendship Circle Draft Enrollment Concept, followed by the presentation situation describing the challenge of captive teen audiences and the experiential presentation concept with opening, video, slideshow, activity, debrief, and wrap-up sections."
+        "title": "Cover Page",
+        "pages": "1",
+        "description": "Cover page showing Lubavitch Friendship Circle logo with a photo of joined hands, titled 'Draft Enrollment Concept.' Handwritten notes indicate '25 minute pres. with 3 add ons' and 'people to interview at their end, 5 of each: Teenager & kids.'"
       },
       {
-        "title": "Extended Activities and Wrap-up",
-        "pages": "3",
-        "description": "Details extended time options including Gloves of Arthritis simulation, trust walk with obstacle course, and 'They are Disabled' imagination exercise."
+        "title": "Assumptions and Investment Estimate",
+        "pages": "2-3",
+        "description": "Five key assumptions for the project: conducting interviews with Jewish teenagers, existing FC participants, and disabled children; incorporating findings into design; creating multiple slideshow versions; travel expenses; and trainer preparation. Includes time estimates totaling 147 hours and investment estimate of $5,000 for design plus $500-$1,000 per center."
       },
       {
-        "title": "Assumptions and Project Planning",
+        "title": "Presentation Format and Extended Activities",
         "pages": "4-5",
-        "description": "Lists assumptions about interviews to conduct (Jewish teenagers, existing FC teens, disabled children), time estimates for each phase totaling 147 hours, and investment estimate of $5,000 for design plus $500-$1,000 per center."
+        "description": "Detailed 25-minute presentation format with five segments: Opening (rabbi sets context), Slideshow (photos of 'normal' and disabled youth doing activities), Activity (class shares observations), Debrief (finding common ground), Video (teenagers sharing hopes/dreams), and Wrap-up (commitment discussion). Extended activities include Gloves of Arthritis simulation, trust walk, and 'They are Disabled' imagination exercise."
       }
     ]
   },
@@ -208,19 +188,19 @@
     "pageCount": 3,
     "outline": [
       {
-        "title": "History and Mission of Friendship Circle",
+        "title": "History and Proposed Workshop",
         "pages": "1",
-        "description": "Background on the Friendship Circle founded in 1994 in Detroit, its growth to 42 cities, the unique volunteer formula enriching children with special needs, teen volunteers, and families."
+        "description": "History of the Friendship Circle (founded 1994 in Detroit, 42 cities, 3,000+ families, 5,500+ teen volunteers), proposed one-day disabilities sensitivity training and anti-bullying workshop using discussions, improv exercises, and videos to be presented at middle and high schools across the country."
       },
       {
-        "title": "Proposed Workshop and Anti-Bullying Connection",
+        "title": "Conference Call Notes (May 18, 2004)",
         "pages": "2",
-        "description": "Details the proposed workshop focusing on disability awareness, similarities between disabled and non-disabled teens, reducing bullying through sensitivity training, and the one-day format using discussions, improv exercises, and videos."
+        "description": "Notes from conference call with Rabbi Zalman Grossbaum, Rabbi Yudi Shemtov, Judith Orloff, and Sarah Cardet. Discussion points: Zalman wants sensitivity training (not just recruitment), wants Norm and Emma involved in content, paradigm shift regarding disabilities, 30-minute teaser for decision-makers. Judith and Sarah to create contract incorporating call ideas and Zalman's grant proposal language."
       },
       {
-        "title": "Plan of Action, Pilot, and Funding",
+        "title": "Plan of Action, Funding, and Contact Information",
         "pages": "3",
-        "description": "Describes Orloff Consulting's role, pilot plan through 4 states with 30 workshops, goal of reaching 15,000 teens in the first year, and funding approach through local grants. Includes contact details for Rabbi Zalman Grossbaum."
+        "description": "Orloff Consulting of Boulder enlisted to create the workshop, pilot through Friendship Circles in California, Michigan, New Jersey, and Pennsylvania (30 workshops in first four months), goal of reaching 15,000 teens in first year. Funding through local grants. Contact info for Rabbi Zalman Grossbaum, Executive Director, Livingston, NJ."
       }
     ]
   },
@@ -278,7 +258,7 @@
         "description": "Email from Rabbi Shemtov answering Judith's questions about the Friendship Circle (with Grossbaum CC'd), Judith's original questions about target audience, format, and training needs, and Shemtov's initial outreach from November 2003 requesting help creating a powerful enrollment process for teen volunteers."
       },
       {
-        "title": "Grossbaum's Detailed Response and Brainstorming Notes",
+        "title": "Grossbaum's Forwarding Email and Brainstorming Notes",
         "pages": "3-4",
         "description": "Grossbaum adds context about 28 FC communities, suggests multi-sensory presentation for teens, recommends 15-20 minute format with 45-minute flexibility, and provides thoughts on training through FC conferences. Includes early brainstorming notes about what it means to be a child with special needs and presentation scripts."
       },
@@ -288,7 +268,7 @@
         "description": "Four sets of opening/closing talking points for the Friendship Circle recruitment video, featuring different scenarios (Lindsay, Sam/Jake/Aaron) with messages about friendship, making a difference, and joining the Circle."
       },
       {
-        "title": "Conference Call Notes (May 18, 2004)",
+        "title": "Grossbaum's Detailed Response to Judith's Questions (January 2004)",
         "pages": "6-7",
         "description": "Notes from a conference call with Grossbaum, Shemtov, Orloff, and Sarah Cardet discussing the broader vision: paradigm shift regarding disabilities, sensitivity training as an end result beyond recruitment, Norm and Emma as content collaborators, and plans for Judith and Sarah to create a new contract incorporating these ideas."
       }
@@ -308,7 +288,7 @@
         "description": "The Rebbe emphasizes individual evaluation over group rules, the premise that disabilities are temporary and improvable, and the need for adequate resources and attention to the problem."
       },
       {
-        "title": "Practical Guidelines (Points 1-5)",
+        "title": "Practical Guidelines (Points 3-5)",
         "pages": "2",
         "description": "Detailed guidelines: treat disability as temporary (point 1), encourage trainees to feel confident (point 2), avoid exaggerating expectations (point 3), involve trainees in leadership (point 4), and address group homes controversy with individual evaluation (point 5)."
       },
@@ -404,7 +384,7 @@
       },
       {
         "title": "Session 1 Teaching Notes (Version B) - First Evening",
-        "pages": "19-23",
+        "pages": "18-23",
         "description": "Condensed version dated April 18-22, 1991. First evening notes covering stress awareness, masculine/feminine balance, projection, context-setting for transformation, service, dream diary, sacred space, consecrating relationships, and perturbation concepts."
       },
       {
@@ -438,9 +418,9 @@
         "description": "The essence of the game (people go for how they feel and give up what they want), when the Universe fines participants, when the Universe rewards participants, and instructions for the Universe facilitator role including note-taking, synergizing with co-universe, and supporting groups emotionally."
       },
       {
-        "title": "Blank Pages",
+        "title": "ETP/Choices Session Teaching Notes",
         "pages": "3-7",
-        "description": "Remaining pages are blank."
+        "description": "Printed pages 11-15 covering relationships, commitment, assignments, spiritual teachings, and jokes from an ETP or Choices program session."
       }
     ]
   },
@@ -468,24 +448,24 @@
     "pageCount": 13,
     "outline": [
       {
-        "title": "First Evening",
+        "title": "First Evening (Thursday)",
         "pages": "1-3",
-        "description": "Connected breathing exercise, review of assignments, session framed as spiritual essence in relationship, two-day sexuality healing announced, discussions on relationships in crisis, perturbation and paradox, spiritual joining in relationships, and projection."
+        "description": "Connected breathing exercise, review of assignments, session framed as spiritual essence in relationship, two-day sexuality healing announced, discussions on relationships in crisis, perturbation and paradox, spiritual joining, projection."
       },
       {
-        "title": "Second Day (Friday)",
+        "title": "Friday",
         "pages": "4-6",
-        "description": "Reading from Emmanuel's Book II, truth-telling and safety, karma and unconditional love, sexual healing meditation to Bolero, sharing on sexuality, parental models, and a group relationship healing exercise recreating sexual history."
+        "description": "Inner circle exercise on sexuality, Bolero sexual healing meditation, parents and churches, parental love meditation, relationship healing group assignment. Second day morning: breathing exercise (Barnaby's Canon), Emmanuel's Book II reading, truth-telling, karma and unconditional love."
       },
       {
         "title": "Saturday",
-        "pages": "7-9",
-        "description": "Dealing with what's 'out' for integrity, opportunity to deal with relationships in the moment, integrity and the soul, leaving the third dimension by giving up blame, reading \"The Last Interlude,\" and Saturday afternoon on feelings being irrelevant during transformation."
+        "pages": "7-10",
+        "description": "Emmanuel's Book II on leaving relationships, integrity and the soul, leaving the third dimension by giving up blame, 'The Last Interlude' reading, feelings being irrelevant during transformation, recipe for choice, evening assignment."
       },
       {
         "title": "Sunday and Closing",
-        "pages": "10-13",
-        "description": "Spiritual relationships as ordinary experience, generalized principles of relationship, declarations, reading \"Bar Talk,\" why people say no to real relationships, feelings during transition, assignments (live your vision or drop out, meet in groups, integrate spiritual aspects, reading list), closing with \"Unchained Melody.\""
+        "pages": "11-13",
+        "description": "Spiritual relationships as ordinary experience, generalized principles of relationship, 'Bar Talk' reading, assignments (live your vision, meet in groups, integrate spiritual aspects), closing with 'Unchained Melody.'"
       }
     ]
   },
@@ -504,17 +484,17 @@
       },
       {
         "title": "Second Day (Friday)",
-        "pages": "5-6",
-        "description": "Avatar trainer announcement, deciding what you want (deep feelings), sexual healing meditation to Bolero, sharing on sexuality, parental models, and group exercise on sharing about sexuality in an inner circle format."
+        "pages": "5-9",
+        "description": "Avatar trainer announcement, deciding what you want (deep feelings), open discussion on sexuality and honesty, spiritual essence in relationships, projection and equality, karma and unconditional love, reading 'Now' from Tales of the Magic Monastery, inner circle sexuality sharing exercise, sexual healing meditation to Bolero, parental love meditation, and relationship healing dinner assignment."
       },
       {
         "title": "Saturday",
-        "pages": "7-9",
+        "pages": "10-12",
         "description": "Connected breathing to Barnaby's Canon, reading from Emmanuel's Book II, truth-telling and karma, reading \"Now\" from Tales of the Magic Monastery by Indries Shah, inner circle sexuality sharing exercise, lunch meditation for sexual healing, parental love meditation, relationship healing assignment."
       },
       {
         "title": "Sunday and Closing",
-        "pages": "10-14",
+        "pages": "13-14",
         "description": "Sunday morning exercises on choosing partners, spiritual relationships as ordinary, fights and stories vs. experience, declarations, reading \"Bar Talk,\" participant dynamics (Jack and Karen, Jonathan, Darrell and Marshall, Cate and Judith), generalized principles of relationship, context for approaching relationships, closing with assignments and readings."
       }
     ]
@@ -564,7 +544,7 @@
       },
       {
         "title": "Friday Evening - Relationship Healing",
-        "pages": "7-8",
+        "pages": "8",
         "description": "Group exercise to go over and re-create all sexual relationships year by year, making them fresh and innocent. Emphasis on truth-telling and releasing karma."
       },
       {
@@ -610,81 +590,6 @@
     ]
   },
   {
-    "id": "4n",
-    "title": "ETP II Transformation - Session 2 Instructor's Manual (Version C)",
-    "summary": "This document is identical in content to document 4l. It is the instructor's manual for ETP II Transformation Session 2, June 27-30, 1991, covering spiritual essence in relationships, sexual healing meditations, projection work, unconditional love and karma, personal responsibility, integrity, and the inverted power group exercise. No visible version markings distinguish it from 4l, though it may represent a separate copy or version kept in a different filing context.",
-    "authorship": "No author explicitly credited. Written as an instructor guide for the ETP II Transformation program led by Judith Orloff and Peg Dylan through QED (Quantum Educational Discoveries, Inc.).",
-    "category": "Transformation Programs",
-    "pageCount": 10,
-    "outline": [
-      {
-        "title": "First Evening (Thursday)",
-        "pages": "1-3",
-        "description": "Breathing exercise, sharing since last session, discussion of spiritual essence in relationships, projection work, conscious agreements vs. drama in relationships, spiritual joining."
-      },
-      {
-        "title": "Thursday Evening (continued) and Break",
-        "pages": "3-4",
-        "description": "Teaching on projections as physical experience, courage to take back projections, abandonment fears, creating space for shifts, the 'inverted power group.'"
-      },
-      {
-        "title": "Friday Day",
-        "pages": "4-6",
-        "description": "Breathing exercise, spiritual aspects in relationships, safety through truth-telling, karma and unconditional love, personal responsibility as the path to freedom, inner circle sharing exercise on sexuality."
-      },
-      {
-        "title": "Friday Afternoon - Sexual Healing Meditation",
-        "pages": "6-7",
-        "description": "Guided meditation to revisit and re-create sexual experiences, family dynamics work with Susan and Mildred, teachings on parents as models."
-      },
-      {
-        "title": "Friday Evening - Relationship Healing",
-        "pages": "7-8",
-        "description": "Group exercise re-creating sexual relationships year by year, truth-telling, releasing karma."
-      },
-      {
-        "title": "Saturday and Sunday",
-        "pages": "8-10",
-        "description": "Integrity work, ordinary vs. special relationships, dimension shifting, individual assignments, commitment discussions, QED business matters."
-      }
-    ]
-  },
-  {
-    "id": "4o",
-    "title": "The Elements of Magic - Chapter Four (from Earth Power by Scott Cunningham)",
-    "summary": "This document is identical in content to document 4m. It is Chapter Four from Scott Cunningham's 'Earth Power,' covering the four classical elements (Earth, Air, Fire, Water) and their roles in magical symbolism, including their attributes, compass directions, colors, seasons, and the types of spells each governs. This may represent a second copy kept in a different session packet or filing context.",
-    "authorship": "Written by Scott Cunningham, from his book 'Earth Power' (pages 21-25). Used as supplementary reading material in the ETP Transformation program.",
-    "category": "Transformation Programs",
-    "pageCount": 5,
-    "outline": [
-      {
-        "title": "Introduction to the Elements",
-        "pages": "1",
-        "description": "Overview of the four elements as basic components of magical symbolism, their dual physical/spiritual nature, and historical roots."
-      },
-      {
-        "title": "Earth",
-        "pages": "2-3",
-        "description": "Earth as feminine element of foundation, stability, abundance, prosperity. Rules the North, color green, season winter."
-      },
-      {
-        "title": "Air",
-        "pages": "3",
-        "description": "Air as masculine element of intellect and thought. Rules the East, color yellow, season spring."
-      },
-      {
-        "title": "Fire",
-        "pages": "3-4",
-        "description": "Fire as masculine element of change, will, passion, sexuality. Rules the South, color red, season summer."
-      },
-      {
-        "title": "Water",
-        "pages": "4-5",
-        "description": "Water as feminine element of purification, subconscious mind, love, emotions. Rules the West, color blue, season autumn."
-      }
-    ]
-  },
-  {
     "id": "5b",
     "title": "ETP II Transformation - Session 3 Complete Packet",
     "summary": "A comprehensive 36-page packet for ETP II Transformation Session 3, held September 27-30, 1991, at a river location. Contains the instructor's outline covering teachings on projection, self-worth, vision, masculine/feminine energy balancing, the elements (Earth, Air, Fire, Water) integrated into meditations and exercises, and a firewalk. Includes detailed instructor teaching notes spanning three days, a QED cover letter dated October 21, 1991 signed by Judith and Peg, the POP Jokebook Part 3 with humor from participants (Susan F., Patty, George, Lynn, Marlene, Julia, Avram, Jonathan, Michael, Darrell, Sybil), and auxiliary handouts: 'How To Handle a Projection' (5-step guide), 'Touch the Earth' meditation compiled by T.C. McLuhan featuring Brave Buffalo's account of sacred stones, 'Talking Stones' meditation technique, 'The Healing Powers of Trees' reference guide, Transformation Key Teachings compilation (multiple pages of aphorisms across all sessions, dated 10/25/92), a 'Who Should Say What to Whom' business communication exercise (with handwritten notes referencing 'Hawaii MB2' and keywords like synergy, teamwork, intimacy, congruence), and a Namaste prayer card.",
@@ -693,64 +598,49 @@
     "pageCount": 36,
     "outline": [
       {
-        "title": "Session 3 Instructor's Outline",
-        "pages": "1-2",
-        "description": "Title page and program schedule for September 27-30. Friday evening focus on behavioral effects on the whole, reviewing visions and assignments, distributing Elements handout. Saturday through Monday: elemental meditations (Rock Meditations, Talking Stones, Air circle exercise, Water Gazing, Candle Meditation, Firewalk, Bonfires), auxiliary handouts list, and Monday graduation/celebration."
+        "title": "Session 3 Title Page",
+        "pages": "1",
+        "description": "Title page: 'Transformation Session Three Instructor's Outline.'"
       },
       {
-        "title": "Instructor's Teaching Notes - First Evening and Day Two",
-        "pages": "3-8",
-        "description": "Detailed teaching content on projection as the psychological mechanism behind abuse, self-worth, vision vs. jealousy and hate, rewiring behavior, the void as possibility, self-love, vulnerability, friendship vs. romantic love, masculine/feminine energy, the four elements applied to relationships and spirituality, and the 'Why I Survived AIDS' article assignment."
+        "title": "Instructor's Teaching Notes: First Evening and Day Two",
+        "pages": "2-6",
+        "description": "Teaching content on projection as the mechanism behind abuse, self-worth, vision, rewiring behavior, the void, self-love, vulnerability, friendship vs. romantic love, masculine/feminine energy, the four elements (Fire, Water), marriage as a trinity."
       },
       {
-        "title": "Instructor's Teaching Notes - Day Three",
-        "pages": "9-16",
-        "description": "Teachings on feminine (receiving) and masculine (giving) energy, transformation as turning lead into gold, handling projections through truth-telling, aura balancing exercise, burning projection papers ceremony, will as a muscle, dependency vs. freedom, the divine in everyone, energy field connections, and evening assignments including tree meditation, writing projections, and watching 'At Play in the Fields of the Lord.'"
-      },
-      {
-        "title": "Instructor's Teaching Notes - Final Day and God/Divine",
-        "pages": "17-18",
-        "description": "Teachings on recognizing God in everyone, the essence of divine passed through parental bonding, energy field connections between souls, committing to see the truth of God in all interactions, connecting with others as an experience of God."
+        "title": "Instructor's Teaching Notes: Day Three and Final Day",
+        "pages": "7-10",
+        "description": "Feminine and masculine energy, handling projections through truth-telling, aura balancing exercise, burning projection papers ceremony, will as a muscle, dependency vs. freedom. Evening assignments and final day teachings on recognizing God in everyone."
       },
       {
         "title": "QED Cover Letter",
-        "pages": "19",
-        "description": "Letter dated October 21, 1991 on QED letterhead from Judith and Peg to 'Dear Family,' enclosing the final chapter of the POP joke and quote book along with handouts. Signed by both with 'We love you all very much.'"
+        "pages": "11",
+        "description": "Letter dated October 21, 1991 from Judith and Peg to 'Dear Family,' enclosing the final chapter of the POP joke and quote book along with handouts."
       },
       {
         "title": "POP Jokebook Part 3",
-        "pages": "20-24",
-        "description": "Title page ('One Ugly Minute at a Time') followed by four pages of humorous quotes and one-liners from program participants including Susan F., Patty, George, Lynn, Marlene, Julia, Avram, Jonathan, Michael, Darrell, and Sybil. Inside jokes from the Transformation sessions."
+        "pages": "12-16",
+        "description": "Title page ('One Ugly Minute at a Time') followed by humorous quotes and one-liners from program participants."
       },
       {
-        "title": "How To Handle a Projection (Handout)",
-        "pages": "25",
-        "description": "Blue card with a five-step process: (1) Say the projection to yourself, (2) Look at its effect on yourself and others, (3) Find out what is true about the projection, (4) See what power the projection gives you, (5) Let the other person in. Copyright Quantum Educational Discoveries, Inc. 1991."
+        "title": "Participant Handouts",
+        "pages": "17-20",
+        "description": "How To Handle a Projection (5-step process), Touch the Earth meditation (Brave Buffalo), Talking Stones meditation technique, and The Healing Powers of Trees reference card."
       },
       {
-        "title": "Touch the Earth Meditation (Handout)",
-        "pages": "26",
-        "description": "Meditation excerpt from 'Touch the Earth' compiled by T.C. McLuhan, featuring Tatanka-ohitika (Brave Buffalo), a Sioux medicine man from Standing Rock Reservation, describing his 1911 dream of the sacred stone and Wakan tanka. Discusses the spiritual significance of stones in Sioux tradition."
+        "title": "Session 3 Detailed Schedule",
+        "pages": "21-22",
+        "description": "Detailed program schedule for September 27-30 including Friday evening, Saturday-Monday elemental meditations (Rock, Talking Stones, Air, Water, Candle, Firewalk, Bonfires), and Monday graduation."
       },
       {
-        "title": "Talking Stones Meditation (Handout)",
-        "pages": "27",
-        "description": "Pink card describing a meditation technique of striking high-vibration stones with dull knife blades to produce musical sounds that induce a trance-like meditative state. Best done in a candle-lit room or beneath a full moon."
-      },
-      {
-        "title": "The Healing Powers of Trees (Handout)",
-        "pages": "28",
-        "description": "Green card listing the metaphysical healing properties of 30+ tree species (almond, apple, ash, birch, cedar, oak, willow, etc.) with their associated qualities such as healing, protection, love, prosperity, wisdom, and fertility."
-      },
-      {
-        "title": "Transformation Key Teachings (Compiled)",
-        "pages": "29-35",
-        "description": "Seven pages of compiled key teachings from the Transformation program, presented as aphorisms with key symbols. Covers topics including projection, self-love, congruence, marriage as a trinity of male/female/child, karma, truth-telling, the void, giving up judgments, masculine/feminine energy, the divine in everyone, and the importance of behavioral change. Dated 10/25/92. Includes both a clean version and a version with one item highlighted/underlined."
+        "title": "Transformation Key Teachings",
+        "pages": "23-34",
+        "description": "Compiled key teachings from Session 3 and the broader Transformation program, presented as aphorisms covering projection, self-love, congruence, karma, truth-telling, the void, masculine/feminine energy, and the divine."
       },
       {
         "title": "Business Communication Exercise and Namaste Card",
-        "pages": "36",
-        "description": "A 'Who Should Say What to Whom About What & Why?' worksheet for business problem-solving with handwritten notes referencing 'Hawaii MB2' and keywords (synergy, teamwork, intimacy, congruence, problem solving, communication). Final page is a Namaste prayer card: 'I bow to the God within You.'"
+        "pages": "35-36",
+        "description": "'Who Should Say What to Whom About What & Why?' worksheet with handwritten notes referencing 'Hawaii MB2.' Final page is a Namaste prayer card."
       }
     ]
   },
@@ -845,51 +735,6 @@
     ]
   },
   {
-    "id": "10a",
-    "title": "Evening Series Manual - Instructor Outlines and Logistics Guidelines",
-    "summary": "A comprehensive manual for QED (Quantum Educational Discoveries) evening seminar series, copyright 1990, revised 1991. Contains two complete instructor outlines for evening workshops: \"How Many People Are Really in Your Bed?\" (about relationships, parental patterns, chemistry, attraction, competition, secrets, children, intimacy, and a \"recipe for ecstatic sex\") and \"Ending the Fight\" (a five-step process for resolving conflicts covering deciding to end the fight, giving up blame, sharing intimately, feeling everything, and saying goodbye to old patterns). Also includes a full logistics section with general guidelines for affiliates, room setup instructions with a floor plan diagram, break setup procedures, job descriptions for Team Leader/Music Coordinator and Registrar, presenter responsibilities, a detailed supplies list, and music playlists for both \"Bed\" and \"Fight\" evenings. These evening seminars served as condensed introductions to the longer QED Choices Weekend program.",
-    "authorship": "Quantum Educational Discoveries (QED), copyright 1990. Instructor outlines revised 6/11/91 (\"Bed\") and 6/25/91 (\"Fight\"). Logistics guidelines revised 7/1/91. Associated with Judith Orloff's QED organization.",
-    "category": "Choices & Personal Development",
-    "pageCount": 29,
-    "outline": [
-      {
-        "title": "Cover Page and Section I: Outlines Divider",
-        "pages": "1-2",
-        "description": "Evening Series Manual cover page and Section I divider page for the instructor outlines."
-      },
-      {
-        "title": "Instructor's Outline: \"How Many People Are Really in Your Bed?\"",
-        "pages": "3-12",
-        "description": "Complete instructor script for a relationship-focused evening seminar. Covers opening enrollment questions, the promise of the evening, parental relationship patterns, a Mom and Dad role-play game, feelings exploration (okay vs. not okay feelings in families), chemistry and attraction (head vs. heart), competition, secrets, children as wedges, intimacy (\"Into-Me-See\"), and a four-step \"Recipe for Ecstatic Sex.\" Includes specific music cues, timing notes, and instructions for interactive exercises. References the Choices Weekend as the longer program."
-      },
-      {
-        "title": "Instructor's Outline: \"Ending the Fight\"",
-        "pages": "13-19",
-        "description": "Complete instructor script for a conflict resolution evening seminar. Presents fighting as wanting connection and familiarity, then teaches a five-step process: (1) Decide you really want to end the fight, (2) Give up blame, (3) Share intimately without blame, (4) Feel everything, (5) Say goodbye to old ways of relating. Includes a Blame Game exercise (30 min), a No Blame Game exercise (30 min), and discussion of the QED vision and philosophy. Music cues include \"Out of Africa,\" \"All My Exes Live in Texas,\" \"Desperado,\" and \"Imagine.\""
-      },
-      {
-        "title": "Section III: Originals Divider and Logistics Cover",
-        "pages": "20-21",
-        "description": "Section III divider page for originals and the Evening Workshop Logistics Guidelines cover page, credited to Quantum Educational Discoveries, 1990."
-      },
-      {
-        "title": "General Guidelines and Room Setup",
-        "pages": "22-23",
-        "description": "Affiliate responsibilities for arranging hotel venue (7-10 PM events), logistics team requirements (minimum 2 staff), registration table setup with payment processing, and detailed room setup instructions including theater-style seating in an open semi-circle, riser placement, and registration area layout."
-      },
-      {
-        "title": "Break Setup and Job Descriptions",
-        "pages": "24-27",
-        "description": "Break service details (coffee, tea, lemon water between 8-9 PM), job descriptions for Team Leader/Music Coordinator (overseeing logistics, managing music equipment, coordinating with affiliates) and Registrar (registration area setup, greeting participants, assisting presenter, post-event enrollment)."
-      },
-      {
-        "title": "Presenter Responsibilities, Supplies List, and Room Diagram",
-        "pages": "27-29",
-        "description": "Presenter logistical duties, comprehensive supplies checklist for registration table, front of room, and music table. Includes cued music playlists for both \"Bed\" and \"Fight\" evenings, and a detailed floor plan diagram showing chair arrangement, podium, flip chart, registration, music/logistics tables, lemon water station, and plant placement."
-      }
-    ]
-  },
-  {
     "id": "11a",
     "title": "Extended Teaching Program (ETP) Instructor's Manual - DRAFT (Sessions 1-8)",
     "summary": "Draft instructor's manual for the Extended Teaching Program (ETP), an 8-session personal responsibility training curriculum created by Quantum Educational Discoveries, Inc. (copyright 1991, revised 04/23/91). Each session spans a multi-day weekend format and covers: owning personal history, living from personal responsibility, integrating the primary family (including a \"Mom and Dad Game\" and projection exercises), vision and power (with a vision quest and purpose meditation), creating adult relationships (with \"schiz-skits\" demonstrations), sex/bodies/physical integration (as a retreat with body autobiographies and tantric sexuality discussion), personal integrity (with a \"Truth or Consequences\" questionnaire), and mastering the process of change. The manual includes detailed instructor notes on facilitation techniques, group exercises, partner work, family day logistics, reading assignments (Richard Bach's \"Illusions,\" Jane Roberts' Seth books, Stephen King's \"The Talisman,\" Bernie Siegel, Buckminster Fuller), and curated music selections to close each session. References to Judith Orloff appear in Session 8 notes.",
@@ -910,37 +755,37 @@
       },
       {
         "title": "Session 2: Living From Personal Responsibility",
-        "pages": "17-28",
+        "pages": "19-33",
         "description": "Appears in two versions (pages 17-20 and 21-28). Defines personal responsibility as 'the ability to create a response in the moment from nothing.' Covers right and wrong, limits on behavior, components of responsibility (self-care, equality, truth, compassion, congruence), fear of freedom, false guilt, self-hatred. Includes partner exercise on responsibility, Family Day preparation, and assignments (read 'Illusions' by Richard Bach, have a responsible conversation with parents). Discusses the Session 4 retreat."
       },
       {
         "title": "Session 3: Integrating the Primary Family",
-        "pages": "29-40",
+        "pages": "34-45",
         "description": "Opens with sharing and reviewing assignments. Reviews how behavioral patterns are set (ages 0-3 wiring, 3-11 beliefs established, 11-20 cemented). Includes the 'Mom and Dad Game' (role-playing as each parent discussing love, sex, marriage, money, work). Teaches about projection, its effects (isolation, victimhood, self-hate, shame), and Family Day with the 'Projection Game.' Covers letting go of approval/disapproval, changing patterns, and includes 'Dating Your Mom' handout discussion and a 'Last Conversation with My Parents' writing exercise."
       },
       {
         "title": "Session 4: Vision and Power (Retreat)",
-        "pages": "41-53",
+        "pages": "46-58",
         "description": "A residential retreat session with an extra day. Covers perturbation and change theory (internal vs external perturbation), core values exercise (list 10 most important values), purpose and vision concepts. Includes a Vision Quest (18-24 hours) preceded by a Purpose Meditation with connected breathing. Day Four debriefs the vision quest, teaches about receiving, universal principles, and Buckminster Fuller's 'Critical Path.' Day Five focuses on making vision happen: correcting course, embracing mistakes, following your heart, and staying true to inner knowing."
       },
       {
         "title": "Session 5: Creating Adult Relationships",
-        "pages": "54-61",
+        "pages": "59-67",
         "description": "Instructor's note shifts to participant self-discovery mode. Defines adult relationships as equal, non-controlling, intimate, and responsible. Includes Adult Relationship Exercise Parts I and II (choosing unequal relationships, role-playing adult versions), 'schiz-skits' demonstrating old vs new relationship patterns, Family Day with intimacy focus, and the model for change. Assignments include reading 'Love, Medicine and Miracles' by Bernie Siegel and bringing a bathing suit to the next retreat."
       },
       {
         "title": "Session 6: Sex, Bodies and Physical Integration (Retreat)",
-        "pages": "62-73",
+        "pages": "68-79",
         "description": "A residential retreat session. Breaks down sexual stereotypes, explores attraction, sensuality, and tantric sexuality concepts (kundalini, chakras). Includes sharing sexual autobiographies in groups, body autobiography exercise in bathing suits, discussion of parent-child relationship dynamics and their impact on sexuality. Day Four covers body as history/beliefs manifested, Louise Hay's 'Heal Your Body,' commitment and change, physical integration, and body as instrument of the soul. Assignments include integrity checklist and body awareness practices."
       },
       {
         "title": "Session 7: Personal Integrity",
-        "pages": "74-78",
+        "pages": "80-84",
         "description": "Reviews responsibility and vision teachings. Groups decide on levels of personal responsibility and integrity needed for their vision. Includes 'Truth or Consequences' questionnaire covering childhood perception, relationships, vision, finances, fitness, sex life, health, and material possessions. Groups of 3 work through each question as an 'integrity patrol,' with the instructor facilitating. Process takes the entire day."
       },
       {
         "title": "Session 8: Mastering the Process of Change - A Demonstration",
-        "pages": "79-92",
+        "pages": "85-92",
         "description": "Presented as informal session notes (less structured than earlier sessions). Covers sensations vs feelings, unconditional love as a 'sea of bliss,' going through pain to reach feelings, meditation for inner child healing, pioneer relationships without criticism or judgment. Includes Saturday AM discussion of vulnerability, sharing, and being seen. References to Judith (Orloff) by name with personal anecdotes. Covers topics like unconditional love erasing history, response-ability, guilt (real vs cultural), and concludes with a follow-up session assignment to write commitments and send to Judith."
       }
     ]
@@ -951,27 +796,22 @@
     "summary": "A conceptual essay published by Real Impact Learning, Inc. (2004) that argues for embracing the full range of human emotions rather than repressing them. It introduces the concepts of \"Backup Behaviors\" (defensive reactions like blaming, denying, justifying) versus \"Flexible Behaviors\" (honest emotional expression leading to wisdom), and defines \"Emotional Mastery\" and \"emotional literacy\" as skills for reading and expressing emotions without projection. The document draws on brain research about emotional processing systems and references the importance of personal responsibility as the ability to respond in the present moment with unlimited options.",
     "authorship": "Real Impact Learning, Inc. Copyright 2004. No individual author credited. The handwritten cover page reads \"Real Impact Learning / Personal Responsibility.\" A handwritten note on page 3 reads \"Thursday\" and appears to reference a date.",
     "category": "Choices & Personal Development",
-    "pageCount": 6,
+    "pageCount": 3,
     "outline": [
       {
-        "title": "Cover Page",
-        "pages": "1-2",
-        "description": "Handwritten title page reading 'Real Impact Learning / Personal Responsibility' and a faded reverse/bleed-through page."
+        "title": "Repressed Emotions and Backup Behaviors",
+        "pages": "1",
+        "description": "Opens with the premise that repressed emotions cannot stay hidden and emerge in distorted forms through projection. Introduces 'Backup Behaviors' (defending, denying, justifying, blaming, pretending, avoiding) as reactions to unacknowledged emotions."
       },
       {
-        "title": "Introduction - The Case for Embracing Negative Emotions",
+        "title": "Family Systems and Flexible Behaviors",
+        "pages": "2",
+        "description": "Explains that emotional distortion originates from family systems and applies equally in organizations. Introduces 'Flexible Behaviors' as the healthy alternative: acknowledging emotions as neutral data rather than threats, leading to wisdom rather than reaction. Defines personal responsibility as the ability to respond in the present with unlimited options."
+      },
+      {
+        "title": "Emotional Literacy and Emotional Mastery",
         "pages": "3",
-        "description": "Opens with the premise that society teaches us to hide negative emotions, arguing this is unhealthy. Discusses how repressed emotions manifest in distorted ways through projection and 'Backup Behaviors' such as defending, denying, blaming, and pretending."
-      },
-      {
-        "title": "Family Systems and Organizational Context",
-        "pages": "4",
-        "description": "Explains that emotional distortion originates from adaptation to family systems and applies equally in organizations. Introduces 'Flexible Behaviors' as the healthy alternative, where emotions are treated as neutral data rather than threats."
-      },
-      {
-        "title": "Personal Responsibility and Emotional Literacy",
-        "pages": "5-6",
-        "description": "Defines personal responsibility as the ability to respond in the present with unlimited options rather than from programmed reactions. Introduces 'emotional literacy' as the ability to read and express emotions without reaction or projection. Defines 'Emotional Mastery' as the skill set for experiencing emotions neutrally and transforming them. References the book 'Emotion and the Brain' on neuroscience of emotional processing."
+        "description": "Defines 'emotional literacy' as the ability to read and express emotions without reaction or projection, and 'Emotional Mastery' as the skill set for experiencing emotions neutrally and transforming them into results. References the book 'Emotion and the Brain' on neuroscience of emotional processing."
       }
     ]
   },
@@ -1045,22 +885,22 @@
       },
       {
         "title": "Day Two - Feeling Check, Wisdom, Context, and Personal Responsibility",
-        "pages": "18-23",
+        "pages": "19-24",
         "description": "Opens with feeling check (sensation, not content). Teaches Wisdom as the result of experience versus Thoughts as the result of interpretation. Introduces Context as the meaning framework inherited from family. Core teaching on Personal Responsibility with the infinity symbol poster, including a story about Judith Orloff-Falk and Peg Doubleday helping a 9-year-old girl with Crohn's Disease. Presents the Seven Steps to Get Out of Reaction and the Results of Personal Responsibility ('response-ability')."
       },
       {
         "title": "Day Two - Unconditional Love, Control, Intimacy, and Projection",
-        "pages": "24-30",
+        "pages": "25-31",
         "description": "Teaches Unconditional Love as the result of personal responsibility (accepting all of yourself). Control equals Fear of Loss. 'Taking care of' versus support (intention matters). Intimacy redefined as 'into-me-see' (sharing your truth without blame). Projection teaching with exercises and a 5-step method for handling projections. Covers Integrity, Self-Respect, True Guilt, and 'Deepest Intentions = Results.' Ends with 'You are the source of your experience.'"
       },
       {
         "title": "Day Three - Vision, Model for Change, and Closing",
-        "pages": "31-38",
+        "pages": "32-38",
         "description": "Morning walk for deep connection. Vision teaching and guided meditation ('Kitaro Ki') connecting participants to their inner child and life purpose. Silent hour-long vision quest. The Model for Change: an 8-step process from Conscious Choice through Resistance to Change, then branching to either Illusion/Crisis/Decay/Death (unexperienced fear) or Chaos of Creation/Acknowledgment/Breakthrough/Goal Actualization/Vision (experienced fear). Closes with action planning, 'Recipe for Ecstatic Sex,' reunion announcements, and information about ETP and other QED programs."
       },
       {
         "title": "Music Guide",
-        "pages": "39-40",
+        "pages": "40",
         "description": "List of 28 songs with descriptions of what each piece evokes and when to use it, including 'Imagine' (sets tone), 'The Rose' (theme song), 'Bridge over Troubled Waters' (fathers and daughters), 'Desperado' (for those who don't let love in), 'Kitaro Ki' (guided meditation), and 'What a Wonderful World' (opener or closer)."
       }
     ]
@@ -1071,32 +911,32 @@
     "summary": "A multi-page intake questionnaire given to participants before The Choices Weekend seminar. The form collects extensive personal history including birth circumstances (planned, wanted, birth complications, twin, premature, breech, caesarean), family dynamics (parents' relationship, divorce, siblings, deaths), childhood experiences (illnesses, injuries, emotional traumas), sexual and reproductive history (separate sections for women and men covering pregnancies, miscarriages, abortions), current health status (illnesses, injuries, medications, psychiatric care, allergies, surgeries), personal psychology (desires, fears, self-perception, thoughts about life and relationships), previous workshop experience, and emergency contact information. Participants are asked to bring the completed form to the Weekend.",
     "authorship": "No author or publisher credited on the form itself. Based on its title 'The Choices Weekend Personal Discovery Form,' it was created by the same organization (QED / Educational Discoveries) that produced the Choices Weekend program, founded by Judith Orloff-Falk and Peg Doubleday.",
     "category": "Choices & Personal Development",
-    "pageCount": 7,
+    "pageCount": 5,
     "outline": [
       {
         "title": "Demographics and Birth History",
-        "pages": "1-2",
-        "description": "Name, sex, age, religion, birthplace. Detailed birth questions: whether participant was wanted/planned, gestation details, birth complications (twin, premature, breech, caesarean, forceps, anesthetized), mother's birth problems (hemorrhage, infection, post-partum depression), father's presence, parental gender preference, breastfeeding, and infancy/childhood illnesses."
+        "pages": "1",
+        "description": "Birth questions: whether participant was wanted/planned, gestation details, birth complications, mother's birth problems, father's presence, parental gender preference, breastfeeding, infancy/childhood illnesses, injuries, emotional traumas, and family deaths."
       },
       {
         "title": "Family History and Childhood",
-        "pages": "3",
-        "description": "Questions about family deaths, parental divorce, self-description as a child, descriptions of mother and father (starting with dislikes), parents' relationship, substitute parents/caregivers, and current marital status and mate description."
+        "pages": "2",
+        "description": "Questions about parental divorce, self-description as a child, descriptions of mother and father, parents' relationship, substitute parents/caregivers, and current marital status."
       },
       {
         "title": "Sexual and Reproductive History",
-        "pages": "4",
-        "description": "Separate sections for women and men covering onset of sexual activity, pregnancies, deliveries, miscarriages, abortions, children given away, and feelings about sex."
+        "pages": "3",
+        "description": "Separate sections for women and men covering pregnancies, deliveries, birth problems, miscarriages, abortions, and feelings about sex."
       },
       {
         "title": "Current Health and Emotional State",
-        "pages": "5",
-        "description": "Current personal upsets, illnesses (including skin disorders, infections, pain), injuries, recent medical treatments, medications, psychiatric care, medical problems, allergies, recent surgeries, and ability to participate in late evening sessions."
+        "pages": "4",
+        "description": "Current personal upsets, illnesses, injuries, recent medical treatments, medications, psychiatric care, allergies, recent surgeries, and ability to participate in late evening sessions."
       },
       {
-        "title": "Personal Psychology and Closing",
-        "pages": "6-7",
-        "description": "Open-ended questions about desires, fears, family/friend relationships, feelings about men and women, most negative and positive thoughts about self/life/relationships. Previous seminars and workshops attended. Emergency contact information, insurance coverage, signature, and date line with instruction to bring the form to the Weekend."
+        "title": "Personal Psychology",
+        "pages": "5",
+        "description": "Open-ended questions about desires, fears, family/friend relationships, feelings about men and women, and most negative and positive thoughts about self, life, and relationships."
       }
     ]
   },
@@ -1241,52 +1081,72 @@
     "summary": "Complete curriculum package for \"Discovery and Change,\" an eight-session personal responsibility training program developed under the ETP (Educational Training Program) framework. The document includes both participant handout materials (readings, worksheets, exercises) dated 04-07-1992 and a detailed instructor's manual (revised 04-23-1991) covering session-by-session teaching notes, facilitation guidance, and day-by-day schedules for each multi-day weekend session. Topics span emotional autobiography, responsibility, family dynamics, core values, vision and purpose, projection, body integration, sexuality, personal integrity, and commitment to change. The program also references \"Disruptive Learning Technology\" as its pedagogical framework and incorporates curated readings from authors including Vaclav Havel, Ian Frazier, and R. Buckminster Fuller.",
     "authorship": "Created as part of the ETP (Educational Training Program) organization. The instructor's manual is labeled 'ETP Instructor's Manual' and revised 04-23-1991. The participant materials are dated 04-07-1992. Judith Orloff's specific role is not named in the sampled pages, but the document is part of her archive and reflects the personal growth training work she was involved with.",
     "category": "Business & Intellectual Property",
-    "pageCount": 94,
+    "pageCount": 92,
     "outline": [
       {
-        "title": "Cover Pages and Introduction",
-        "pages": "1-2",
-        "description": "Title pages reading 'Disruptive Learning Technology' and 'Discovery and Change,' establishing the program framework."
+        "title": "Participant Handout: Session Two (Havel's \"The Great Moral Stake of the Moment\")",
+        "pages": "1",
+        "description": "Excerpt from Vaclav Havel's Second Inaugural address to Czechoslovakia, used as a Session Two reading on personal responsibility in a decayed moral environment."
       },
       {
-        "title": "Session One: Emotional Autobiography",
-        "pages": "3-6",
-        "description": "Participant handout for writing an emotional autobiography from conception/birth to present, plus the instructor's manual introduction explaining Discovery and Change as a personal responsibility curriculum (not therapy), with instructor's notes on facilitation philosophy."
+        "title": "Participant Handouts: Session Three (Family Exercises)",
+        "pages": "2-4",
+        "description": "Ian Frazier's satirical 'Dating Your Mom' excerpt, the Mom and Dad Game role-play exercise (become your parents at age 20), and a 'My Last Conversation With My Parents' lined writing worksheet."
       },
       {
-        "title": "Session Two: Responsibility and Moral Stake",
-        "pages": "7-11",
-        "description": "Includes Vaclav Havel's 'The Great Moral Stake of the Moment' speech excerpt, the 'On Responsibility' partner exercise (sharing, listening, and giving support in groups of four), and instructor notes on teaching right/wrong, limits, and the components of personal responsibility."
+        "title": "Participant Handouts: Session Four (Core Values and Fuller)",
+        "pages": "5-7",
+        "description": "Core Values group exercise (list 10 values, discuss what blocks living them) and a two-page excerpt from R. Buckminster Fuller's 'Critical Path' on eternal principles, frequency, and synergy."
       },
       {
-        "title": "Session Three: Family Patterns and Parental Relationships",
-        "pages": "12-18",
-        "description": "Features Ian Frazier's satirical 'Dating Your Mom' excerpt, the 'Mom and Dad Game' role-play exercise, 'My Last Conversation With My Parents' writing worksheet, and instructor notes on childhood stories, illusion, family day preparation, and breaking behavioral patterns."
+        "title": "Evaluation Form and Logistics Guide",
+        "pages": "8-10",
+        "description": "Session evaluation/reflection form (what I learned, what was unclear, comments on logistics) and a two-page logistics guide covering dinner teams, cleanup duties, and shopping responsibilities."
       },
       {
-        "title": "Session Four: Core Values and Vision/Power",
-        "pages": "19-27",
-        "description": "Core Values group exercise (listing and examining 10 core values), R. Buckminster Fuller's 'Critical Path' excerpt on principles and God, evaluation/reflection form for all sessions, logistics guide for the program, and the instructor's manual section on Session Four covering vision, purpose, and the vision quest with purpose meditation."
+        "title": "Participant Handout: Session One (Emotional Autobiography)",
+        "pages": "11",
+        "description": "Writing prompt for an emotional autobiography from conception/birth to present, asking participants to focus on feelings at each stage of life."
       },
       {
-        "title": "Session Five: Retreat - Projection, Approval, and Family Integration",
-        "pages": "28-49",
-        "description": "Instructor notes covering fear of freedom, false guilt, self-hatred, the projection game (role-playing difficult family members), teaching on approval vs. disapproval, family day facilitation, behavioral pattern change, childhood autobiography demonstrations, and assignments including 'The Kin of Atta' reading and last conversation with parents writing exercise."
+        "title": "Participant Handout: Session Two (On Responsibility)",
+        "pages": "12",
+        "description": "Partner exercise for groups of four: sharing about responsibility, listening, and giving support."
       },
       {
-        "title": "Session Six: Retreat - Vision and Purpose",
-        "pages": "50-60",
-        "description": "Session Four title page 'Vision and Power,' instructor notes on purpose, vision as purpose brought to life, the vision quest context and instructions, purpose meditation guided by Kitaro Ki music, dealing with fear and uncomfortable feelings, connected breathing exercise, and teaching values from childhood."
+        "title": "Instructor's Manual: Introduction and Session One",
+        "pages": "13-26",
+        "description": "Discovery and Change defined as a personal responsibility curriculum (not therapy). Instructor notes on facilitation philosophy, Session One (Owning Your Personal History): welcome, group formation, sharing personal history, videoing goals, and reviewing core concepts."
       },
       {
-        "title": "Session Six (continued): Bodies, Sex, and Commitment",
-        "pages": "80-88",
-        "description": "Instructor notes on Day Four and Five of the retreat covering bodies and sexuality, body as history and instrument of experience, physical integration, commitment as how change happens, Louise Hay's 'Heal Your Body' exercise, body autobiography sharing in bathing suits, parent-child relationship dynamics, and integrity assignments."
+        "title": "Instructor's Manual: Session Two (Living from Unlimited Responsibility)",
+        "pages": "27-37",
+        "description": "Teaching on right/wrong, limits, fear of freedom, false guilt, self-hatred, the projection game, approval vs. disapproval, family day facilitation, and behavioral pattern change."
       },
       {
-        "title": "Session Seven: Personal Integrity",
-        "pages": "89-98",
-        "description": "Multi-day session focused on personal integrity. Includes integrity self-assessment questions (financial condition, physical fitness, sex life, health, material possessions), the 'integrity patrol' group exercise, family day focused on integrity, conflict resolution through integrity lens, internal fights work, demonstrations of integrity, and preparation for the final Session Eight graduation."
+        "title": "Instructor's Manual: Session Three (Integrating the Primary Family)",
+        "pages": "38-52",
+        "description": "Family Day: welcome family members, gossip and sharing, 'Bliss to Now' poster, Mom/Dad Game facilitation, childhood autobiography demonstrations, and assignments."
+      },
+      {
+        "title": "Instructor's Manual: Session Four (Vision and Power)",
+        "pages": "53-63",
+        "description": "4.5-day residential retreat: vision quests, purpose meditation, dealing with fear, connected breathing, teaching values from childhood, perturbation and lasting change."
+      },
+      {
+        "title": "Instructor's Manual: Session Five (Creating Adult Relationships)",
+        "pages": "64-70",
+        "description": "Adult relationships, unconditional love in partnerships, control, taking care of vs. support, synergistic relationships, and family day focused on adult relationship dynamics."
+      },
+      {
+        "title": "Instructor's Manual: Session Six (Bodies, Sex, and Physical Integration)",
+        "pages": "71-83",
+        "description": "Residential retreat on body awareness, body autobiography, sexuality, physical integration, lovemaking teachings, commitment, and integrity assignments."
+      },
+      {
+        "title": "Instructor's Manual: Session Seven (Personal Integrity)",
+        "pages": "84-92",
+        "description": "Integrity self-assessment, the 'integrity patrol' group exercise, family day focused on integrity, conflict resolution, demonstrations of integrity, and preparation for Session Eight graduation."
       }
     ]
   },
@@ -1352,31 +1212,6 @@
         "title": "Closing / Contact Information",
         "pages": "11",
         "description": "Thank you page with contact information for Ali Boaldin at Radical Choices LLC."
-      }
-    ]
-  },
-  {
-    "id": "9c",
-    "title": "Emotional Literacy - Marketing Pitch Collection (Three Branding Eras)",
-    "summary": "A collection of three versions of the same core marketing pitch for Emotional Literacy training services, each written under a different organizational brand: Radical Choices, Real Impact Learning (RIL), and Orloff Consulting (OC). All three versions explain that Emotional Literacy (EL) is the ability to be self-aware and make decisions aligned with one's objectives, that emotional intelligence (EQ) matters more than intellectual intelligence for success, and that the methodology uses cognitive dissonance and simulated environments to help people break unconscious behavioral patterns. The pitches emphasize business results including improved client relationships, employee retention, and increased sales.",
-    "authorship": "Judith Orloff / Radical Choices LLC / Real Impact Learning / Orloff Consulting. The three versions represent different eras of the same organization's branding.",
-    "category": "Radical Love & Radical Choices",
-    "pageCount": 10,
-    "outline": [
-      {
-        "title": "Radical Choices and Emotional Literacy (Version 1)",
-        "pages": "1-4",
-        "description": "First branding era pitch under 'Radical Choices' name. Defines Emotional Literacy as self-awareness enabling aligned decision-making, explains how childhood patterns unconsciously control behavior, describes EL as a transferable skill, and positions Radical Choices as having over 30 years of teaching emotional literacy technology."
-      },
-      {
-        "title": "Real Impact Learning and Emotional Literacy (Version 2)",
-        "pages": "5-7",
-        "description": "Second branding era pitch under 'Real Impact Learning' (RIL) name. Covers the same core concepts with slightly different framing, adds a section on resistance as 'pure energy' for transforming history into awareness, and references RIL's Emotional Literacy Learning Process."
-      },
-      {
-        "title": "Orloff Consulting and Emotional Literacy (Version 3)",
-        "pages": "8-10",
-        "description": "Third branding era pitch under 'Orloff Consulting' (OC) name. Most polished version with numbered points, references work of Peter Senge and Daniel Goleman, and positions OC as the only company in adult learning to have developed a specific methodology for mastering emotional literacy in the workplace. References over 20 years of experience."
       }
     ]
   },
@@ -1465,22 +1300,22 @@
       },
       {
         "title": "Authenticity and Communicating Intention",
-        "pages": "8",
+        "pages": "7",
         "description": "Defines authenticity as sharing your natural self, explains how hiding emotions leads to incongruence, and teaches that when heart and mind are integrated, communication becomes clear and effective."
       },
       {
         "title": "Integrity and Application Exercise",
-        "pages": "9",
+        "pages": "8",
         "description": "Defines integrity as honoring your word (from MIT professor Michael Jenson), provides clues for knowing integrity vs. lack of integrity, and includes a 'Cleaning Up The Mess' self-assessment exercise with reflective questions about workplace integrity."
       },
       {
         "title": "Six Principles of DLT",
-        "pages": "10",
+        "pages": "9",
         "description": "Detailed descriptions of all six DLT principles: Insight (knowing yourself), Personal Responsibility (owning yourself), Authenticity (being real), Integrity (walking your talk), Clear Mind (without bias or preconceptions), and Awakened Action (acting for the benefit of all)."
       },
       {
         "title": "Closing / Contact Information",
-        "pages": "11",
+        "pages": "10",
         "description": "Thank you page for Day 2 participation with contact information for Ali Boaldin at Radical Choices LLC."
       }
     ]
@@ -1494,29 +1329,24 @@
     "pageCount": 26,
     "outline": [
       {
-        "title": "Cover Page",
-        "pages": "1",
-        "description": "Title page for Disruptive Learning Technology Train the Trainer Certification Program Participant Workbook, Session Three: Beyond Suffering, The Naked Bald Truth. Copyright 2016 by Radical Choices LLC."
-      },
-      {
-        "title": "Table of Contents",
-        "pages": "2",
-        "description": "Detailed three-day outline: Day One (Know What Is/Own What Is), Day Two (Clarity), Day Three (Taking It Out In The World) with sub-sections and page numbers."
+        "title": "Cover Page and Table of Contents",
+        "pages": "1-2",
+        "description": "Title page for DLT Train the Trainer Certification Program, Session Three: 'Beyond Suffering, The Naked Bald Truth.' Copyright 2016 by Radical Choices LLC. Detailed three-day table of contents."
       },
       {
         "title": "Day One: Know What Is / Own What Is",
-        "pages": "3-7",
-        "description": "Purpose statement, opening mock trial activity (God on Trial for Crimes Against Humanity with assigned roles), nondual awareness vs. conditioned experience diagram (Peter Fenner), 'The Simple Ugly: Pictures & How They Affect Our Lives,' personal Greek tragedy and fatal flaw, 'Who Told You That?' sharing activity, Being vs. Doing (e.e. cummings poem), DLT Daily Practice language tip-offs, and eulogy/obituary evening writing activity. Interspersed with blank Notes pages."
+        "pages": "3-13",
+        "description": "Opening mock trial activity (God on Trial for Crimes Against Humanity), nondual awareness vs. conditioned experience diagram (Peter Fenner), 'The Simple Ugly: Pictures and How They Affect Our Lives,' personal Greek tragedy and fatal flaw, 'Who Told You That?' sharing activity, Being vs. Doing (e.e. cummings poem), DLT Daily Practice, and eulogy/obituary evening activity. Content pages alternate with blank Notes pages."
       },
       {
         "title": "Day Two: Clarity",
-        "pages": "8-11",
-        "description": "Day One debrief, individual DLT demo by Judith, DLT Core Perspective principles (essential oneness, blame as choice, thoughts as menu not food), Jungian archetypes (Hero, Mother, Innocent Youth, Magician, Doppelganger, Scapegoat, Villain), 'Who Will I Be If I Give Up Who I Think I Am' mythology exercise, thoughts/feelings exploration, 'Speakable Me' activity, and DLT Daily Practice. Interspersed with blank Notes pages."
+        "pages": "14-21",
+        "description": "Day One debrief, individual DLT demo by Judith, DLT Core Perspective principles, Jungian archetypes (Hero, Mother, Innocent Youth, Magician, Doppelganger, Scapegoat, Villain), mythology exercise, thoughts/feelings exploration, 'Speakable Me' activity, and DLT Daily Practice."
       },
       {
         "title": "Day Three: Taking It Out In The World",
-        "pages": "12-14",
-        "description": "Organization DLT demo by Judith, DLT Daily Practice, Tips for a Clear Mind ('Under the Hood' techniques like looking at the whole without discoloration, holding shape in changing reality), Clear Mind large group discussion on mass consciousness, Awakened Action team presentations, and closing activity where each person presents their plan for taking DLT into the world. Includes thank you page with contact for Ali at Radical Choices LLC."
+        "pages": "22-26",
+        "description": "Organization DLT demo, Tips for a Clear Mind, Clear Mind discussion on mass consciousness, Awakened Action team presentations, and closing where each person presents their plan for taking DLT into the world."
       }
     ]
   },
@@ -1567,31 +1397,26 @@
   },
   {
     "id": "9e",
-    "title": "DeepSee App - Mindfulness Application Proposal and Patent Research",
-    "summary": "A proposal document for DeepSee, a mindfulness mobile application developed by Radical Choices, designed to bridge the gap between personal values and everyday behaviors using Practical Mindfulness Processes (PMP). The document includes competitive landscape research citing existing patents in digital health and behavioral change (including patents by Bernie Almosni and Min-Hwa Lee), evidence from mindfulness research including PTSD studies by Bessel van der Kolk, and references to B.J. Fogg's persuasion technology framework from Stanford. The app uses whole-brain learning methodology incorporating physical, emotional, intellectual, and spiritual dimensions.",
-    "authorship": "Produced by Radical Choices, Judith Orloff's company for mobile and web-based practical mindfulness applications. The document references the DeepSee app as their first application with a patent filing in process for their Practical Mindfulness Processes (PMP).",
-    "category": "Business & Intellectual Property",
-    "pageCount": 5,
+    "title": "Radical Choices and Emotional Literacy - Program Materials and Kosmos Essay",
+    "summary": "A collection of Radical Choices program materials covering emotional literacy (EQ) as a teachable, transferable skill. Includes the Radical Choices overview of how childhood conditioning creates unconscious behavioral patterns, a Kosmos magazine essay draft on 'Radical Choice' and Disruptive Learning Technology (DLT) with its six principles, and Real Impact Learning branded variations of the emotional literacy pitch for business contexts.",
+    "authorship": "Produced by Radical Choices (Judith Orloff) and Real Impact Learning / Orloff Consulting. The Kosmos essay references Buckminster Fuller and the six principles of DLT.",
+    "category": "Radical Love & Radical Choices",
+    "pageCount": 10,
     "outline": [
       {
-        "title": "Existing Patent Research in Digital Health",
-        "pages": "1",
-        "description": "Lists existing patents in digital health and behavioral change, including electronic health records (CN 202676267 U), mental health monitoring (US 20130297536 A1 by Bernie Almosni), and behavioral change systems (US 20060141431 A1 by Min-Hwa Lee). Also references competitors Lumosity and SOMA Analytics."
+        "title": "Radical Choices and Emotional Literacy Overview",
+        "pages": "1-3",
+        "description": "Defines emotional literacy as EQ, explains how childhood conditioning creates unconscious patterns, and describes Radical Choices' 30+ years of teaching emotional literacy as a transferable business skill."
       },
       {
-        "title": "Evidence Base and Research Support",
-        "pages": "2",
-        "description": "Presents evidence for mindfulness practices including research on PTSD symptom reduction in veterans (citing Bessel van der Kolk), neuroplasticity research, and B.J. Fogg's behavior change equation (motivation, ability, and trigger). Describes how the app offers personalized exercises and challenges."
+        "title": "Kosmos Essay Draft: Radical Choice and Disruptive Learning Technology",
+        "pages": "5-6",
+        "description": "Essay on conditioning as 'a freight train we cannot stop,' the concept of Radical Choice at the intersection of conditioning and life, and DLT as a six-principle practice for self-awareness."
       },
       {
-        "title": "Market Landscape and Competitive Analysis",
-        "pages": "3",
-        "description": "Identifies market gap for a digital, action-oriented, personalized education program in mindfulness and self-awareness. Lists competitors including Digital Health Scorecard by Johnson & Johnson, AbilTo, Breakthrough Behavioral Inc., BrainPaint, Cognitive Health Innovations, and Empower Interactive."
-      },
-      {
-        "title": "Radical Choices Company Overview and DeepSee App",
-        "pages": "4-5",
-        "description": "Describes Radical Choices' mission to develop mobile and web-based applications for practical mindfulness. Introduces DeepSee as their first application to bridge the gap between values and behaviors using Practical Mindfulness Processes (PMP), with a patent filing in process. Explains the learning perspective that goes beyond visual and literary forms of the Information Age."
+        "title": "Real Impact Learning Emotional Literacy Materials",
+        "pages": "7-10",
+        "description": "RIL and Orloff Consulting branded variations of the emotional literacy content, covering acting-out patterns, the business impact of misinterpreted emotions, flexible vs. backup behaviors, and treating emotions as neutral data."
       }
     ]
   },
@@ -1671,17 +1496,17 @@
       },
       {
         "title": "Dictionary Definition Exhibits",
-        "pages": "12-18",
-        "description": "Screenshots from the American Heritage Dictionary website (captured 04/07/2016) providing definitions of \"disruptive\" (radically reconfiguring a field of business), \"technology\" (application of science to industrial or commercial objectives), and \"learn\" (to gain knowledge or skill through study, instruction, or experience), used as evidence supporting the descriptiveness refusal."
+        "pages": "12-16",
+        "description": "Screenshots from the American Heritage Dictionary website (captured 04/07/2016) providing definitions of \"disruptive\" (radically reconfiguring a field of business), \"technology\" (application of science to industrial or commercial objectives), and \"learn\" (to gain knowledge or skill through study, instruction, or experience), used as evidence supporting the descriptiveness refusal. Two pages per definition (screenshot plus page overflow)."
       },
       {
         "title": "XSearch Trademark Search Summary",
-        "pages": "19",
+        "pages": "17",
         "description": "USPTO internal XSearch database search results conducted by examiner jgartner on 3/28/2016 for Serial Number 86829570, searching for \"Radical Choices\" and variations of disruptive/learning/technology terms across live marks."
       },
       {
         "title": "TEAS RF Trademark Application",
-        "pages": "20-22",
+        "pages": "18-22",
         "description": "The original Trademark/Service Mark Application filed 11/23/2015 on the Principal Register by Radical Choices, LLC (Boulder, CO). Mark: \"Disruptive Learning Technology\" in International Class 038 for communication services providing accelerated and experiential based action learning. Filed under Section 1(a) with first use in commerce as early as 09/08/2015. Signed by Ali Boaldin, Manager. Fee of $275 paid for one class."
       },
       {
@@ -1757,33 +1582,33 @@
     "outline": [
       {
         "title": "Introduction and Early Letters (Aleph through Dalet)",
-        "pages": "1-22",
+        "pages": "1",
         "description": "Title page, introduction to the Sacred Living Letters concept, and chapters on the first four Hebrew letters: Aleph (silence, paradox), Bet (house, duality), Gimel (camel, reward and punishment), and Dalet (door, humility). Each letter includes meaning, focus, number, calendar connection, reflective questions, shadow aspects, and right actions."
       },
       {
         "title": "Hei through Tet",
-        "pages": "23-38",
+        "pages": "2-18",
         "description": "Chapters on Hei (window, thought-to-action gap), Vav (hook, connection and completion), Zayin (sword, woman of valor, balance), Chet (life and fear, gateway to infinity), and Tet (womb and serpent, concealed good). Includes Chassidic stories preceding each letter."
       },
       {
         "title": "Yud through Samech",
-        "pages": "39-55",
+        "pages": "19-37",
         "description": "Chapters covering Yud (hand and power, revealed good), Kaf (palm of hand), Lamed (learning and teaching), Mem (water, revealed and concealed), Nun (faithfulness, falling and rising), and Samech (support, infinite cycle). Each includes numerical symbolism and practical exercises."
       },
       {
         "title": "Ayin through Pei",
-        "pages": "56-64",
+        "pages": "38-43",
         "description": "Chapters on Ayin (eye, divine sight), and Pei (mouth, the power of speech and words). Discusses energy preceding words, the concept of rebuke (Lashon Hara), and the story of Moses's speech impediment."
       },
       {
         "title": "Tzadi through Tav",
-        "pages": "65-80",
+        "pages": "44-59",
         "description": "Chapters on the final letters: Tzadi (righteous one, hunting for divine sparks), Kuf (monkey, holiness, retrieving broken shards), Reish (wicked/beginning, clarifying choices), Shin (fire/change, finding changeless essence), and Tav (sign/mark, living in duality knowing absolute truth). Concludes the Alef-Bet cycle."
       },
       {
         "title": "Authors Notes and Appendix",
-        "pages": "81-83",
-        "description": "Personal reflections from both authors, Judith Orloff and Jasmyne Boswell, about their spiritual journeys and the inspiration behind writing the book. Includes a Friendship Circle presentation slide deck with talking points (dated 03/28/04) about volunteer programs for children with special needs."
+        "pages": "60-62",
+        "description": "Personal reflections from both authors, Judith Orloff and Jasmyne Boswell, about their spiritual journeys and the inspiration behind writing the book."
       }
     ]
   },
@@ -1990,8 +1815,8 @@
       },
       {
         "title": "Professional Resume",
-        "pages": "8-9",
-        "description": "Lists Orloff's professional experience: Executive Coach, Master Facilitator, Trainer of Trainers, and published author with 25+ years of experience. Details positions at Horizon House (Philadelphia), University of Pennsylvania, Burlington College, Carriage House Associates in Health, Choices International, Educational Discoveries (co-founder, employing 70+ people), and Orloff Learning/Real Impact Learning in Boulder, Colorado. Notes speaking to 1500+ people internationally and designing a leadership program for 10,000 participants at Bank of America."
+        "pages": "8-12",
+        "description": "Professional resume listing Orloff's experience: Executive Coach, Master Facilitator, Trainer of Trainers, and published author with 25+ years of experience. Positions at Horizon House, University of Pennsylvania, Burlington College (co-founder), Carriage House Associates, Choices International, Educational Discoveries (co-founder, sold to Provant), and Orloff Learning/Real Impact Learning. Notes speaking to 1500+ people internationally and designing a leadership program for 10,000 participants at Bank of America."
       }
     ]
   },
@@ -2035,7 +1860,7 @@
       },
       {
         "title": "Science of Emotions and Learning",
-        "pages": "9-10",
+        "pages": "10",
         "description": "References Candace Pert on physiology run by emotions, physics on energy, Prigogine's dissipative structures, and how real learning requires bifurcation in the brain."
       },
       {
@@ -2055,7 +1880,7 @@
       },
       {
         "title": "Negative Bonding",
-        "pages": "16-17",
+        "pages": "15-17",
         "description": "Teaching on how people bond around shared injuries creating a 'whirlpool effect' of negativity, and how unexperienced emotions control behavior."
       },
       {
@@ -2184,13 +2009,18 @@
     "pageCount": 45,
     "outline": [
       {
-        "title": "The Choice of Love / Opening Poem",
+        "title": "Radical In-to-me-see (Radical Intimacy)",
         "pages": "1",
+        "description": "Opening passage defining radical intimacy as sharing everything unspeakable with another person, being willing to experience whatever the next moment brings. Relationships as mirrors for self-understanding."
+      },
+      {
+        "title": "The Choice of Love / Opening Poem",
+        "pages": "2",
         "description": "Poem contrasting fear and love, with soaring eagle imagery."
       },
       {
         "title": "Week One: Context / Introduction",
-        "pages": "2-3",
+        "pages": "3",
         "description": "Introduction to the program as 'not a temporary fix,' prompts for deepest desires and fears, the question 'Who are we?'"
       },
       {
@@ -2224,13 +2054,18 @@
         "description": "Murray commitment passage and first self-assessment form with goals, past obstacles, needed feelings and behaviors."
       },
       {
-        "title": "Week One Interim Assignment",
+        "title": "My Story, or Why I am the Way I am",
         "pages": "12",
+        "description": "Journaling exercise with lined page and photo prompt for writing one's personal story."
+      },
+      {
+        "title": "Week One Interim Assignment",
+        "pages": "13",
         "description": "Partner sharing exercises: share story with interruptions, practice setting context in relationships."
       },
       {
         "title": "Week 2: Insight",
-        "pages": "13-14",
+        "pages": "14",
         "description": "Teaching on insight as knowing ourselves, Werner Erhard quote, fire heart imagery, and questions about identity."
       },
       {
@@ -2264,48 +2099,53 @@
         "description": "Self-assessment form and DeepSee app assignment on Principle 1 (Insight)."
       },
       {
-        "title": "Week 3: Personal Responsibility / Owning Yourself",
+        "title": "Personal Journal Pages",
         "pages": "21-22",
+        "description": "Blank journaling pages with notebook image between Week 2 and Week 3."
+      },
+      {
+        "title": "Week 3: Personal Responsibility / Owning Yourself",
+        "pages": "23",
         "description": "Teaching on being the source of our experience, exercises on resistance to personal responsibility."
       },
       {
         "title": "Dishonesty",
-        "pages": "23",
+        "pages": "24",
         "description": "Three forms of dishonesty: telling people what they want to hear, withholding to 'protect,' adding spin."
       },
       {
         "title": "Photo Reflection and Body Beliefs",
-        "pages": "24-25",
+        "pages": "25-26",
         "description": "Evocative photographs of children, abuse, and suffering for emotional reflection; body image exercise."
       },
       {
         "title": "Judge 'Til You Drop",
-        "pages": "26",
+        "pages": "27",
         "description": "Exercise on noticing judgments: how you feel judging, being judged, how you resemble what you judge."
       },
       {
         "title": "Projection = Giving Away Our Power",
-        "pages": "27",
+        "pages": "28",
         "description": "Teaching on projection as a learned childhood habit that saps personal power."
       },
       {
         "title": "Simple Meditation",
-        "pages": "28",
+        "pages": "29",
         "description": "5-minute daily meditation on watching thoughts, bringing to mind those you've judged, noticing paradox."
       },
       {
         "title": "Week 3 Self-Assessment and Interim Assignment",
-        "pages": "29",
+        "pages": "30",
         "description": "Self-assessment and DeepSee assignment on Principle 2 (Responsibility)."
       },
       {
         "title": "Personal Journal Pages",
-        "pages": "30-31",
+        "pages": "31-32",
         "description": "Blank journaling pages."
       },
       {
         "title": "Week 4: Personal Responsibility Towards Others",
-        "pages": "32-33",
+        "pages": "33",
         "description": "Making amends by dissolving right/wrong thinking; reflection questions on cheating, abandoning, gossiping, blaming, neglecting, abusing self and others."
       },
       {
@@ -2320,23 +2160,33 @@
       },
       {
         "title": "Week 4 Self-Assessment and Interim Assignment",
-        "pages": "36-37",
+        "pages": "36",
         "description": "Self-assessment and DeepSee assignment on Personal Responsibility, radical listening practice."
       },
       {
         "title": "Week 5: Authenticity",
-        "pages": "38-39",
-        "description": "Teaching on authentic vs. reactive sharing, comparison table, Bette Midler's 'The Rose' lyrics."
+        "pages": "37",
+        "description": "Teaching on authentic vs. reactive sharing, comparison table contrasting reactive statements with authentic ones, questions about identity and being fake."
+      },
+      {
+        "title": "The Rose by Bette Midler",
+        "pages": "38",
+        "description": "Full lyrics of 'The Rose' with rose imagery. Poem on love as river, razor, hunger, flower, and the seed beneath the snow."
       },
       {
         "title": "Role Play Exercise: Jumping Paradigms",
-        "pages": "40",
+        "pages": "39",
         "description": "Partner exercise with scenario roles (homeless vet under bridge, woman who lost children) set in Boulder, Colorado."
       },
       {
-        "title": "Right Action for Authenticity / Week 5 Self-Assessment",
+        "title": "Right Action for Authenticity",
+        "pages": "40",
+        "description": "Short teaching on choosing actions in the gap between thought and action when feeling fear, anger, resentment, or worry. Photo of child."
+      },
+      {
+        "title": "Week 5 Self-Assessment and Interim Assignment",
         "pages": "41",
-        "description": "Teaching on choosing actions in the gap between thought and action, self-assessment form, DeepSee assignment on Authenticity."
+        "description": "Self-assessment form and DeepSee assignment on Authenticity, radical listening practice with a family member."
       },
       {
         "title": "e.e. cummings Poem",
@@ -2381,11 +2231,16 @@
       {
         "title": "Pure Feeling vs. Thought-Derived Emotion",
         "pages": "5-6",
-        "description": "Discussion of pure sensory perceptions and emotions that bypass thinking, the gut as an intuitive sense organ, consciousness filling expanses, and the body as a sensing instrument. Includes handwritten annotations about pure emotions."
+        "description": "Discussion of pure sensory perceptions and emotions that bypass thinking, the gut as an intuitive sense organ, consciousness filling expanses, and the body as a sensing instrument. 'Radical In-to-me-see' (radical intimacy) as the result of sharing everything about yourself. Includes handwritten annotations about pure emotions."
+      },
+      {
+        "title": "Surrender, Failure, and Awakening",
+        "pages": "7",
+        "description": "Adyashanti on ego not being in control, accepting experience rather than pushing it away, transformation through failure rather than technique, and the paradox that knowing 'there is nothing I can do' is the beginning of awakening. Closes with 'What do I know for certain? Only that I am.'"
       },
       {
         "title": "Pure Anger and Undivided Emotion",
-        "pages": "7",
+        "pages": "19",
         "description": "Discussion of whether anger can come from a pure, undivided place, referencing wrathful deities in Tibetan tradition and Jesus overturning the money changers' tables."
       },
       {
@@ -2410,17 +2265,17 @@
       },
       {
         "title": "Past Lives and 'Final Awakening' at Age 32",
-        "pages": "14-16",
+        "pages": "13-16",
         "description": "Adyashanti's detailed account of his awakening experience while walking across his living room: perceiving the point of light called 'I,' entering different points/lifetimes, resolving karmic confusion from past incarnations including a drowning death, and experiencing all past lives as simultaneous rather than sequential."
       },
       {
         "title": "Death, Dying, and Waking Up",
-        "pages": "17-18",
+        "pages": "16-18",
         "description": "Discussion of death as the next experience consciousness has, awakening as dying ('total blankness, absolute nonexistence'), near-death experiences, and those who have let go becoming transparent to Spirit."
       },
       {
         "title": "Adyashanti Bio",
-        "pages": "19",
+        "pages": "17",
         "description": "Biography noting his name means 'primordial peace,' he began teaching in 1996 at his Zen teacher's request, and lists his published works."
       }
     ]
@@ -2428,7 +2283,7 @@
   {
     "id": "21b",
     "title": "Conditioning's Last Stand - Integrity",
-    "summary": "A brief two-page document consisting of a handwritten title page reading 'Conditioning's last stand - INTEGRITY' in pink marker, followed by a page describing an alternative information-communicative theory of brain organization. The second page is a dense scientific text listing 10 conventional scientific concepts about brain structure and function, covering neural circuits, synaptic levels, the holographic principle of information distribution, memory storage in brain cortex and subcortical nodes, morphofunctional systems, neurodynamic integration, and quantum mechanisms of consciousness formation. This appears to be reference material connecting neuroscience to the Radical Love Foundation's teachings on conditioning and integrity.",
+    "summary": "A single-page document with a handwritten title reading 'Conditioning's last stand - INTEGRITY' in pink marker. Originally part of a two-page document; the second page (a brain organization scientific summary) was lost during PDF processing.",
     "authorship": "The handwritten title page is uncredited (likely Judith Orloff or a Radical Love Foundation associate). The scientific text on page 2 appears to be excerpted from an academic paper on brain organization and information-communicative theory, with numbered references to scientific literature.",
     "category": "Radical Love & Radical Choices",
     "pageCount": 2,
@@ -2437,31 +2292,21 @@
         "title": "Title Page",
         "pages": "1",
         "description": "Handwritten title in pink marker: 'Conditioning's last stand - INTEGRITY'"
-      },
-      {
-        "title": "Brain Organization Scientific Summary",
-        "pages": "2",
-        "description": "Dense scientific text listing 10 conventional concepts of brain organization: neural circuits, holographic information distribution, memory storage, morphofunctional systems, neurodynamic integration, free energy principles, neural codes, and quantum mechanisms of consciousness."
       }
     ]
   },
   {
     "id": "21c",
     "title": "Draft Introduction to the Learning Architecture - Radical Choices",
-    "summary": "A two-page draft document introducing the Radical Choices learning architecture. It describes how linking emotion, spiritual relevance, and intellectual content to participant experience is the core job of learning. It explains that Radical Choices' leadership programs achieve this through a combination of logical, emotional, and spiritual experiences combined with abstract concepts, physical experiences, and taking action. Notes that programs can be customized to specific organizations by incorporating organization-specific data and issues. Also includes a brief excerpt about Judith Orloff's interview discussing emotional intelligence competencies across industries, her secret agenda to end child abuse through emotional awareness, and her belief that if everyone were aware of their emotions, children would be loved totally and people treated equally.",
+    "summary": "A single page from a draft introduction to the Learning Architecture for Radical Choices. The page (printed page 3 of the original document) describes the organization's approach to experiential leadership programs that combine logical, emotional, and spiritual experiences. Notes that programs can be customized with organization-specific data.",
     "authorship": "Radical Choices (organization). The interview excerpt on page 2 features Judith Orloff (identified as 'JO') speaking about emotional intelligence and her mission to end child abuse.",
     "category": "Radical Love & Radical Choices",
-    "pageCount": 2,
+    "pageCount": 1,
     "outline": [
       {
         "title": "Learning Architecture Introduction",
         "pages": "1",
-        "description": "Describes how Radical Choices programs link emotion, spiritual relevance, and intellectual content through logical, emotional, and spiritual experiences. Notes programs can be customized to organizations."
-      },
-      {
-        "title": "Judith Orloff Interview Excerpt",
-        "pages": "2",
-        "description": "Interview transcript where Judith Orloff discusses emotional intelligence competencies across industries and reveals her secret agenda: ending child abuse through universal emotional awareness."
+        "description": "A single page (printed page 3 of a larger document) describing Radical Choices' approach to experiential leadership programs, emphasizing emotional, spiritual, and intellectual learning."
       }
     ]
   },
@@ -2491,67 +2336,6 @@
     ]
   },
   {
-    "id": "9a",
-    "title": "Choices for Success - Participant Workbook",
-    "summary": "A participant workbook for the \"Choices for Success\" company retreat program held May 18-19, 1995, produced by Educational Discoveries. The workbook guides participants through exercises on paradigm shifts, childhood purpose, beliefs as \"sacred cows,\" feelings and reactions, personal responsibility, unconditional love, projection, control, intimacy, the 10-step Model for Change, vision, integrity, and guilt. It includes reflective journal prompts, illustrated concept pages, and blank notes pages for use during the two-day retreat.",
-    "authorship": "Created by Educational Discoveries (5495 Arapahoe Road, Suite 205, Boulder, CO 80303). Judith Orloff was a co-founder of Educational Discoveries. Written for corporate retreat participants.",
-    "category": "Choices & Personal Development",
-    "categoryNote": "Agent recommended 'Choices & Personal Development' since the content focuses on personal development (paradigms, feelings, beliefs, childhood purpose, intimacy, integrity, vision, and the Model for Change), though it was used at a company retreat.",
-    "pageCount": 31,
-    "outline": [
-      {
-        "title": "Cover and Welcome",
-        "pages": "1-2",
-        "description": "Cover page for the Choices for Success Participant Workbook (May 18-19, 1995 Company Retreat) and welcome page stating the program's purpose."
-      },
-      {
-        "title": "Paradigms and Paradigm Shifts",
-        "pages": "3",
-        "description": "Introduces the concept of paradigms as basic belief systems and paradigm shifts as drastic, innovative changes in thinking."
-      },
-      {
-        "title": "Head vs. Heart and Role Reflection",
-        "pages": "4-5",
-        "description": "Explores the difference between head (past learning) and heart (present experience), with reflective prompts about one's role in family, relationships, and organizations."
-      },
-      {
-        "title": "Childhood Purpose and Feelings",
-        "pages": "6-10",
-        "description": "Guides participants through childhood purpose discovery, the 'sea of bliss' metaphor for feelings development, beliefs as sacred cows, and how unexperienced feelings persist and control behavior."
-      },
-      {
-        "title": "Reactions, Wisdom, and Personal Freedom",
-        "pages": "11-14",
-        "description": "Covers reactions as cover-ups for true feelings, habitual family patterns, wisdom vs. thoughts, and personal freedom as the ability to respond from unlimited options."
-      },
-      {
-        "title": "Personal Responsibility and Unconditional Love",
-        "pages": "15-16",
-        "description": "Teaches personal responsibility through acceptance and forgiveness, and introduces unconditional love as accepting all of oneself without exclusions."
-      },
-      {
-        "title": "Projection, Control, and Intimacy",
-        "pages": "17-20",
-        "description": "Explores projection as giving away power, control as fear of loss, the distinction between taking care of vs. supporting others, and intimacy ('into-me-see')."
-      },
-      {
-        "title": "The Model for Change",
-        "pages": "21-25",
-        "description": "Presents the complete 10-step Model for Change spanning decision to change, resistance, agitation, choice points, illusion, crisis, chaos of creation, responsibility, congruence, and breakthrough."
-      },
-      {
-        "title": "Integrity, Guilt, and Vision",
-        "pages": "26-27",
-        "description": "Covers integrity as living according to true values, true guilt as a soul message, and vision as a navigational guide, with a reflective prompt for writing one's personal vision."
-      },
-      {
-        "title": "Notes Pages",
-        "pages": "28-31",
-        "description": "Blank notes pages for participant use during and after the retreat."
-      }
-    ]
-  },
-  {
     "id": "25b",
     "title": "The Model for Change For Managers - Program Overview",
     "summary": "A program overview document for \"The Model for Change For Managers,\" a two-day training program created by Educational Discoveries (copyright 2001, dated 10.12.01). The document outlines nine training modules across two days covering topics including paradigm shifts, the 8-step Model for Change, resistance vs. reaction, giving and receiving support, creating an environment for change, communication tools (the 6 Tools for Communicating and F.A.V.O.R.), the Synergy Game, and taking ownership for change. It also includes color-coded role-play scenario cards for improvisation activities featuring characters like Sulky Supervisor, Fresh as a Newborn Babe, Willing Worker, Wary Worker, and Marginal Manager.",
@@ -2566,7 +2350,7 @@
       },
       {
         "title": "Day One - Opening Module",
-        "pages": "4",
+        "pages": "6",
         "description": "Module One (1 hour) covering enrollment, introductions, the 'Business of Paradigms' video, and team presentations on paradigm shifts."
       },
       {
@@ -2576,125 +2360,69 @@
       },
       {
         "title": "Day One - Debrief the Improvisation Activity",
-        "pages": "7-8",
+        "pages": "9-10",
         "description": "Module Three (1.5 hours) with large group debrief, team discussion on leadership during change, and team presentations."
       },
       {
         "title": "Day One - Resistance and Choice",
-        "pages": "9-10",
+        "pages": "11-12",
         "description": "Module Four (1.5 hours) distinguishing resistance from reaction, teaching the Reactive Self concept, and the Stop/Look/Listen/Act tool."
       },
       {
         "title": "Day One - Giving and Receiving Support",
-        "pages": "11-12",
+        "pages": "13-14",
         "description": "Module Five (1.5 hours) teaching the support process and receiving support process, with a 'Slice of Life' demonstration and practice."
       },
       {
         "title": "Day Two - Creating an Environment",
-        "pages": "13-14",
+        "pages": "15-16",
         "description": "Module Six (2.5 hours) covering context vs. content in communication and the 6 Tools for Communicating."
       },
       {
         "title": "Day Two - Getting Past Bias and Judgment",
-        "pages": "15-16",
+        "pages": "17-18",
         "description": "Module Seven (1 hour) teaching assuming positive intent and the F.A.V.O.R. framework."
       },
       {
         "title": "Day Two - The Essence of Communicating",
-        "pages": "17",
+        "pages": "19",
         "description": "Module Eight (3.5 hours) featuring the Synergy Game where teams work to express and recognize the meaning of key words."
       },
       {
         "title": "Day Two - Taking Ownership for Change",
-        "pages": "18",
+        "pages": "20",
         "description": "Module Nine (1 hour) where participants assess their position in the Model for Change and create action plans."
       },
       {
         "title": "Role-Play Scenario Cards",
-        "pages": "19-30",
+        "pages": "21-30",
         "description": "Color-coded character cards for the improvisation activity: Sulky Supervisor, Fresh as a Newborn Babe, Willing Worker, Wary Worker, and Marginal Manager."
       }
     ]
   },
   {
     "id": "10",
-    "title": "QED Evening Series Manual: Instructor Outlines, Logistics Guidelines, and Originals",
-    "summary": "A comprehensive operations manual for the QED (Quantum Educational Discoveries) Evening Series workshop program, copyrighted 1990 and revised in 1991. It contains two complete instructor outlines for evening seminars: \"How Many People Are Really in Your Bed?\" (about relationships, intimacy, parental patterns, chemistry, secrets, and a \"recipe for ecstatic sex\") and \"Ending the Fight\" (a five-step process for resolving conflict). The manual also includes Evening Workshop Logistics Guidelines with detailed job descriptions, room setup diagrams, supply checklists, and music playlists. The final section contains the Choices Weekend Personal Discovery Form.",
+    "title": "QED Evening Series Manual: Instructor Outlines and Logistics Guidelines",
+    "summary": "An operations manual for the QED (Quantum Educational Discoveries) Evening Series workshop program, copyrighted 1990 and revised in 1991. Contains two complete instructor outlines for evening seminars: \"How Many People Are Really in Your Bed?\" (about relationships, intimacy, parental patterns, chemistry, secrets, and a \"recipe for ecstatic sex\") and \"Ending the Fight\" (a five-step process for resolving conflict). Also includes Evening Workshop Logistics Guidelines with detailed job descriptions, room setup diagrams, supply checklists, and music playlists.",
     "authorship": "Created by Quantum Educational Discoveries (QED), copyrighted 1990, with instructor outlines revised 6/11/91 and 6/25/91, and logistics guidelines revised 7/1/91. Written as internal training and operations materials for QED instructors and logistics teams.",
     "category": "Choices & Personal Development",
     "categoryNote": "This manual is the operational backbone of the QED Evening Series, which served as a condensed introduction to The Choices Weekend program. Both instructor outlines explicitly reference the Choices Weekend as the deeper program these evenings preview.",
-    "pageCount": 34,
+    "pageCount": 28,
     "outline": [
       {
-        "title": "Handwritten Cover Page",
-        "pages": "1",
-        "description": "Handwritten title page reading 'Evening Series. How Many People are really in your bed?'"
-      },
-      {
-        "title": "Evening Series Manual Cover",
-        "pages": "2",
-        "description": "Typed title page for the Evening Series Manual."
-      },
-      {
-        "title": "Section I: Outlines",
-        "pages": "3",
-        "description": "Section divider page for the instructor outlines portion of the manual."
-      },
-      {
         "title": "Instructor's Outline: How Many People Are Really in Your Bed?",
-        "pages": "4-14",
-        "description": "Complete instructor guide exploring how parental patterns, childhood conditioning, chemistry, attraction, competition, secrets, and lack of intimacy affect relationships."
+        "pages": "2-10",
+        "description": "Complete instructor guide exploring how parental patterns, childhood conditioning, chemistry, attraction, competition, secrets, and lack of intimacy affect relationships. Includes a 'recipe for ecstatic sex' and music cues."
       },
       {
         "title": "Instructor's Outline: Ending the Fight",
-        "pages": "15-20",
-        "description": "Complete instructor guide presenting a five-step process for ending any fight, with interactive games like the Blame Game and No Blame Game."
+        "pages": "11-16",
+        "description": "Complete instructor guide presenting a five-step process for ending any fight, with the Blame Game and No Blame Game exercises, and promotion of The Choices Weekend."
       },
       {
-        "title": "Section III: Originals / Evening Workshop Logistics Guidelines",
-        "pages": "21-30",
-        "description": "Detailed logistics operations manual covering affiliate responsibilities, room setup, job descriptions, supply checklists, and music playlists."
-      },
-      {
-        "title": "Choices Personal Discovery Form",
-        "pages": "31-34",
-        "description": "A comprehensive multi-page intake questionnaire for The Choices Weekend covering birth history, childhood, family dynamics, relationships, sexuality, health, and self-perception."
-      }
-    ]
-  },
-  {
-    "id": "15",
-    "title": "Radical Choices Disruptive Learning Technology: Workbooks and Training Materials Collection",
-    "summary": "A compiled collection of Radical Choices LLC program materials spanning multiple iterations of the Disruptive Learning Technology (DLT) curriculum. It includes three distinct documents: a Leadership in Recovery Day Two participant workbook (copyright 2015) covering DLT feedback, the Reactive Self, personal responsibility, and the six principles of DLT; a Real Impact Learning, Inc. document (copyright 2004) on emotional mastery and the neuroscience of emotional processing; and a DLT Train the Trainer Certification Program Session Three workbook (copyright 2016) titled \"Beyond Suffering: The Naked Bald Truth\" structured as a three-day curriculum covering nondual awareness, archetypes, mythology, and awakened action.",
-    "authorship": "Created by Radical Choices LLC (copyrights 2015 and 2016) and Real Impact Learning, Inc. (copyright 2004). Judith Orloff is referenced as the person who will demonstrate DLT techniques. Ali Boaldin is listed as the contact person for Radical Choices LLC.",
-    "category": "Radical Love & Radical Choices",
-    "categoryNote": "All three documents are produced by or directly connected to Radical Choices LLC and its predecessor Real Impact Learning, Inc. The materials center on Disruptive Learning Technology (DLT), the proprietary methodology of Radical Choices.",
-    "pageCount": 33,
-    "outline": [
-      {
-        "title": "Handwritten Cover: Radical Choices Disruptive Learning Technology",
-        "pages": "1",
-        "description": "Handwritten divider page in pink marker."
-      },
-      {
-        "title": "Radical Choices Leadership in Recovery Day Two Workbook",
-        "pages": "2-13",
-        "description": "A participant workbook for Day Two of the Leadership in Recovery program covering DLT feedback, the Reactive Self, personal responsibility, reactions as pitfalls, authenticity, integrity, and the six principles of DLT."
-      },
-      {
-        "title": "Handwritten Cover: Real Impact Learning Personal Responsibility",
-        "pages": "14",
-        "description": "Handwritten divider page."
-      },
-      {
-        "title": "Real Impact Learning: Personal Responsibility, Emotional Mastery and Success",
-        "pages": "15-17",
-        "description": "A document exploring the psychology and neuroscience of emotional repression, projection, and backup behaviors versus flexible behaviors."
-      },
-      {
-        "title": "Radical Choices DLT Train the Trainer Session Three: Beyond Suffering",
-        "pages": "18-33",
-        "description": "A confidential three-day participant workbook covering nondual awareness, archetypes, mythology, thoughts and feelings, clear mind practice, and awakened action."
+        "title": "Evening Workshop Logistics Guidelines",
+        "pages": "18-28",
+        "description": "Detailed logistics operations manual covering affiliate responsibilities, room setup diagrams, job descriptions for Team Leader and Registrar, supply checklists, music playlists with tape cuing instructions, and a room setup floor plan."
       }
     ]
   },
@@ -2763,7 +2491,7 @@
       },
       {
         "title": "The Six Emotional Sources of Questions and F.A.V.O.R.",
-        "pages": "28-29",
+        "pages": "27-29",
         "description": "Explains emotional undercurrents in questions and the F.A.V.O.R. method for handling them."
       }
     ]
@@ -2808,12 +2536,12 @@
       },
       {
         "title": "The Model for Change",
-        "pages": "14-21",
+        "pages": "16-21",
         "description": "Visual diagram and written explanation of the 10-step Model for Change from Decision through Breakthrough."
       },
       {
         "title": "The Model for Change - The Players",
-        "pages": "22-27",
+        "pages": "23-27",
         "description": "Character roles for an experiential exercise based on The Model for Change."
       }
     ]
@@ -2821,96 +2549,51 @@
   {
     "id": "13d",
     "title": "Radical Love Foundation - Workshop Materials, Conference Proposals, Teaching Content, and Bios",
-    "summary": "A compilation of Radical Love Foundation materials by Judith Orloff and co-founder Melissa Stuart, including workshop descriptions, conference proposals (notably for the Science and Nonduality Conference 2010 in San Rafael, California), core teaching content on topics like \"Pure Inseeing,\" \"Pure Listening,\" and \"Pure Speaking,\" email correspondence with conference organizers, the Practicum Principles one-sheet, the Foundation's Purpose/Vision/Mission statement, detailed workshop outlines covering conditioning, unconditioned awareness, family systems, and archetypes, plus professional bios for both Judith and Melissa.",
+    "summary": "A compilation of Radical Love Foundation materials by Judith Orloff and co-founder Melissa Stuart, including the core teachings framework (five activities of Radical Love), workshop descriptions, conference proposals for the Science and Nonduality Conference (2010), teaching content on reactions, authenticity, unconditioned awareness, and archetypes, the Practicum Principles one-sheet, the Foundation's Purpose/Vision/Mission statement, and professional bios.",
     "authorship": "Written and compiled by Judith Orloff, M.Ed., with contributions from Melissa Stuart, M.A., and email correspondence from Alexa Cloud and Salina Storozuk. Created for internal use by the Radical Love Foundation team and for conference submissions.",
     "category": "Radical Love & Radical Choices",
-    "categoryNote": "The existing category of 'Corporate Leadership Training & Educational Discoveries' does not fit. The content is almost entirely about the Radical Love Foundation's teachings, workshops, conference proposals, and philosophical framework.",
-    "pageCount": 33,
+    "categoryNote": "Core Radical Love Foundation materials: teachings, workshops, conference proposals, and philosophical framework.",
+    "pageCount": 28,
     "outline": [
       {
-        "title": "Melbourne Workshop Advertorial Email",
-        "pages": "1",
-        "description": "Email with a revised advertorial for Radical Love Training in Melbourne (June 2011)."
+        "title": "Core Teachings of Radical Love",
+        "pages": "1-2",
+        "description": "Proposed conceptual scheme defining five core Radical Love activities: Pure Inseeing, Pure Listening, Pure Speaking, Pure Choosing, and Pure Doing."
       },
       {
-        "title": "Handwritten Section Dividers",
-        "pages": "2-3",
-        "description": "Handwritten pages reading 'Writing about Radical Love.'"
-      },
-      {
-        "title": "Proposed Conceptual Scheme for the Core Teachings",
-        "pages": "4-5",
-        "description": "Framework outlining five core Radical Love activities: Pure Inseeing, Pure Listening, Pure Speaking, Pure Choosing, and Pure Doing."
-      },
-      {
-        "title": "Radical Love Workshop Description",
-        "pages": "6",
-        "description": "Official Radical Love Foundation flyer signed by Judith Orloff as Executive Director."
-      },
-      {
-        "title": "Conference Presentation Proposals",
-        "pages": "7-8",
-        "description": "Two conference presentation abstracts on Radical Love and relationships."
-      },
-      {
-        "title": "Notes on Time and Workshop Design",
-        "pages": "9",
-        "description": "Notes exploring the relationship between time, reactive states, and Radical Love."
+        "title": "Workshop Descriptions and Conference Proposals",
+        "pages": "3-6",
+        "description": "Radical Love Foundation workshop flyer, two presentation abstracts on Radical Love in relationships and the notion of time, and workshop planning notes."
       },
       {
         "title": "Science and Nonduality Conference Correspondence",
-        "pages": "10-12",
-        "description": "Email thread about Judith's acceptance to the Science and Nonduality Conference 2010."
+        "pages": "7-10",
+        "description": "Email exchange about Judith's acceptance to the SAND Conference 2010 in San Rafael, including requests for a session presentation and abstract revisions."
       },
       {
-        "title": "Judith Orloff Bio",
-        "pages": "13",
-        "description": "Biographical summary listing credentials, books, organizations, and teaching influences."
-      },
-      {
-        "title": "Objections and Reactions Teaching Material",
-        "pages": "14-15",
-        "description": "Teaching content on recognizing and working with objections and reactive states."
-      },
-      {
-        "title": "Practicum Principles",
-        "pages": "16",
-        "description": "One-sheet contrasting conditioned responses with six Radical Love Foundation practices."
-      },
-      {
-        "title": "Buddha Quote and Section Dividers",
-        "pages": "17-19",
-        "description": "A Buddha quote on independent thinking and handwritten divider pages."
-      },
-      {
-        "title": "Educational Discoveries Module Overviews",
-        "pages": "20",
-        "description": "Two module overviews from the Educational Discoveries curriculum (copyright 2001)."
+        "title": "Teaching Materials: Reactions and Practicum",
+        "pages": "11-14",
+        "description": "Judith Orloff bio (conference version), teaching content on objections and reactions as 'goldmines,' the Stop/Look/Listen/Act process, and the Practicum Principles infographic contrasting conditioned responses with Radical Love practices."
       },
       {
         "title": "Radical Love Foundation Purpose, Vision and Mission",
-        "pages": "21",
-        "description": "Official document stating the Foundation's purpose, vision, mission, culture, and guiding principles."
+        "pages": "15-16",
+        "description": "Buddha quote on independent thinking, followed by the Foundation's official organizational document with purpose, vision, mission, culture, and six guiding principles."
       },
       {
-        "title": "Workshop Outline and Planning Notes",
-        "pages": "22-23",
-        "description": "Detailed workshop planning notes covering conditioning, the unconditioned, authenticity, and free choice."
+        "title": "Workshop Curriculum and Planning",
+        "pages": "17-18",
+        "description": "Detailed facilitation plans covering the nature of conditioning, the unconditioned, receiving and experiencing what is, free choice, and 'coming home.' Includes roles, logistics, and exercise sequences."
       },
       {
-        "title": "Additional Teaching Content",
-        "pages": "24-25",
-        "description": "Supplemental content on authenticity and free choice drawn from various RL/ETP/NL transcripts."
-      },
-      {
-        "title": "Unconditioned Awareness Teaching Notes",
-        "pages": "26-28",
-        "description": "Detailed teaching notes on unconditioned awareness, family systems, and Jungian archetypes."
+        "title": "Teaching Content: Authenticity, Free Choice, and Archetypes",
+        "pages": "19-24",
+        "description": "Supplemental teaching notes from RL/ETP/NL transcripts covering authenticity (Martin Buber), steps to authenticity, free choice, unconditioned awareness, family systems, shadow work, and Jungian archetypes."
       },
       {
         "title": "Professional Bios",
-        "pages": "29-31",
-        "description": "Full professional biographies for Judith Orloff and Melissa Stuart, dated June 2013."
+        "pages": "25-28",
+        "description": "Full professional biographies for Judith Orloff, M.Ed. and Melissa Stuart, M.A., co-founders of the Radical Love Foundation, dated June 2013."
       }
     ]
   },
@@ -2924,83 +2607,83 @@
     "outline": [
       {
         "title": "Title Page and Introduction",
-        "pages": "1-3",
-        "description": "Cover page with 'Breakthrough' graphic, cartoon illustrations about change, and an Edward Simon quote."
+        "pages": "1-4",
+        "description": "Instructor module overview pages, 'Breakthrough' cover graphic, cartoon illustrations about change, and an Edward Simon quote."
       },
       {
         "title": "Paradigm and Paradigm Shift",
-        "pages": "4",
+        "pages": "5",
         "description": "Defines paradigm and paradigm shift, illustrated with the flat earth to round earth analogy."
       },
       {
         "title": "The Paradigm of Response-Ability",
-        "pages": "5-6",
+        "pages": "6-7",
         "description": "Contrasts the Paradigm of Control with the Paradigm of Responsibility."
       },
       {
         "title": "Context and Personal Freedom",
-        "pages": "7",
+        "pages": "8",
         "description": "Defines context and introduces the Context of Personal Freedom."
       },
       {
         "title": "Purpose, Mission, Vision, and Objectives",
-        "pages": "8-12",
+        "pages": "10-13",
         "description": "Walks participants through defining personal and organizational Purpose, Mission, Vision, and Objectives."
       },
       {
         "title": "Paradox and The Model for Change",
-        "pages": "13-15",
+        "pages": "14-16",
         "description": "Introduces Paradox and presents the full Model for Change diagram with its 10 steps."
       },
       {
         "title": "Business as Usual, Decision, and Resistance",
-        "pages": "16",
+        "pages": "17",
         "description": "Explains 'Business as Usual,' the importance of a clear decision to change, and how resistance arises."
       },
       {
         "title": "Intention and Choice Points",
-        "pages": "17",
+        "pages": "18",
         "description": "Defines intention and illustrates the choice point between retreating to history or moving forward."
       },
       {
         "title": "Reaction",
-        "pages": "18",
+        "pages": "19",
         "description": "Defines reaction as a patterned internal response from the past, with a quote from Judith Orloff."
       },
       {
         "title": "Illusion and Crisis",
-        "pages": "19-20",
-        "description": "Defines illusion as self-deception and crisis as a catastrophic situation that can serve as opportunity."
+        "pages": "20-21",
+        "description": "Defines illusion as self-deception and crisis as a catastrophic situation that can serve as opportunity. Includes the reactive path diagram."
       },
       {
         "title": "The Proactive Path",
-        "pages": "21-22",
+        "pages": "22-23",
         "description": "Illustrates the proactive path through the Chaos of Creation, managing old and new simultaneously."
       },
       {
         "title": "Perturbation and Keys to Change",
-        "pages": "23-24",
+        "pages": "24-25",
         "description": "Defines perturbation and introduces the keys to change: Support and Receiving/Using New Information."
       },
       {
         "title": "Congruence and Synergy",
-        "pages": "25-26",
+        "pages": "26-27",
         "description": "Defines congruence and synergy, with quotes from Stephen Covey on interdependence."
       },
       {
         "title": "How to Create a Paradigm Shift",
-        "pages": "27-28",
+        "pages": "28-29",
         "description": "A seven-step guide for creating a paradigm shift and summary of the full journey."
       },
       {
         "title": "Glossary",
-        "pages": "29-31",
+        "pages": "30-32",
         "description": "Comprehensive glossary defining key terms used throughout the workbook."
       },
       {
         "title": "Articles Section Divider",
-        "pages": "32-33",
-        "description": "Blank page followed by an 'Articles' section divider page."
+        "pages": "33",
+        "description": "'Articles' section divider page."
       }
     ]
   },
@@ -3125,77 +2808,6 @@
     ]
   },
   {
-    "id": "16",
-    "title": "Radical Love - Participant Workbook & Program Materials",
-    "summary": "A comprehensive collection of materials for the Radical Love program, including the Inward Bound Institute proposal for the \"Touching Reality\" series (a partnership between Orloff Learning, Inc. and Rabbi Yehuda Shemtov at the Glazer Center), Radical Love Foundation branded reflection pieces, the \"Living the Future Now\" Winter 2012 program schedule, teaching content on the science of emotions referencing Dr. Candace Pert and Prigogene's dissipative structures, and the complete Radical Love Participant Workbook with exercises on conditioning, emotions, reactions, integrity, negative bonding, the Mom and Dad Game, true desire, and readings from Karlfried Graf von Durkheim.",
-    "authorship": "Created by Judith Orloff through Orloff Learning, Inc. and the Radical Love Foundation (RLF, copyright 2011). The Inward Bound Institute proposal (dated 2006) was written in collaboration with Rabbi Yehuda Shemtov. Includes quoted material from Dr. Candace Pert, Rumi, W.N. Murray, Goethe, Guthema Roba, and Karlfried Graf von Durkheim.",
-    "category": "Radical Love & Radical Choices",
-    "categoryNote": "Assigned to 'Radical Love & Radical Choices' because the majority of the content is the Radical Love Participant Workbook and Radical Love Foundation materials, focused on personal transformation through emotional awareness, conditioning, and spiritual practice.",
-    "pageCount": 34,
-    "outline": [
-      {
-        "title": "Radical Love Title Page",
-        "pages": "1",
-        "description": "Handwritten title page reading 'RADICAL LOVE' in pink marker."
-      },
-      {
-        "title": "Inward Bound Institute Proposal",
-        "pages": "2",
-        "description": "A 2006 proposal for the 'Touching Reality' series, a partnership with Rabbi Yehuda Shemtov of the Glazer Center."
-      },
-      {
-        "title": "Radical Love Foundation - NOW",
-        "pages": "3",
-        "description": "RLF-branded reflection piece with a parable about a monk and spiritual presence."
-      },
-      {
-        "title": "Blank Page",
-        "pages": "4",
-        "description": "A blank separator page."
-      },
-      {
-        "title": "Radical Love Foundation - Commitment",
-        "pages": "5",
-        "description": "RLF-branded page featuring the W.N. Murray quote and Goethe's couplet on boldness."
-      },
-      {
-        "title": "Is This New? - Introduction",
-        "pages": "6",
-        "description": "Brief text explaining that the ancient wisdom of Radical Love is now available to everyone."
-      },
-      {
-        "title": "Teaching Content - Emotions as Energy",
-        "pages": "7-10",
-        "description": "Teaching slides on emotions as waves of energy, unexperienced emotions, reactions, and progression from dependence to interdependence."
-      },
-      {
-        "title": "Living the Future Now - Winter 2012 Program",
-        "pages": "11",
-        "description": "Schedule for the Winter 2012 'Living the Future Now' Radical Love immersion course."
-      },
-      {
-        "title": "Science of Emotions",
-        "pages": "12-15",
-        "description": "Teaching content referencing Dr. Candace Pert's 'Molecules of Emotion' and Prigogene's dissipative structures applied to learning."
-      },
-      {
-        "title": "Purpose & Conditioning",
-        "pages": "16-19",
-        "description": "Teaching on living purpose through moment-to-moment actions, childhood conditioning, and Rumi's poem 'Look at Love.'"
-      },
-      {
-        "title": "Radical Love Participant Workbook",
-        "pages": "20-32",
-        "description": "Complete participant workbook with exercises on conditioning, emotions, integrity, negative bonding, the Mom and Dad Game, approval/disapproval, true desire, and readings from Karlfried Graf von Durkheim."
-      },
-      {
-        "title": "Blank Pages",
-        "pages": "33-34",
-        "description": "Blank trailing pages."
-      }
-    ]
-  },
-  {
     "id": "17",
     "title": "Business & You - Seminar Participant Workbook",
     "summary": "A 76-page participant workbook for the \"Business & You\" seminar held November 7-9, 1997, a three-day experiential corporate training program rooted in Marshall Thurber's \"Money and You\" seminar. The workbook guides participants through interactive exercises, games, and frameworks covering learning levels (Dreyfus model), cognitive filters, emotional competency, trust, commitment management, coordinating action workflows (Fernando Flores), the Knower vs. Learner paradigm (Fred Kofman), Buckminster Fuller's principles of integrity and precession, and wealth-building strategies. It was customized for The Neenan Company, a DesignBuild firm, and includes their \"Rules of the Game\" corporate values document alongside extensive fill-in-the-blank note pages and a recommended reading list of over 100 titles.",
@@ -3205,22 +2817,22 @@
     "outline": [
       {
         "title": "Welcome & Purpose",
-        "pages": "1-3",
-        "description": "Cover page dated November 7-9, 1997, purpose statement, acknowledgment of Marshall Thurber, and introductory concepts."
+        "pages": "1-4",
+        "description": "Cover page dated November 7-9, 1997, purpose statement, acknowledgment of Marshall Thurber, introductory concepts including the Stonewall exercise, courage, RSVP, and 'Transformation is Possible.'"
       },
       {
         "title": "Levels of Learning & Mistakes",
-        "pages": "4-6",
-        "description": "H. Dreyfus model of learning levels, reframing mistakes as essential to growth with R.B. Fuller and Kipling quotes."
+        "pages": "5-7",
+        "description": "H. Dreyfus model of learning levels, reframing mistakes as essential to growth with Von Braun rocket story, R.B. Fuller and Kipling quotes."
       },
       {
         "title": "Ground Rules & The Win Game",
-        "pages": "7-12",
+        "pages": "8-13",
         "description": "Seminar ground rules, 'Win as much as you can' game exploring cooperation vs. competition, scarcity vs. abundance economics."
       },
       {
         "title": "Trust, Perception & Cognitive Filters",
-        "pages": "13-20",
+        "pages": "14-20",
         "description": "Trust frameworks, cognitive filters (Fred Kofman), Unilateral Control Model vs. Mutual Learning Model, the Whisper Game."
       },
       {
@@ -3265,49 +2877,69 @@
       },
       {
         "title": "Appendix & Recommended Reading",
-        "pages": "74-76",
-        "description": "Extensive recommended reading list organized in three tiers with over 100 titles."
+        "pages": "73-76",
+        "description": "Appendix table of contents and extensive recommended reading list organized in three tiers with over 100 titles."
       }
     ]
   },
   {
     "id": "9",
-    "title": "Choices for Success, Radical Choices & Transformation: Collected Participant Workbooks and Program Materials",
-    "summary": "A compilation of participant workbooks and supporting materials from multiple Judith Orloff programs spanning from 1995 to the later Radical Choices era. The collection opens with the complete \"Choices for Success\" workbook from a May 1995 company retreat (published by Educational Discoveries), followed by the \"Radical Choices: Leadership in Recovery Using Disruptive Learning Technology\" Day One workbook, a \"Transformation\" student workbook, white papers on Radical Choices and Emotional Literacy, and a Kosmos Essay draft on Radical Choice and Disruptive Learning Technology (DLT). Together these documents trace the evolution of Orloff's experiential learning methodology from the original Choices program through its later incarnations under Radical Choices LLC.",
-    "authorship": "Created by Judith Orloff and Educational Discoveries (the 1995 Choices for Success workbook), and later by Radical Choices LLC with Ali Boaldin as a contact. The documents were designed for corporate retreat participants, leadership workshop attendees, and students of transformation programs.",
+    "title": "Choices for Success: Participant Workbook",
+    "summary": "The complete participant workbook for \"Choices for Success,\" a two-day company retreat program created by Judith Orloff through Educational Discoveries (May 18-19, 1995). The workbook guides participants through a structured journey of self-discovery, starting with paradigms and head-vs.-heart awareness, then moving through childhood purpose, feelings, beliefs, and reactions. It builds toward core principles of personal freedom, personal responsibility, and unconditional love, addresses barriers like projection and control, explores intimacy and integrity, and culminates with creating a personal vision as a guide through the \"Sea of Chaos\" of change.",
+    "authorship": "Created by Judith Orloff and Educational Discoveries for corporate retreat participants.",
     "category": "Choices & Personal Development",
-    "categoryNote": "Compilation spanning multiple programs, but the core is the Choices for Success participant workbook, and the later materials (Radical Choices, Transformation) are direct descendants of the Choices methodology. The unifying thread is personal development through self-awareness, emotional literacy, and behavioral change.",
-    "pageCount": 84,
+    "categoryNote": "The foundational participant workbook for Judith's Choices for Success program, covering personal development through self-awareness, emotional literacy, and behavioral change.",
+    "pageCount": 29,
     "outline": [
       {
-        "title": "Choices for Success: Participant Workbook",
-        "pages": "1-30",
-        "description": "Complete workbook for a two-day company retreat covering paradigms, childhood purpose, feelings, beliefs, reactions, personal responsibility, unconditional love, projection, control, intimacy, integrity, vision, and the Model for Change."
+        "title": "Cover Page",
+        "pages": "1",
+        "description": "Title page for Choices for Success participant workbook, May 1995 company retreat by Educational Discoveries."
       },
       {
-        "title": "Radical Choices: Participant Workbooks (Divider)",
-        "pages": "31-32",
-        "description": "Handwritten cover pages serving as divider between Choices for Success and Radical Choices materials."
+        "title": "Welcome and Program Goals",
+        "pages": "2-5",
+        "description": "Program introduction and purpose, paradigm and paradigm shift definitions, head vs. heart framework, and program goals exercise."
       },
       {
-        "title": "Radical Choices: Leadership in Recovery Day One Workbook",
-        "pages": "33-43",
-        "description": "11-page workbook for a three-day leadership workshop covering DLT, Triune Brain model, vision, beliefs, and powerful leadership."
+        "title": "Childhood Purpose and the Sea of Bliss",
+        "pages": "6-7",
+        "description": "Childhood purpose exercise and the origin of feelings through the womb/bliss metaphor."
       },
       {
-        "title": "Choices / Radical Choices and Emotional Literacy White Papers",
-        "pages": "44-50",
-        "description": "White papers explaining Radical Choices' approach to Emotional Literacy, the business case, and the evolution from Choices methodology."
+        "title": "Beliefs and Feelings",
+        "pages": "8-10",
+        "description": "Beliefs as 'sacred cows,' feelings as waves that are all equal, and how unexperienced feelings persist and control you."
       },
       {
-        "title": "Kosmos Essay Draft and DLT Overview",
-        "pages": "51-54",
-        "description": "Draft essay for Kosmos magazine on Radical Choice and the Six Principles of Being, plus Real Impact Learning Emotional Literacy overview."
+        "title": "Reactions",
+        "pages": "11-13",
+        "description": "Reactions as cover-ups that protect true feelings, big clues for recognizing reactions, family pattern exercises, and wisdom vs. thoughts."
       },
       {
-        "title": "Transformation: Student Workbook",
-        "pages": "55-84",
-        "description": "Student workbook organized into three sessions: Our Relationship with Ourselves, Others, and the Earth, with reflective journal pages."
+        "title": "Personal Freedom and Responsibility",
+        "pages": "14-15",
+        "description": "Personal freedom as the ability to respond from unlimited options. Personal responsibility and its three basic assumptions: parents loved you, the universe is neutral, people are just doing what they're doing."
+      },
+      {
+        "title": "Unconditional Love",
+        "pages": "16",
+        "description": "Unconditional love as self-acceptance with no exclusions, accepting all feelings, thoughts, and your body."
+      },
+      {
+        "title": "Projection, Control, and Support",
+        "pages": "17-19",
+        "description": "Projection as giving energy away, control as fear of loss, and the distinction between 'taking care of' (co-dependency) vs. genuine support."
+      },
+      {
+        "title": "Intimacy, Integrity, and True Guilt",
+        "pages": "20-22",
+        "description": "Intimacy as 'into-me-see,' integrity as living who you really are, and true guilt as a message from your soul to stop a behavior."
+      },
+      {
+        "title": "Vision",
+        "pages": "23-24",
+        "description": "Vision as your guide through the Sea of Chaos of change, with the navigational diagram and personal vision exercise."
       }
     ]
   },
@@ -3372,148 +3004,6 @@
     ]
   },
   {
-    "id": "12",
-    "title": "Natural Leadership and Awakened Relationships: Radical Love Foundation Guidebook",
-    "summary": "A two-part guidebook published by the Radical Love Foundation in 2013, combining 'Natural Leadership: A Core Competency of Clarity' and 'Awakened Relationships: A Core Competency of Unconditional Love.' Each part presents six Guiding Principles with sub-topics covering personal responsibility, sharing direct experience, knowing yourself, honoring your word, being authentic, and applying skillful means, adapted for leadership contexts and relational contexts respectively. Includes definitions, benefits, and reflective notes pages for each principle.",
-    "authorship": "Written by Judith Orloff, M.Ed. and the Radical Love Design Team (2013). Co-founded with Melissa Stuart. Published by the Radical Love Foundation, Boulder, Colorado.",
-    "category": "Radical Love & Radical Choices",
-    "categoryNote": "Core Radical Love Foundation publication presenting the foundational six Guiding Principles in two applied contexts (leadership and relationships). It is the combined version of documents 12a and 12b.",
-    "pageCount": 96,
-    "outline": [
-      {
-        "title": "Part 1: Natural Leadership - Title and Front Matter",
-        "pages": "1-5",
-        "description": "Cover page, copyright (June 16, 2013), table of contents, and Rumi epigraph."
-      },
-      {
-        "title": "What is Natural Leadership? / Purpose, Vision, Mission",
-        "pages": "6-12",
-        "description": "Introduces Natural Leadership as the ability to lead with clarity, ease, and authenticity."
-      },
-      {
-        "title": "Guiding Principle #1: Personal Responsibility",
-        "pages": "13-18",
-        "description": "Accountability for results, allowing many alternatives, congruence. Result: trust in life itself."
-      },
-      {
-        "title": "Guiding Principle #2: Sharing Direct Experience",
-        "pages": "19-24",
-        "description": "Listening and receiving, opportunity for transformation, sharing without defense. Result: oneness."
-      },
-      {
-        "title": "Guiding Principle #3: Knowing Yourself",
-        "pages": "25-30",
-        "description": "Understanding true nature, assuming innocence, uniting personal vision with larger perspective. Result: natural wisdom."
-      },
-      {
-        "title": "Guiding Principle #4: Honoring Our Word",
-        "pages": "31-36",
-        "description": "Keeping our word, timely communication, free choice. Result: integrity."
-      },
-      {
-        "title": "Guiding Principle #5: Being Authentic",
-        "pages": "37-42",
-        "description": "Communicating without pretense, trust and equality, awareness of intention. Result: synergy."
-      },
-      {
-        "title": "Guiding Principle #6: Applying Skillful Means",
-        "pages": "43-49",
-        "description": "Seeing through reactions, thinning conditioning, opening heart and mind. Result: inseparability of clarity and everyday life."
-      },
-      {
-        "title": "Part 2: Awakened Relationships - Title and Front Matter",
-        "pages": "50-58",
-        "description": "Second guidebook cover, copyright (September 7, 2013), purpose/vision/mission, opening quote on the path of Awakened Relationships."
-      },
-      {
-        "title": "Guiding Principles #1-6 (Relationships)",
-        "pages": "59-94",
-        "description": "All six principles reframed for relational contexts: Personal Response-Ability (trust), Sharing Direct Experience (oneness), Being Authentic (freedom), Knowing Yourself (natural wisdom), Honoring Our Word (peace of mind), Applying Skillful Means (wholeness)."
-      },
-      {
-        "title": "Closing: For the Benefit of All",
-        "pages": "95-96",
-        "description": "Concluding section on infinite responsibility and the inseparability of response-ability from everyday life."
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "title": "Speeches, Convocation Addresses, and Radical Love Foundation Materials",
-    "summary": "A compilation spanning over four decades of Judith Orloff's work, from the 1973 VICI opening ceremony speech by Sister Elizabeth Candon through Orloff's own 2015 Burlington College convocation address, Radical Love Foundation presentation slides and workshop curricula, a 1992 letter from Educational Discoveries to Dr. W. Edwards Deming, conference correspondence for the Science and Nonduality Conference (2010), and supporting teaching content on authenticity, unconditioned awareness, archetypes, and free choice. Includes handwritten notes identifying key influences (Peter Fenner, Adyashanti, Werner Erhard, Buckminster Fuller, Deming).",
-    "authorship": "Compiled from multiple authors and sources. The 1973 VICI speech was by Sister Elizabeth Candon (President, Trinity College, Burlington VT). The 2015 Burlington College convocation speech, Radical Love workshop descriptions, and conference abstracts were by Judith Orloff. The 1992 letter to Dr. Deming was on Educational Discoveries letterhead. Handwritten divider pages appear to be by a compiler organizing the archive.",
-    "category": "Radical Love & Radical Choices",
-    "categoryNote": "While containing materials from multiple periods (VICI/Burlington College era, Educational Discoveries correspondence), the dominant theme is Radical Love. The Radical Love Foundation slides, workshop curricula, conference presentations, and core teachings comprise the majority of the document.",
-    "pageCount": 62,
-    "outline": [
-      {
-        "title": "Handwritten Divider: Burlington College Convocation",
-        "pages": "1",
-        "description": "Handwritten note: 'Softa did the last Convocation at Burlington College.'"
-      },
-      {
-        "title": "VICI Opening Ceremony Speech: 'In Praise of Venture' (1973)",
-        "pages": "2-6",
-        "description": "Speech by Sister Elizabeth Candon at the Vermont Institute of Community Involvement opening ceremony, September 29, 1973."
-      },
-      {
-        "title": "Burlington College Convocation Schedule (2015)",
-        "pages": "7",
-        "description": "Schedule for Judith Orloff's day at Burlington College including media interviews, convocation, and trustee meeting."
-      },
-      {
-        "title": "Judith Orloff's 2015 Convocation Speech",
-        "pages": "8-11",
-        "description": "Speech notes on co-founding Burlington College, four enduring social issues, and Debra Meyerson's 'Tempered Radicalism.'"
-      },
-      {
-        "title": "Background Research for Convocation",
-        "pages": "12-14",
-        "description": "Supporting research including biographical summary, Six Principles of Emotional Literacy, John Dewey, and Tempered Radical concept."
-      },
-      {
-        "title": "Handwritten Notes: Influential Teachers",
-        "pages": "15",
-        "description": "Lists Orloff's most influential teachers: Peter Fenner, Adyashanti, Werner Erhard, Buckminster Fuller, Deming."
-      },
-      {
-        "title": "Letter to Dr. W. Edwards Deming (1992)",
-        "pages": "16",
-        "description": "Letter on Educational Discoveries letterhead discussing consulting work at Wilcox Memorial Hospital in Hawaii."
-      },
-      {
-        "title": "Core Teachings of Radical Love",
-        "pages": "17-19",
-        "description": "Five core Radical Love activities: Pure Inseeing, Pure Listening, Pure Speaking, Pure Choosing, Pure Doing."
-      },
-      {
-        "title": "Radical Love Foundation Presentation Slides",
-        "pages": "20-25",
-        "description": "Branded slides (2013) on the present state of leadership education, its shortcomings, and the Radical Love Foundation vision."
-      },
-      {
-        "title": "Workshop Descriptions and Conference Abstracts",
-        "pages": "26-35",
-        "description": "Workshop flyer, presentation abstracts on Radical Love in relationships and time, Science and Nonduality Conference correspondence, and bio."
-      },
-      {
-        "title": "Purpose, Vision and Mission Statement",
-        "pages": "34",
-        "description": "Official Radical Love Foundation document with purpose, vision, mission, and six guiding principles."
-      },
-      {
-        "title": "Workshop Curriculum and Facilitation Plan",
-        "pages": "36-40",
-        "description": "Detailed workshop planning covering conditioning, family exercises, Pure Listening, defenseless intimacy, and facilitator roles."
-      },
-      {
-        "title": "Teaching Content: Authenticity, Free Choice, Archetypes",
-        "pages": "41-50",
-        "description": "Content from RL/ETP/NL transcripts on authenticity (Martin Buber), free choice, unconditioned awareness, family systems, and Jungian archetypes."
-      }
-    ]
-  },
-  {
     "id": "20a",
     "title": "WHY's Guide to the Human Side of CPR - Complete Training Program",
     "summary": "A comprehensive four-day corporate training seminar workbook created for Cargill, designed to teach the human and emotional side of CPR (Corporate Process Reengineering/Change). The program includes multiple interactive modules: \"The Chronicles of WHY\" (a narrative role-playing exercise set aboard the S.S. Destiny), \"WHY: A Game of Integrity\" (a commodity trading simulation with play money and role cards), \"The Synergy Game\" (a non-verbal communication exercise), and concluding sections on consultant tools, action planning, and stress relief. Includes custom watercolor cover art, printable game materials (play money branded \"The World of WHY\" with \"In Each Other We Trust\"), and structured reflection worksheets.",
@@ -3523,7 +3013,7 @@
     "outline": [
       {
         "title": "Seminar Overview and Agenda",
-        "pages": "1-7",
+        "pages": "3-7",
         "description": "Cover artwork, purpose statement, four-day agenda, and 'Why? and Why Not?' debate exercise about Cargill's CPR initiative."
       },
       {
@@ -3533,7 +3023,7 @@
       },
       {
         "title": "WHY: A Game of Integrity - Trading Simulation",
-        "pages": "27-90",
+        "pages": "34-90",
         "description": "Large-scale trading simulation with fictional countries, commodity cards, cultural customs, disruptive role cards, audit cards, and custom play money."
       },
       {
@@ -3543,12 +3033,12 @@
       },
       {
         "title": "Consultant's Tools and Taking Stock",
-        "pages": "111-120",
+        "pages": "117-132",
         "description": "Seven C's model worksheets for evaluating team context, connections, and confrontation needs."
       },
       {
         "title": "Action Planning and Notes",
-        "pages": "121-135",
+        "pages": "133-135",
         "description": "Team presentations, critical success factors, action planning templates, and journaling pages."
       }
     ]
@@ -3601,82 +3091,6 @@
         "title": "Level VI: Inventory, Auditing, and Completion",
         "pages": "96-110",
         "description": "Inventory write-offs, auditing concepts, final balance sheet cleanup, post-test, diploma ceremony."
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "title": "Educational Discoveries Instructor's Manual: Leadership Program, ETP, Choices Weekend & Graduate Training",
-    "summary": "A comprehensive instructor's manual compiled by Quantum Educational Discoveries (QED) that brings together teaching guides for multiple interconnected programs. The bulk is the Extended Teaching Program (ETP) Instructor's Manual (draft, 1991), detailing eight multi-day sessions covering personal history, unlimited responsibility, family integration, vision and power, adult relationships, bodies and sexuality, personal integrity, and mastering the process of change. Also includes a Graduate Training outline (6-week post-Choices Weekend follow-up, copyright 1990), the Choices Weekend instructor's script with the Model for Change diagram, and a guide to using 28 specific songs for emotional resonance during sessions.",
-    "authorship": "Created by Judith Orloff and the team at Quantum Educational Discoveries, Inc. (QED) for use by certified ETP and Choices instructors and teaching assistants. Multiple revision dates (4/23/91, 12/4/91, 1/9/92).",
-    "category": "Transformation Programs",
-    "categoryNote": "Master instructor's manual for the ETP (Extended Teaching Program), the core multi-session transformation curriculum that followed the Choices Weekend.",
-    "pageCount": 144,
-    "outline": [
-      {
-        "title": "Cover Page and Introductory Material",
-        "pages": "1-3",
-        "description": "Handwritten cover and Buckminster Fuller 'Critical Path' excerpt on 'Discovery and Change.'"
-      },
-      {
-        "title": "ETP Instructor's Manual - Title and Overview",
-        "pages": "4-7",
-        "description": "Title page, instructor's notes defining ETP as personal responsibility training, and eight-session curriculum overview."
-      },
-      {
-        "title": "Session One: Owning Your Personal History",
-        "pages": "8-15",
-        "description": "Welcome, group formation, sharing personal history and secrets, reviewing core concepts, setting personal goals on video."
-      },
-      {
-        "title": "Session Two: Living from Unlimited Personal Responsibility",
-        "pages": "16-22",
-        "description": "Family dynamics, differentiating feelings from reactions, childhood illusion work, perturbation and change."
-      },
-      {
-        "title": "Session Three: Integrating the Primary Family",
-        "pages": "23-30",
-        "description": "Family Day facilitation where participants bring family members, family integration exercises."
-      },
-      {
-        "title": "Session Four: Vision and Power",
-        "pages": "31-52",
-        "description": "4.5-day residential retreat focused on vision quests, perturbation and lasting change, vision sharing."
-      },
-      {
-        "title": "Session Five: Creating Adult Relationships",
-        "pages": "53-60",
-        "description": "Adult relationships, unconditional love in partnerships, power struggles vs. synergistic relationships."
-      },
-      {
-        "title": "Session Six: Bodies, Sex, and Physical Integration",
-        "pages": "61-75",
-        "description": "Residential retreat on body awareness, body autobiography, physical integration, sexuality."
-      },
-      {
-        "title": "Session Seven: Personal Integrity",
-        "pages": "76-90",
-        "description": "Personal integrity demonstrations, 'schiz-skits,' feedback exercises, integration of prior concepts."
-      },
-      {
-        "title": "Session Eight: Mastering the Process of Change",
-        "pages": "91-100",
-        "description": "Culminating session where participants demonstrate mastery of the change process."
-      },
-      {
-        "title": "Graduate Training Outline",
-        "pages": "101-105",
-        "description": "6-week follow-up for Choices Weekend graduates (Copyright 1990 by QED), format details, enrollment guidelines."
-      },
-      {
-        "title": "Choices Weekend Instructor's Guide",
-        "pages": "106-138",
-        "description": "Facilitation guide covering Head vs. Heart framework, reactions, Model for Change diagram, sexuality, closing activities."
-      },
-      {
-        "title": "Music Guide and Supplementary Materials",
-        "pages": "139-144",
-        "description": "28 songs listed with specific emotional contexts for use during sessions."
       }
     ]
   },
@@ -3780,7 +3194,7 @@
       },
       {
         "title": "Continuous Improvement of Program Design",
-        "pages": "33-34",
+        "pages": "38",
         "description": "Iterative refinement process: Talk-Through, Walk-Through, Pilot Test, Showcase, Final Product."
       },
       {
@@ -3795,12 +3209,12 @@
       },
       {
         "title": "The Accounting Game",
-        "pages": "38-55",
+        "pages": "43-55",
         "description": "Complete copy of the lemonade stand accounting simulation workbook (copyright 1983)."
       },
       {
         "title": "The Model for Change / Choices Paradigm",
-        "pages": "56-62",
+        "pages": "58-62",
         "description": "Choices International (1990) paradigm for personal and organizational change with mind map illustration."
       },
       {
@@ -3810,7 +3224,7 @@
       },
       {
         "title": "Learning Styles Inventory",
-        "pages": "69-75",
+        "pages": "70-75",
         "description": "4MAT System learning styles: Innovative/Diverger, Analytic/Assimilator, Common Sense/Converger, Dynamic/Accommodator."
       },
       {
@@ -3829,27 +3243,22 @@
     "pageCount": 279,
     "outline": [
       {
-        "title": "MBL Program Overview (Orloff Consulting)",
-        "pages": "1-10",
-        "description": "Title page and formal curriculum overview describing MBL as an eight-session program teaching leadership through self-mastery, emotional literacy, and authenticity."
+        "title": "MBL Program Overview",
+        "pages": "1-12",
+        "description": "Title page and formal curriculum overviews from Orloff Consulting and Choices International describing MBL as an eight-session program teaching leadership through self-mastery, emotional literacy, and authenticity. References The Tao of Leadership by John Heider."
       },
       {
-        "title": "Leadership Mastery Program Overview (Choices International)",
-        "pages": "11-12",
-        "description": "Second version branded under Choices International with eight progressive sessions. References The Tao of Leadership by John Heider."
-      },
-      {
-        "title": "Supplementary Articles and Reference Materials",
+        "title": "Supplementary Articles",
         "pages": "13-15",
-        "description": "Tarrytown Letter article 'Acting Out the Family on the Job' (Dr. Harry Levinson) and a Denver Business Journal article."
+        "description": "Tarrytown Letter article 'Acting Out the Family on the Job' (Dr. Harry Levinson) and a Denver Business Journal article on leadership."
       },
       {
-        "title": "Session One: Beliefs - Breaking the Chain",
+        "title": "Session One: Beliefs",
         "pages": "16-30",
-        "description": "July 16-18, 1989. Assignments include reading Strategy of the Dolphin, examining beliefs about money/business/leadership, and choosing a demonstration project."
+        "description": "Breaking the Chain. July 16-18, 1989. Assignments include reading Strategy of the Dolphin, examining beliefs about money/business/leadership, and choosing a demonstration project."
       },
       {
-        "title": "Sessions Two & Three: Intention, Motivation, and Core Beliefs",
+        "title": "Sessions Two and Three: Intention, Motivation, and Core Beliefs",
         "pages": "31-75",
         "description": "Deeper psychological work on loneliness, survival patterns, illusions, and how childhood patterns create adult business behaviors."
       },
@@ -3859,29 +3268,89 @@
         "description": "Teaching on connection, intention, presentation skills, enrolling listeners, and handling reactions. Includes Stephen Covey article."
       },
       {
-        "title": "Session Five: Stress Management - Conflict as Opportunity",
+        "title": "Session Five: Stress Management and Conflict",
         "pages": "91-140",
-        "description": "Conflict resolution, viewing point vs. point of view, Tom Crum's monastery parable, and interpersonal conflict case studies."
+        "description": "Conflict as opportunity, viewing point vs. point of view, Tom Crum's monastery parable, and interpersonal conflict case studies."
       },
       {
-        "title": "Sessions Six & Seven: Integrity - Creating Excellence",
-        "pages": "141-185",
-        "description": "Integrity as wholeness, lying in relationships, Pattern of Integrity vs. Pitfalls, bifurcation points (Storage Tech, Apple, Kodak examples)."
+        "title": "Sessions Six and Seven: Integrity and Creating Excellence",
+        "pages": "141-183",
+        "description": "Integrity as wholeness, lying in relationships, Pattern of Integrity vs. Pitfalls, bifurcation points (Storage Tech, Apple, Kodak examples), dissipative structures, evolution. Includes Vaclav Havel inaugural address."
       },
       {
-        "title": "Session Eight: Integrity and Leadership",
-        "pages": "186-245",
-        "description": "Self-directed session on living from context, embracing chaos, compassion, purpose, synergy and entrepreneurship."
+        "title": "Session Seven: Responsibility and Delegation",
+        "pages": "184-219",
+        "description": "Responsibility as ability-to-respond, context vs. content communication, shifting context, keeping agreements, projection and responsibility, fear of loss as illusion, equality, delegation, and planetary responsibility."
       },
       {
-        "title": "Session Nine: Responsibility and Delegation",
-        "pages": "246-260",
-        "description": "Responsibility as freedom, delegation, context shifts, fears reframed ('I'll be alone' to 'I'll be free')."
+        "title": "Session Eight: Demonstrating Leadership",
+        "pages": "220-248",
+        "description": "Title page, Session 6 review materials and planning notes, then the self-directed session on keeping agreements, handling inner reactions, power and leadership, purpose/vision/mission spiral, chaos of creation, integrity in relationships, and the 4 C's (Communication, Completion, Creation, Correction)."
       },
       {
         "title": "Program Administration",
-        "pages": "261-279",
-        "description": "MBL schedule (Jan-Apr 1990), assignment sheets, Choices International evaluation form, Goals/Action Steps worksheet, Steve Jobs quote on responsibility."
+        "pages": "249-279",
+        "description": "MBL roster (February 1990, Boulder, Colorado), detailed session plans for Sessions 1-3 (registration, vision/mission, beliefs, goals, risk-taking), assignment sheets, evaluation form, and Goals/Action Steps worksheet."
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Using Nonduality to Ameliorate Early Childhood Trauma: An Autoethnography (Doctoral Dissertation, 2020)",
+    "summary": "Judith Orloff's doctoral dissertation at Fielding Graduate University (Doctor of Education, 2020), chaired by Dr. Szabi Istai-Zee. An autoethnographic study exploring how early childhood trauma (emotional, physical, sexual) defines a person's future, and proposing nonduality as a foundational core therapeutic model that could be used universally alongside all modalities of therapy. The study focuses on Judith's own journey: postpartum depression and psychosis leading to misdiagnosis and psychiatric hospitalization at age 26, followed by decades of healing through nondual practice (particularly through Peter Fenner's work). Organized in five chapters: introduction and theoretical framework, literature review of nondual practitioner scholars, autoethnography as research method, a detailed personal narrative from childhood through discovering nonduality, and conclusions with a six-step nonduality-in-action process for practitioners.",
+    "authorship": "Judith Orloff. Committee: Szabi Istai-Zee, PhD (Chair), Anna M. DiStefano, EdD (Research Faculty), Ira P. Glovinsky, PhD (Faculty Reader), Donna Farren (Student Reader), Alan Davis, PhD (External Examiner).",
+    "category": "Academic & Scholarly Work",
+    "pageCount": 208,
+    "outline": [
+      {
+        "title": "Title Page, Abstract, and Copyright",
+        "pages": "1-3",
+        "description": "Dissertation title page with committee members, abstract defining the twofold study (childhood trauma's lasting effects and nonduality as therapeutic model), key words (nonduality, postpartum depression, psychosis, resiliency coaching, relational therapy), and copyright page."
+      },
+      {
+        "title": "Acknowledgements, Dedication, and Table of Contents",
+        "pages": "4-10",
+        "description": "Acknowledgements to partner Jonathan (30+ years), children Adam, Heather, and Rithy, granddaughter Montana, committee chair Dr. Istai-Zee, and colleagues Melissa and Sarah. Dedication to those who have struggled with trauma. Table of contents (five chapters plus references) and list of 13 figures."
+      },
+      {
+        "title": "Chapter One: Introduction to the Study",
+        "pages": "11-46",
+        "description": "Background exploring how childhood trauma defines a person's future. Definition of nonduality as a Buddhist non-conceptual practice for healing suffering. Purpose of bringing this healing model to the mainstream. Theoretical framework rooted in Fenner (2007). Discussions of conceptual vs. non-conceptual mindfulness, definition of duality, origins of nonduality across traditions (Hindu Vedanta, Buddhism, Taoism, mystical Christianity, Judaism, Islam). Use of nonduality as therapeutic modality. Significance and limitations of the study."
+      },
+      {
+        "title": "Chapter Two: Review of Literature",
+        "pages": "47-86",
+        "description": "Four-section literature review: (1) nondual practitioner scholars and their work, (2) early childhood conditioning and its lasting effects on development, (3) mindfulness research as a precursor to nonduality and its relationship to healing trauma, (4) mentors and teachers who shaped Judith's own perspective on nonduality in action. Summary of gaps in existing literature."
+      },
+      {
+        "title": "Chapter Three: Autoethnography as Method",
+        "pages": "87-106",
+        "description": "Overview of autoethnography as a research method for examining personal experience within social and cultural context. Description of the crucible 3-week stay at Philadelphia Psychiatric Center. Discussion of insanity, psychiatric labels, and postpartum hormone chaos in the mid-1960s. Research focus, data sources (journals, letters, class notes, many undated), a few early memories, detailed research approach, and chapter summary."
+      },
+      {
+        "title": "Chapter Four: My Personal Journey — Childhood",
+        "pages": "107-138",
+        "description": "Opening poem 'Yearning' (free form writing, 1959, New York City). The chapter's five-section overview. Parents' troubled marriage, a loving tale with father at age 2, St. Agnes Hospital, three years old, the red mitten incident, school years ages 7-12, father's heart attack, developing as an empath, Cinderella journal entry (May 2012), trolley car memory, elementary school, private school and abuse, friend Ramona, being Jewish in Philadelphia, and taking sides as the beginning of nonduality."
+      },
+      {
+        "title": "Chapter Four: My Personal Journey — Teenager through Philadelphia",
+        "pages": "139-156",
+        "description": "Teenage years and leaving home at 19, 1985 journal entry, moving to New York City and the beatnik era, returning to Philadelphia, Horizon House residential program (a crucible period of recovery), and University of Pennsylvania."
+      },
+      {
+        "title": "Chapter Four: My Personal Journey — Vermont, Colorado, and Healing",
+        "pages": "157-174",
+        "description": "Vermont as a new reality, 'A Fly Cries' reflection, San Diego period, move to Colorado, marriage to soulmate, discovering nonduality and Peter Fenner through two year-long programs and 6 years of training. The last 12 years (2006-2018) weaving nondual threads into transformation from recovering mental patient to master teacher. The healing process through continually resolving trauma via nondual practice."
+      },
+      {
+        "title": "Chapter Five: Now What? Conclusions and Recommendations",
+        "pages": "175-187",
+        "description": "Opening poem 'EXIST' (Philadelphia, 1960s). Reflections on memory as a self-woven tapestry. The research question: how does nonduality assist in ameliorating early childhood trauma? Memories shared with sister whose experience differed. Suggestions for future research, implications for practice, example of nonduality in action with a six-step process (two figures), and final reflection ending in a state of grace and appreciation."
+      },
+      {
+        "title": "References",
+        "pages": "188-208",
+        "description": "Academic references spanning trauma studies, nonduality, autoethnography methodology, mindfulness, childhood development, psychotherapy, resilience research, and related fields."
       }
     ]
   }
