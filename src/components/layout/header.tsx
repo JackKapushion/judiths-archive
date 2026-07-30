@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../auth/auth-context'
+import { auth } from '../../lib/firebase'
 
 function getSignInMethod(user: { providerData: { providerId: string }[] }) {
   const providerId = user.providerData[0]?.providerId
@@ -44,6 +45,26 @@ export function Header() {
   // Mobile hamburger menu state (separate from the desktop user dropdown)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
+  // Check if the signed-in user is an admin by pinging the admin endpoint.
+  // The backend compares the user's email against the ADMIN_EMAIL env var
+  // and returns 200 (admin) or 403 (not admin). This keeps the admin email
+  // as a single source of truth on the server.
+  const [isAdmin, setIsAdmin] = useState(false)
+  useEffect(() => {
+    if (!user || user.isAnonymous) {
+      setIsAdmin(false)
+      return
+    }
+    auth.currentUser?.getIdToken().then((token) => {
+      fetch('/api/admin/stats', {
+        method: 'GET',
+        headers: { Authorization: `Bearer ${token}` },
+      }).then((res) => {
+        setIsAdmin(res.ok)
+      }).catch(() => setIsAdmin(false))
+    })
+  }, [user])
+
   // Ref on the <header> element so we can measure its height and expose it
   // as a CSS variable. Child pages (chat, viewer) reference --header-height
   // instead of hard-coding pixel values, so spacing stays correct when the
@@ -188,6 +209,15 @@ export function Header() {
                     </div>
                   </div>
                   <div className="border-t border-[var(--color-foreground)]/10 pt-3 space-y-2">
+                    {isAdmin && (
+                      <Link
+                        to="/admin"
+                        onClick={() => setDropdownOpen(false)}
+                        className="block text-[var(--color-foreground)] hover:opacity-70"
+                      >
+                        Admin dashboard
+                      </Link>
+                    )}
                     <button
                       onClick={() => { signOut(); setDropdownOpen(false) }}
                       className="w-full text-left text-[var(--color-foreground)] hover:opacity-70"
@@ -277,6 +307,15 @@ export function Header() {
                         className="block text-[var(--color-foreground)] hover:opacity-70"
                       >
                         View AI Chats
+                      </Link>
+                    )}
+                    {isAdmin && (
+                      <Link
+                        to="/admin"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-[var(--color-foreground)] hover:opacity-70"
+                      >
+                        Admin dashboard
                       </Link>
                     )}
                     <button
