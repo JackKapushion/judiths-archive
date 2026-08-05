@@ -51,3 +51,6 @@ steps/
 
 # Temp data
 tmp/
+
+# Claude Code (volatile session state, not project docs)
+.claude/CHECKPOINT.md
