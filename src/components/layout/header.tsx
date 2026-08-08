@@ -162,10 +162,20 @@ export function Header() {
           (64 + 12) so the extra bottom padding extends the bar downward
           without moving the title (content area stays 52px starting at 12px
           from top, identical to the old h-16/pt-3/pb-0 layout). */}
-      <div className={`px-6 sm:px-10 flex items-center gap-4 ${isHomePage ? 'pt-3 pb-0 sm:pb-0 sm:h-16 sm:pt-4' : 'py-3 sm:h-[76px]'}`}>
+      <div className={`relative px-6 sm:px-10 flex items-center gap-4 ${isHomePage ? 'pt-3 pb-0 sm:pb-0 sm:h-16 sm:pt-4' : 'py-3 sm:h-[76px]'}`}>
         <Link to="/" className="text-xl leading-none py-1.5 text-[var(--color-foreground)] hover:opacity-70 flex-shrink-0">
           Judith's Archive
         </Link>
+
+        {/* TEMPORARY deploy smoke-test marker. Absolutely centered rather than
+            placed in the flex row so it stays visually centered in the bar
+            regardless of how wide the title/nav are, and so it doesn't compete
+            with the portal-rendered search UI inside #header-search-slot.
+            pointer-events-none keeps it from blocking clicks on the search
+            input underneath it. Remove once the deploy is verified. */}
+        <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 text-lg leading-none text-[var(--color-foreground)]">
+          test
+        </span>
 
         <div id="header-search-slot" className="flex-1 min-w-0" />
 
