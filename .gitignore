@@ -26,8 +26,9 @@ dist-ssr
 # Quiz data
 .quiz-data/
 
-# Local notes (not tracked)
-my-notes/
+# my-notes moved out on 09-12-2026, to
+# non-code-workspaces/inactive/judiths-archive-notes, so it is in source
+# control there rather than being ignored here and living on one laptop.
 
 # Environment variables (Firebase config is public but .env files
 # could contain other secrets in the future)
