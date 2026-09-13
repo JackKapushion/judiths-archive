@@ -303,6 +303,11 @@ export const chat = onRequest(
       // any "thinking out loud" text from Claude gets streamed too. During
       // the final round, the actual answer streams token by token.
 
+      // Whether the loop ended because Claude actually finished, rather than
+      // because it ran out of rounds. Those two exits used to be
+      // indistinguishable, which is the bug this tracks. See below the loop.
+      let finishedNaturally = false
+
       for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
         const stream = anthropic.messages.stream({
           // Sonnet 5 for good quality at reasonable cost ($3/$15 per MTok).
@@ -360,6 +365,7 @@ export const chat = onRequest(
 
         // If no tool calls, Claude gave its final answer (already streamed)
         if (finalMessage.stop_reason === 'end_turn' || toolUseBlocks.length === 0) {
+          finishedNaturally = true
           break
         }
 
@@ -390,11 +396,81 @@ export const chat = onRequest(
         apiMessages.push({ role: 'user', content: toolResults })
       }
 
+      // --- Ran out of rounds ---
+      //
+      // Claude was still calling tools when the loop hit MAX_TOOL_ROUNDS. That
+      // used to fall straight through to the write below with fullResponse
+      // still empty, and save it as a complete answer. The user saw a blank
+      // reply and no error, because the request itself succeeded.
+      //
+      // Measured on 09-11-2026: "What did Judith believe about leadership"
+      // spent all seven rounds searching, twelve tool calls, and saved "".
+      //
+      // Nothing is actually wrong in that situation. Claude has read the
+      // documents, it just never stopped to write the answer. So ask it once
+      // more with tool_choice none, which forces text instead of another
+      // search, and it answers from everything it has already gathered.
+      if (!finishedNaturally) {
+        console.warn(
+          `Hit MAX_TOOL_ROUNDS (${MAX_TOOL_ROUNDS}) with ${fullResponse.length} ` +
+            `chars of text. Forcing a final answer with tool_choice=none.`,
+        )
+        safeSend({ type: 'status', text: 'Putting it together...' })
+
+        const finalStream = anthropic.messages.stream({
+          model: 'claude-sonnet-5',
+          max_tokens: 2048,
+          system: systemPrompt,
+          tools,
+          // Tools stay declared because the history contains tool_use blocks,
+          // but 'none' stops Claude picking another one.
+          tool_choice: { type: 'none' },
+          messages: apiMessages,
+        })
+
+        for await (const event of finalStream) {
+          if (
+            event.type === 'content_block_delta' &&
+            event.delta.type === 'text_delta'
+          ) {
+            fullResponse += event.delta.text
+            safeSend({ type: 'content_delta', text: event.delta.text })
+          }
+        }
+
+        const forced = await finalStream.finalMessage()
+        if (forced.usage) {
+          const u = forced.usage as Anthropic.Messages.Usage & {
+            cache_creation_input_tokens?: number
+            cache_read_input_tokens?: number
+          }
+          totalInputTokens += u.input_tokens ?? 0
+          totalOutputTokens += u.output_tokens ?? 0
+          totalCacheCreationTokens += u.cache_creation_input_tokens ?? 0
+          totalCacheReadTokens += u.cache_read_input_tokens ?? 0
+        }
+        console.log(`Forced final answer: text=${fullResponse.length} chars`)
+      }
+
+      // Last line of defence. An empty answer is a failure whatever produced
+      // it, and saving it as 'complete' is what made the original bug silent.
+      // Mark it as an error so the frontend and the admin dashboard can both
+      // see that this question was never answered.
+      const answeredNothing = fullResponse.trim().length === 0
+      if (answeredNothing) {
+        console.error('Empty response after all rounds. Saving as error.')
+        safeSend({
+          type: 'error',
+          error:
+            'Something went wrong putting that answer together. Please try asking again.',
+        })
+      }
+
       // Write the assistant's response to Firestore
       const assistantMsg = await messagesRef.add({
         role: 'assistant',
         content: fullResponse,
-        status: 'complete',
+        status: answeredNothing ? 'error' : 'complete',
         createdAt: FieldValue.serverTimestamp(),
       } satisfies Omit<Message, 'createdAt'> & { createdAt: FieldValue })
 
